@@ -1,0 +1,39 @@
+stages:
+    - build
+    - deploy
+
+Build:
+    stage: build
+    cache:
+        paths:
+            - node_modules/
+    image: node:16.14.2
+    only:
+        - main
+    tags:
+        - global_stage
+    script:
+        - npm i
+        - npm run build:prod
+    artifacts:
+        paths:
+            - build/
+
+Deploy:
+    stage: deploy
+    image: node:16.14.2
+    only:
+        - main
+    dependencies:
+        - Build
+    tags:
+        - stage
+    before_script:
+        - 'which ssh-agent || ( apt-get install -qq openssh-client )'
+        - eval $(ssh-agent -s)
+        - ssh-add <(echo "$SSH_PRIVATE_KEY")
+        - mkdir -p ~/.ssh
+        - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+    script:
+        - scp -r ./build cp05609@5.23.51.23:/home/c/cp05609/tatsocbank/public_html/local/static

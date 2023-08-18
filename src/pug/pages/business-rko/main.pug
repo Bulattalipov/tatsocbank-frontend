@@ -1,0 +1,12 @@
+main.page-main.main
+  +breadcrumbs([['Главная', "/"], ['РКО']])
+  +page-intro("Расчетно-кассовое обслуживание вашего бизнеса", "Зарезервируйте и откройте банковский счёт быстро и бесплатно", true, "Зарезервировать расчетный счет", "modal-request")
+  include ../../parts/advantages.pug
+  section.page-section.js-section(id="how")
+    .site-container
+      h2.page-heading-h3.page-mb56.page-heading-sm-center Как получить кредит
+      +info-steps()
+  +callback-banner-list("Заявка на кредит", false, true)
+  +info-img(true, false, true, true)
+  include ../../parts/additional-information.pug
+  +review-banner

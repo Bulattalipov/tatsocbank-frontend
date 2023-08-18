@@ -1,0 +1,21 @@
+.text-block {
+  max-width: 130.5rem;
+  font: var(--font-text-4-reg);
+  color: var(--color-base-5);
+
+  @include mq(sm) {
+    margin-top: 4.5rem;
+  }
+
+  p {
+    margin-bottom: 2rem;
+
+    @include mq(sm) {
+      margin-bottom: 1.5rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

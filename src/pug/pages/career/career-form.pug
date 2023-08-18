@@ -1,0 +1,45 @@
+-
+  careerList = [
+    {name: "Юриспруденция"},
+    {name: "Финансы"},
+    {name: "IT"},
+    {name: "Менеджмент"},
+    {name: "Ассистенты"},
+    {name: "Без опыта"},
+    {name: "Ассистенты"},
+    {name: "Без опыта"},
+  ]
+
+section.page-section.career-form__section
+  .site-container
+    h1.page-heading-h2.page-mb56 Вакансии
+    form.career-form
+      .career-form__search
+        label.input
+          input(type="text" class="input__control no_validate" data-items="content" name="search" placeholder="Найти программу, продукт или сервис")
+          span.input__label Найти программу, продукт или сервис
+          +icon-mono("search")(width="24" height="24" class="search__form-icon")
+          +icon-mono("close")(width="24" height="24" class="search__form-icon search__form-icon--close")
+        .career-form__search-info
+          .career-form__search-info-text
+            | Посмотреть на
+          +icon-inside-circle("hh")
+      .career-form__box
+        .custom-select.career-form__box-select
+          .custom-select__label Город:
+          select(name="city" class="js-select")
+            option(value="Казань") Казань
+            option(value="Набережные Челны") Набережные Челны
+            option(value="Нижнекамск") Нижнекамск
+            option(value="Зеленодольск") Зеленодольск
+        .career-form__checkboxs-wrapper
+          .career-form__checkboxs
+            each item in careerList
+              label.career-form__checkboxs-label
+                input.career-form__checkbox(type="checkbox" name="jobs")
+                .career-form__checkboxs-btn= item.name
+        //- .career-form__mobile
+        //-   button.career-form__btn(type="button" data-path="modal-city")
+        //-     +icon-mono("filter")(width="24" height="24")
+        //-   .career-form__sum
+        //-     | #[span 19] Вакансий #[br] найдено

@@ -1,0 +1,36 @@
+-
+  detail_nav_list = [
+    { name: "Преимущества", link: "#advantages" },
+    { name: "Калькулятор", link: "#calc" },
+    { name: "Как оформить", link: "#how" },
+    { name: "Дополнительная информация", link: "#info" },
+  ]
+
+main.page-main.main
+  .landing-detail-header
+    .site-container.landing-detail-header__container
+      a(href="/" class="landing-detail-header__logo")
+        +icon-multi("logo")(width="173" height="36")
+      nav.nav.landing-detail-header__nav
+        ul.nav__list
+          for nav, i in detail_nav_list
+            - activeClass = i === 0 ? "is-active" : ""
+            li.nav__item
+              a.nav__link(href=nav.link class=activeClass)= nav.name
+
+      +button("Оставить заявку")(class="button--sm button--no-icon landing-detail-header__btn landing-detail-header__btn--callback")
+
+  +breadcrumbs([['Главная', "/"], ['Ипотека', '/'], ['Льготная ипотека на новостройку']])
+  +page-intro-detail("Льготная ипотека на&nbsp;новостройку", "Купите строящееся или уже сданное жильё в новостройке: квартиру, апартаменты или таунхаус с господдержкой")
+  include landing-page-detail.pug
+  include ../../parts/advantages.pug
+  include refinancing.pug
+  section.page-section.js-section(id="how")
+    .site-container
+      h2.page-heading-h3.page-mb56.page-heading-sm-center Ипотека за 3 шага
+      +info-steps()
+  +callback-banner("Заявка на кредит")
+  +card-banner(false, 'Карта с овердрафтом — возобновляемый кредит на любые цели', 'Проценты по кредиту начисляются только на ту сумму, которую вы использовали')
+  include ../../parts/additional-information.pug
+  include ../../parts/best-from-bank.pug
+  +review-banner()

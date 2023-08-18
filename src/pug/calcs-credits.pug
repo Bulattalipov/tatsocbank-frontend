@@ -1,0 +1,15 @@
+extends layout/default.pug
+
+block variables
+	- const bodyClass = "page-home"
+	- const pageTitle = "Калькулятор кредитный"
+	- const siteLang = "ru"
+
+block content
+	include pages/calcs-credits/main.pug
+
+
+block scriptsDev
+	script(src="assets/js/credits.js?v=" + siteVersion)
+	script(src="assets/js/calcsFunc.js?v=" + siteVersion)
+	script(src="assets/js/frontend.js?v=" + siteVersion)

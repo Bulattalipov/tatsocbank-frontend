@@ -1,0 +1,128 @@
+.docs {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  gap: var(--grid-offset);
+
+  &__item {
+    grid-column: 12 span;
+
+    @include mq(md) {
+      margin-bottom: 1rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.file {
+  position: relative;
+  display: flex;
+  height: 100%;
+  padding: 3rem;
+  border: 1px solid var(--color-border);
+  border-radius: 1.6rem;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    width: 100%;
+
+    @include mq(sm) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 0.8rem;
+    }
+  }
+
+  &__type-wrapper {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    height: 6rem;
+    margin-right: 1.6rem;
+    background: var(--color-other-orange);
+    border-radius: 1.2rem;
+
+    @include mq(sm) {
+      width: 4rem;
+      height: 4rem;
+      margin-bottom: 1.2rem;
+      border-radius: 0.8rem;
+    }
+  }
+
+  &__type {
+    display: block;
+    width: 2.8rem;
+    height: 2.8rem;
+    object-fit: contain;
+
+    @include mq(sm) {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+  }
+
+  &__info {
+    font: var(--font-text-4-med);
+
+    a {
+      display: inline-block;
+    }
+  }
+
+  &__size {
+    display: block;
+    margin-top: 0.6rem;
+    color: rgba(42 42 42 / 60%);
+    font: var(--font-text-4-med);
+
+    @include mq(sm) {
+      position: absolute;
+      top: 2.9rem;
+      right: 1.8rem;
+      margin-top: 0;
+    }
+  }
+
+  &__more-btn {
+    margin-top: 4rem;
+
+    &--wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include mq(sm) {
+      justify-content: center;
+      width: 100%;
+      margin-top: 3rem;
+    }
+  }
+
+  @include mq(sm) {
+    flex-direction: column;
+    padding: 1.8rem;
+  }
+}
+
+.file__btn {
+  margin-top: 4rem;
+
+  @include mq(sm) {
+    width: 100%;
+    margin-top: 2rem;
+    background-color: var(--color-base-2);
+    color: var(--color-base-7);
+    border: none;
+  }
+}

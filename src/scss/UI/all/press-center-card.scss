@@ -1,0 +1,106 @@
+/* stylelint-disable value-no-vendor-prefix */
+.press-center-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 23.6rem;
+  padding: 2rem;
+  border: 1px solid var(--color-base-3);
+  border-radius: 2rem;
+  transition: background-color var(--transition);
+
+  @include mq(lg, min) {
+    &:hover {
+      background-color: var(--color-base-2);
+    }
+  }
+
+  &--width-images {
+    .press-center-card__tag {
+      position: absolute;
+      top: 3.2rem;
+      left: 3.2rem;
+      z-index: 3;
+      background-color: var(--color-base-1);
+
+      @include mq(sm) {
+        top: 2.6rem;
+        left: 2.6rem;
+      }
+    }
+  }
+
+  &__tag {
+    display: block;
+    padding: 1.2rem 0.6rem;
+    font: var(--font-text-5-reg);
+    border: 1px solid var(--color-base-4);
+    border-radius: 0.8rem;
+
+    // @include mq(md) {
+    //   margin-right: calc(-1 * var(--padding-offset));
+    //   margin-left: calc(-1 * var(--padding-offset));
+    //   padding-right: var(--padding-offset);
+    //   padding-left: var(--padding-offset);
+    // }
+
+    @include mq(sm) {
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  &__img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 16rem;
+    overflow: hidden;
+    border-radius: 1.2rem;
+
+    @include mq(sm) {
+      height: 14rem;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+
+  &__heading {
+    display: -webkit-box;
+    margin-top: 1.6rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    font: var(--font-text-2-semi);
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    a {
+      &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: "";
+      }
+    }
+  }
+
+  &__date {
+    margin-top: auto;
+    color: var(--color-base-6);
+    font: var(--font-text-3-reg);
+  }
+
+  @include mq(sm) {
+    min-height: 18.1rem;
+    padding: 1.8rem;
+    border-radius: 1.2rem;
+  }
+}

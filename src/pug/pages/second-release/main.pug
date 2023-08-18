@@ -1,0 +1,209 @@
+-
+  media_tab_arr3 = [
+    { name: "Для руководителя организации", tabLabel: "supervisor" },
+    { name: "Для работников организации", tabLabel: "worker" },
+  ]
+
+  media_tab_arr4 = [
+    { name: "Коммунальные платежи", tabLabel: "utilities" },
+    { name: "Денежные переводы", tabLabel: "money" },
+    { name: "Валютные операции", tabLabel: "currency" },
+    { name: "Конверсионные операции", tabLabel: "conversion" },
+  ]
+
+  adv_list = [
+    { name: "Банкоматы-партнеры", text: "Снимайте наличные без комиссии в банкоматах банков-партнёров" },
+    { name: "Mir Pay", text: "Благодаря карте вам доступна бесконтактная оплата, достаточно приложить телефон" },
+    { name: "Удобное управление", text: "Управляйте счетом и картой в нашем мобильном приложении" },
+    { name: "Удобное управление", text: "Управляйте счетом и картой в нашем мобильном приложении" }
+  ]
+
+main.page-main.main
+  +breadcrumbs([['Главная', "/"], ['Зарплатный проект', '/']])
+  +page-intro-detail-new("Зарплатный проект", "Воспользуйтесь услугой «Зарплатный проект» для перечисления заработной платы на банковские карты платежных систем Mastercard, Visa и МИР", true, true)
+  +info-img(true, false, true, false)(class="info-img--modif-img")
+  +info-img(true, false, false, false, true)(class="info-img--modif-img-big")
+  +types-guarantees(true, false, false, false)
+  +types-guarantees(false, true, false, false)(class="types-guarantees--column-adaptive")
+  section.page-section
+    .site-container
+      h2.page-heading-h3.page-mb56.page-heading-sm-center Как оформить лизинг
+      +info-steps(true)
+  include ./why-leasing.pug
+  include ./equipment.pug
+  +types-guarantees(false, false, true, false)(class="types-guarantees--connection")
+  section.page-section
+    .site-container
+      h2.page-heading-h3.page-mb56 Варианты оплаты
+      .logos
+        each item, i in Array.from(Array(8).keys())
+          - var index = i + 1
+          .logos__item
+            +imgLazy(`assets/images/logos/${index}.png`, "")(class="logos__item-img")
+  +types-guarantees(false, false, false, true)(class="types-guarantees--connection")
+  section.page-section
+    .site-container
+      h2.page-heading-h3.page-mb56 Документы
+      .additional-information__item-file-wrapper
+        .file
+          .file__type-wrapper
+            img.file__type(src="assets/images/pdf.svg" alt="")
+          .file__info
+            a(href="./" class="page-link-full" target="_blank")
+              | Копия паспорта гражданина РФ (все страницы)
+              | и копия свидетельства о регистрации по месту
+              | пребывания (если нет постоянной регистрации на территории РФ).pdf
+            span.file__size 237.7 Кб
+        .file
+          .file__type-wrapper
+            img.file__type(src="assets/images/pdf.svg" alt="")
+          .file__info
+            a(href="./" class="page-link-full" target="_blank")
+              | Копия паспорта гражданина РФ (все страницы)
+              | и копия свидетельства о регистрации по месту
+              | пребывания (если нет постоянной регистрации на территории РФ).pdf
+            span.file__size 237.7 Кб
+        .file
+          .file__type-wrapper
+            img.file__type(src="assets/images/pdf.svg" alt="")
+          .file__info
+            a(href="./" class="page-link-full" target="_blank")
+              | Копия паспорта гражданина РФ (все страницы)
+              | и копия свидетельства о регистрации по месту
+              | пребывания (если нет постоянной регистрации на территории РФ).pdf
+            span.file__size 237.7 Кб
+        .file
+          .file__type-wrapper
+            img.file__type(src="assets/images/pdf.svg" alt="")
+          .file__info
+            a(href="./" class="page-link-full" target="_blank")
+              | Копия паспорта гражданина РФ (все страницы)
+              | и копия свидетельства о регистрации по месту
+              | пребывания (если нет постоянной регистрации на территории РФ).pdf
+            span.file__size 237.7 Кб
+      +button("Скачать все документы", null, false, "#")(class="button--lg file__btn" data-modif="\[\"black\"\]" download)
+  section.page-section
+    .site-container.page-tab-parent
+      .benefits-cooperation
+        h2.page-heading-h3.page-mb56 Преимущества сотрудничества
+        +classic-tab-list(media_tab_arr3)
+        .page-tab-content.is-active(data-tab-content="supervisor")
+          ul.advantages
+            for item in adv_list
+              li.advantages__item
+                +advantages-card(item.name, item.text)
+        .page-tab-content(data-tab-content="worker")
+          ul.advantages
+            for item in adv_list
+              li.advantages__item
+                +advantages-card(item.name, item.text)
+  include ../landing/landing-section-finance.pug
+  section.page-section
+    .site-container.page-tab-parent
+      .types-rko
+        h2.page-heading-h3.page-mb56 Виды РКО для физических лиц
+        +classic-tab-list(media_tab_arr4)
+        .page-tab-content.is-active(data-tab-content="utilities")
+          .info-img
+            .info-img__content
+              h2.page-heading-h4.info-img__title
+                | Коммунальные платежи 1
+              .info-img__text
+                p
+                  | Услуга банка по проведению денежных операций с открытием или без открытия счета
+              .info-img__img-mobile
+                img.info-img__img(src="assets/images/general-information/img-photo.png" alt="")
+              ul.info-img__list
+                li.info-img__list-item
+                  | Коммунальные услуги
+                li.info-img__list-item
+                  | Штрафы
+                li.info-img__list-item
+                  | Услуги телефонии
+                li.info-img__list-item
+                  | Налоги
+                li.info-img__list-item
+                  | Услуги телевидения
+                li.info-img__list-item
+                  | Интернет
+              +button('Выбрать отделение', null, null, "link")(class="button--lg info-img__btn")
+            .info-img__img-wrapper
+              img.info-img__img(src="assets/images/general-information/img-photo.png" alt="")
+        .page-tab-content(data-tab-content="money")
+          .info-img
+            .info-img__content
+              h2.page-heading-h4.info-img__title
+                | Коммунальные платежи 2
+              .info-img__text
+                p
+                  | Услуга банка по проведению денежных операций с открытием или без открытия счета
+              .info-img__img-mobile
+                img.info-img__img(src="assets/images/general-information/img-photo.png" alt="")
+              ul.info-img__list
+                li.info-img__list-item
+                  | Коммунальные услуги
+                li.info-img__list-item
+                  | Штрафы
+                li.info-img__list-item
+                  | Услуги телефонии
+                li.info-img__list-item
+                  | Налоги
+                li.info-img__list-item
+                  | Услуги телевидения
+                li.info-img__list-item
+                  | Интернет
+              +button('Выбрать отделение', null, null, "link")(class="button--lg info-img__btn")
+            .info-img__img-wrapper
+              img.info-img__img(src="assets/images/general-information/img-photo.png" alt="")
+        .page-tab-content(data-tab-content="currency")
+          .info-img
+            .info-img__content
+              h2.page-heading-h4.info-img__title
+                | Коммунальные платежи 3
+              .info-img__text
+                p
+                  | Услуга банка по проведению денежных операций с открытием или без открытия счета
+              .info-img__img-mobile
+                img.info-img__img(src="assets/images/general-information/img-photo.png" alt="")
+              ul.info-img__list
+                li.info-img__list-item
+                  | Коммунальные услуги
+                li.info-img__list-item
+                  | Штрафы
+                li.info-img__list-item
+                  | Услуги телефонии
+                li.info-img__list-item
+                  | Налоги
+                li.info-img__list-item
+                  | Услуги телевидения
+                li.info-img__list-item
+                  | Интернет
+              +button('Выбрать отделение', null, null, "link")(class="button--lg info-img__btn")
+            .info-img__img-wrapper
+              img.info-img__img(src="assets/images/general-information/img-photo.png" alt="")
+        .page-tab-content(data-tab-content="conversion")
+          .info-img
+            .info-img__content
+              h2.page-heading-h4.info-img__title
+                | Коммунальные платежи 4
+              .info-img__text
+                p
+                  | Услуга банка по проведению денежных операций с открытием или без открытия счета
+              .info-img__img-mobile
+                img.info-img__img(src="assets/images/general-information/img-photo.png" alt="")
+              ul.info-img__list
+                li.info-img__list-item
+                  | Коммунальные услуги
+                li.info-img__list-item
+                  | Штрафы
+                li.info-img__list-item
+                  | Услуги телефонии
+                li.info-img__list-item
+                  | Налоги
+                li.info-img__list-item
+                  | Услуги телевидения
+                li.info-img__list-item
+                  | Интернет
+              +button('Выбрать отделение', null, null, "link")(class="button--lg info-img__btn")
+            .info-img__img-wrapper
+              img.info-img__img(src="assets/images/general-information/img-photo.png" alt="")

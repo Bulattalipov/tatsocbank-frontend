@@ -1,0 +1,117 @@
+-
+  innfo = [
+    { name: "Тарифы и условия", tabLabel: "tafis" },
+    { name: "Требования", tabLabel: "requirment" },
+    { name: "Страхование", tabLabel: "savings" },
+    { name: "Часто задаваемые вопросы", tabLabel: "faq" },
+    { name: "Погашение", tabLabel: "redemption" },
+    { name: "Документы", tabLabel: "docs" }
+  ]
+
+  innfo2 = [
+    { name: "Требования", tabLabel: "requirment" },
+    { name: "Страхование", tabLabel: "savings" },
+    { name: "Часто задаваемые вопросы", tabLabel: "faq" },
+  ]
+
+section.page-section.js-section-3(id="info")
+  .site-container
+    h2.page-heading-h3.page-mb56 Дополнительная информация
+
+    .additional-information.page-tab-parent
+      +classic-tab-list(innfo)(class="additional-information__nav page-mb32")
+
+      ul.additional-information__list
+        li.additional-information__item.page-tab-content(class="is-active" data-tab-content="tafis")
+          ul.conditions
+            li.conditions__item
+              .conditions__item-block
+                h5.conditions__heading Цель кредита
+              .conditions__item-block.conditions__content
+                ol
+                  li Индивидуальное строительство жилого дома с одновременным приобретением земельного участка
+                  li Индивидуальное строительство жилого дома на имеющемся земельном участке по договору подряда
+                  li Приобретение квартиры у застройщика (ДКП/ДДУ, ДУПТ)
+            li.conditions__item
+              .conditions__item-block
+                h5.conditions__heading Валюта кредита
+              .conditions__item-block.conditions__content
+                p Первоначальный взнос от 15% - 6,1% годовых*
+                p #[span *только для Москвы и Московской области]
+
+        for item, i in innfo2
+          li.additional-information__item.page-tab-content(data-tab-content=item.tabLabel)
+            ul.accordion__list
+              each i in Array.from(Array(2).keys())
+                li.accordion__item.accordion__item--filled
+                  .accordion.accordion--filled.js-accordion(data-close-other)
+                    button.accordion__head.js-accordion-btn
+                      span.accordion__label Требования к залоговой недвижимости
+                    .accordion__body.js-accordion-content
+                      .accordion__body-content
+                        p(style={'color': 'var(--color-base-7)'}) #[strong Гражданство]
+                        ul
+                          li Физические лица — граждане РФ
+                          li От 21 года до 65 лет (на момент погашения кредита)
+
+                        p(style={'color': 'var(--color-base-7)'}) #[strong Стаж работы]
+                        ul
+                          li Работники по найму — общий стаж не менее 12 месяцев
+                          li На последнем месте работы — 3 месяца
+        li.additional-information__item.additional-information__item--files.page-tab-content(data-tab-content="redemption")
+          ul.accordion__list
+            each i in Array.from(Array(2).keys())
+              li.accordion__item.accordion__item--filled
+                .accordion.accordion--filled.js-accordion(data-close-other)
+                  button.accordion__head.js-accordion-btn
+                    span.accordion__label Требования к залоговой недвижимости
+                  .accordion__body.js-accordion-content
+                    .accordion__body-content
+                      .additional-information__item-file-wrapper
+                        .file
+                          .file__type-wrapper
+                            img.file__type(src="assets/images/pdf.svg" alt="")
+                          .file__info
+                            a(href="./" class="page-link-full" target="_blank")
+                              | Копия паспорта гражданина РФ (все страницы)
+                              | и копия свидетельства о регистрации по месту
+                              | пребывания (если нет постоянной регистрации на территории РФ).pdf
+                            span.file__size 237.7 Кб
+                        .file
+                          .file__type-wrapper
+                            img.file__type(src="assets/images/pdf.svg" alt="")
+                          .file__info
+                            a(href="./" class="page-link-full" target="_blank")
+                              | Копия паспорта гражданина РФ (все страницы)
+                              | и копия свидетельства о регистрации по месту
+                              | пребывания (если нет постоянной регистрации на территории РФ).pdf
+                            span.file__size 237.7 Кб
+                        .file
+                          .file__type-wrapper
+                            img.file__type(src="assets/images/pdf.svg" alt="")
+                          .file__info
+                            a(href="./" class="page-link-full" target="_blank")
+                              | Копия паспорта гражданина РФ (все страницы)
+                              | и копия свидетельства о регистрации по месту
+                              | пребывания (если нет постоянной регистрации на территории РФ).pdf
+                            span.file__size 237.7 Кб
+                      +button("Скачать все", null, null, "link")(class="button--lg button--outline file__more-btn")
+      ul.additional-information__list
+        li.additional-information__item.page-tab-content(data-tab-content="docs")
+          ul.docs
+            each i in Array.from(Array(2).keys())
+              li.docs__item
+                .file
+                  .file__type-wrapper
+                    img.file__type(src="assets/images/pdf.svg" alt="")
+                  .file__info
+                    a(href="./" class="page-link-full" target="_blank")
+                      | Копия паспорта гражданина РФ (все страницы)
+                      | и копия свидетельства о регистрации по месту
+                      | пребывания (если нет постоянной регистрации на территории РФ).pdf
+                    span.file__size 237.7 Кб
+          .file__more-btn--wrapper
+            +button("Скачать все документы", null, null, "link")(class="button--third file__more-btn")
+
+    +button("Показать еще")(class="button--outline button--lg button--full")
+

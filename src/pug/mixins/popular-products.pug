@@ -1,0 +1,32 @@
+-
+  pop_prodicts = [
+    { name: "Ипотека", label: "<span class='pop-product__label-legend' >От</span><span class='pop-product__label-num' >15%</span>", text: "На первичное и вторичное жильё с господдержкой" },
+    { name: "Вклады", label: "<span class='pop-product__label-legend' >Доходность до</span><span class='pop-product__label-num' >15%</span>", text: "Воспользуйтесь выгодным процентом" },
+    { name: "Автокредиты", label: "<span class='pop-product__label-legend' >От</span><span class='pop-product__label-num'>15%</span><span class='pop-product__label-legend pop-product__label-legend--ml' >годовых</span>", text: "На новые и поддержанные автомобили" },
+    { name: "Карты", label: "<span class='pop-product__label-legend' >Кэшбек до</span><span class='pop-product__label-num' >15%</span>", text: "Кредитные и дебетовые с выгодными условиями" },
+    { name: "Кредиты", label: "<span class='pop-product__label-legend' >От</span><span class='pop-product__label-num' ></span>", text: "Кредитные и дебетовые с выгодными условиями" },
+  ]
+mixin popular-products(modif)
+  section.page-section.js-section
+    .site-container
+      h2.popular-products__heading.page-heading-h4 Популярные продукты
+      .popular-products.swiper.js-popular-slider
+        ul.swiper-wrapper
+          for product in pop_prodicts
+            li.popular-products__item.swiper-slide
+              if modif
+                article.pop-product
+                  h3.pop-product__heading #[a(href="./" class="page-link-full")= product.name]
+                  p.pop-product__text= product.text
+                  .pop-product__image-wrapper
+                    +imgLazy("assets/images/pop-products/img1.png")(class="pop-product__image" alt=product.name)
+                  .pop-product__link
+                    span Подробнее
+                    +icon-mono("shevron-arrow-right")(width="16" height="16" class="pop-product__link-icon")
+              else
+                article.pop-product
+                  h3.pop-product__heading #[a(href="./" class="page-link-full")= product.name]
+                  .pop-product__label!= product.label
+                  .pop-product__image-wrapper
+                    +imgLazy("assets/images/pop-products/img1.png")(class="pop-product__image" alt=product.name)
+                  p.pop-product__text= product.text

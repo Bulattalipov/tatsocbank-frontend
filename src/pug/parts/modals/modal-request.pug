@@ -1,0 +1,22 @@
+.modal__container.modal-request(data-target="modal-request")
+  button.button-reset.modal__close-btn.modal-close(type="button")
+    +icon-mono("close")(width="22" height="22" class="modal__close-btn-icon")
+  .modal__content
+    .modal__content-close-mobile.modal-close
+    .modal__content-inner
+      button.button-reset.modal__close-btn.modal__close-btn--mobile.modal-close(type="button")
+        +icon-mono("close")(width="22" height="22" class="modal__close-btn-icon")
+      .modal__legend
+        | Напишите отзыв
+      .modal__legend-text
+        | Сотрудник банка свяжется с вами в течение 15 минут
+      form(action="./" data-need-validation data-sucess="success-big" data-error="success-big")
+        +input("ФИО", "name", "ФИО", null, "fio")(class="js-validation-wrapper input--offset-bottom input--grey" data-ts="123")
+        +input("Название организации", "organization", "Название организации", null, "fio")(class="js-validation-wrapper input--offset-bottom input--grey" data-ts="123")
+        +input("Email", "organization", "Email", null, "email")(class="js-validation-wrapper input--offset-bottom input--grey" data-ts="123")
+        +input("Телефон", "phone", "Номер телефона", null, "phone")(class="js-validation-wrapper input--offset-bottom input--grey")
+        +input("ИНН", "phone", "ИНН", null, "fio")(class="js-validation-wrapper input--offset-bottom input--grey")
+        +texarea("Ваше сообщение")(class="texarea--grey js-validation-wrapper")
+        +button("Подать заявку")(class="button--md modal__from-btn")
+      .page-agreement
+        | При нажати кнопки «Подать заявку» вы даете согласие на обработку #[a(href="./") персональных данных]

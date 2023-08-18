@@ -1,0 +1,41 @@
+# АО «ТАТСОЦБАНК»
+
+## Ссылки
+1. [Главная](https://tatsocbank.markweber.ru/local/static/build/)
+2. [Ипотека (разводящая)](http://tatsocbank.markweber.ru/local/static/build/landing-page.html)
+3. [Ипотека (детальная)](http://tatsocbank.markweber.ru/local/static/build/landing-page-detail.html)
+4. [Карты (разводящая)](http://tatsocbank.markweber.ru/local/static/build/cards-landing.html)
+5. [Карты (детальная)](http://tatsocbank.markweber.ru/local/static/build/cards-landing-detail.html)
+6. [Мобильное приложение](http://tatsocbank.markweber.ru/local/static/build/mobile-app.html)
+7. [Аренда сейфов](http://tatsocbank.markweber.ru/local/static/build/safe-rental.html)
+8. [Курсы валют](http://tatsocbank.markweber.ru/local/static/build/exchange.html)
+9. [Драгоценные металлы](http://tatsocbank.markweber.ru/local/static/build/precious.html)
+10. [Офисы и банкоматы](http://tatsocbank.markweber.ru/local/static/build/map.html)
+11. [Поиск по сайту](http://tatsocbank.markweber.ru/local/static/build/search-results.html)
+12. [Калькуляторы](http://tatsocbank.markweber.ru/local/static/build/calcs.html)
+13. [Общая информация](http://tatsocbank.markweber.ru/local/static/build/general-information.html)
+14. [Главная (Бизнесу)](http://tatsocbank.markweber.ru/local/static/build/business-index.html)
+15. [Кредиты (Бизнесу)](http://tatsocbank.markweber.ru/local/static/build/business-credits.html)
+16. [РКО (Бизнесу)](http://tatsocbank.markweber.ru/local/static/build/business-rko.html)
+17. [Блоки второго релиза (Бизнесу)](http://tatsocbank.markweber.ru/local/static/build/second-release.html)
+18. [Документ (О банке)](http://tatsocbank.markweber.ru/local/static/build/documentation.html)
+19. [Контакты (О банке)](http://tatsocbank.markweber.ru/local/static/build/contacts.html)
+20. [Реквизиты (О банке)](http://tatsocbank.markweber.ru/local/static/build/requisites.html)
+21. [Карьера (О банке)](http://tatsocbank.markweber.ru/local/static/build/career.html)
+22. [Страница вакансии (О банке)](http://tatsocbank.markweber.ru/local/static/build/vacancy.html)
+23. [Пресс-центр (О банке)](http://tatsocbank.markweber.ru/local/static/build/press-center.html)
+24. [Новость/Статья (О банке)](http://tatsocbank.markweber.ru/local/static/build/news-and-article.html)
+25. [Автокредитование](http://tatsocbank.markweber.ru/local/static/build/calcs-auto.html)
+26. [Автокредитование детальная](http://tatsocbank.markweber.ru/local/static/build/calcs-auto-detals.html)
+27. [Калькулятор кредитный](http://tatsocbank.markweber.ru/local/static/build/calcs-credits.html)
+28. [Ипотека](http://tatsocbank.markweber.ru/local/static/build/calcs-ipoteka.html)
+29. [Рефинансирование](http://tatsocbank.markweber.ru/local/static/build/calcs-refinancing.html)
+30. [Калькулятор с табами](http://tatsocbank.markweber.ru/local/static/build/calcs-tabs.html)
+31. [Вклады](http://tatsocbank.markweber.ru/local/static/build/calcs-vklad.html)
+32. [Вклады детальная](http://tatsocbank.markweber.ru/local/static/build/calcs-vklad-detals.html)
+
+## Документация
+1. [Как работать со сборкой](readme/howWorks.md)
+
+## Компоненты
+[UI kit](https://tatsocbank.markweber.ru/local/static/build/ui.html)

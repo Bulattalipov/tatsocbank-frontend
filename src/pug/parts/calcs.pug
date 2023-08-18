@@ -1,0 +1,829 @@
+-
+  fisrt_swithcers = [
+    { label: "Капитализация процентов <span> + 0,5%</span>", name: "capitalization"},
+    { label: "С пополнением", name: "rechargeable" },
+    { label: "Со снятием", name: "takeoff" },
+    { label: "Для пенсионеров", name: "pension" }
+  ]
+
+  s_swithcers = [
+    "Я получаю зарплату на карту АО «ТАТСОЦБАНК» <span> + 0,5%</span>",
+    "Я предприниматель с расчётным счётом в АО «ТАТСОЦБАНК» <span> + 0,5%</span>",
+    "У моего работодателя открыт расчётный счёт в АО «ТАТСОЦБАНК» <span> + 0,5%</span>"
+  ]
+
+  innfo_tba = [
+    { name: "Ипотека", tabLabel: "mortgage" },
+    { name: "Кредиты", tabLabel: "kredi" },
+    { name: "Вклады", tabLabel: "vklad" },
+  ]
+
+
+
+script.
+  const settings1 = {
+    rates: {
+      default: 0,
+      depositType: {
+        n: {
+          maxSum: 500000,
+          rate: 0.124,
+          add: 0
+        },
+        vehicle: {
+          maxSum: 1000000,
+          rate: 0.119,
+          add: 0.025
+        },
+        realty: {
+          maxSum: 2000000,
+          rate: 0.114,
+          add: 0.01
+        }
+      },
+      proofOfIncome: {
+        1: 0,
+        2: 0.01,
+        3: 0.01
+      }
+    }
+  }
+
+  const settings2 = {
+    rates: {
+      default: 0,
+      depositType: {
+        n: {
+          maxSum: 3000000,
+          rate: 0,
+          add: 0,
+          year: {
+            12: 0,
+            24: 0,
+            36: 0,
+            48: 0,
+            60: 0
+          }
+        },
+        vehicle: {
+          maxSum: 3000000,
+          rate: 0,
+          add: 0.03,
+          year: {
+            12: 0.139,
+            24: 0.139,
+            36: 0.144,
+            48: 0.144,
+            60: 0.144
+          }
+        },
+        realty: {
+          maxSum: 3000000,
+          rate: 0,
+          add: 0.01,
+          year: {
+            12: 0.129,
+            24: 0.129,
+            36: 0.134,
+            48: 0.134,
+            60: 0.134
+          }
+        }
+      },
+      proofOfIncome: {
+        1: 0,
+        2: 0.01,
+        3: 0.01
+      }
+    }
+  }
+
+  const settings3 = {
+    rates: {
+      default: 0,
+      depositType: {
+        n: {
+          maxSum: 2000000,
+          rate: 0.109,
+          add: 0
+        },
+        vehicle: {
+          maxSum: 2000000,
+          rate: 0.109,
+          add: 0.03
+        },
+        realty: {
+          maxSum: 2000000,
+          rate: 0.109,
+          add: 0.01
+        }
+      },
+      proofOfIncome: {
+        1: 0,
+        2: 0.01,
+        3: 0.01
+      }
+    }
+  }
+
+  let allDeposit = {
+    1: {
+      id: '1',
+      name: 'Вклад «До востребования»',
+      min: '10',
+      max: '',
+      type: '1', // 1- бессрочный, 2 - срочный //# По бессрочным вкладам процент применяется ко всей сумме вклада
+      rates: {
+        0: 0.01
+      },
+      //capitalization: '',
+      rechargeable: 'Y',
+      takeoff: 'Y',
+      //pension: '',
+    },
+    /*2: {
+      id: '2',
+      name: 'Вклад "Надежный"',
+      min: '5000',
+      max: '',
+      type: '2', // 1- бессрочный, 2 - срочный //# По бессрочным вкладам процент применяется ко всей сумме вклада
+      rates: {
+        90: 2
+      },
+      //capitalization: '', //Капитализация
+      rechargeable: 'Y', //Пополняемый
+      //takeoff: 'Y', //можно снять
+      //pension: '', //пенсионные
+    },*/
+    3: {
+      id: '3',
+      name: 'Вклад "Стабильный процент"',
+      min: '5000',
+      max: '',
+      type: '2', // 1- бессрочный, 2 - срочный //# По бессрочным вкладам процент применяется ко всей сумме вклада
+      rates: {
+        360: 4
+      },
+      //capitalization: '', //Капитализация
+      rechargeable: 'Y', //Пополняемый
+      //takeoff: 'Y', //можно снять
+      //pension: '', //пенсионные
+    },
+    4: {
+      id: '4',
+      name: 'Вклад "Больше возможностей"',
+      min: '5000000',
+      max: '',
+      type: '1', // 1- бессрочный, 2 - срочный //# По бессрочным вкладам процент применяется ко всей сумме вклада
+      rates: {
+        1: 0.5,
+        30: 1,
+        90: 1.25,
+        180: 2.25,
+        270: 3.25,
+        360: 4.75
+      },
+      capitalization: 'Y', //Капитализация
+      rechargeable: 'Y', //Пополняемый
+      takeoff: 'Y', //можно снять
+      //pension: '', //пенсионные
+    },
+    5: {
+      id: '5',
+      name: 'Вклад "Капитальное вложение"',
+      min: '1000000',
+      max: '',
+      type: '1', // 1- бессрочный, 2 - срочный //# По бессрочным вкладам процент применяется ко всей сумме вклада
+      rates: {
+        1: 0.5,
+        30: 1,
+        90: 1.25,
+        180: 2.25,
+        270: 3.25,
+        360: 4.25
+      },
+      capitalization: 'Y', //Капитализация
+      rechargeable: 'Y', //Пополняемый
+      takeoff: 'Y', //можно снять
+      //pension: '', //пенсионные
+    },
+    6: {
+      id: '6',
+      name: 'Вклад "Новый пенсионный"',
+      min: '100',
+      max: '',
+      type: '1', // 1- бессрочный, 2 - срочный //# По бессрочным вкладам процент применяется ко всей сумме вклада
+      rates: {
+        1: 0.5,
+        360: 3.25
+      },
+      capitalization: 'Y', //Капитализация
+      rechargeable: 'Y', //Пополняемый
+      takeoff: 'Y', //можно снять
+      pension: 'Y', //пенсионные
+    },
+    8: {
+      id: '8',
+      name: 'Вклад "Апельсиновый фреш"',
+      min: '10000',
+      max: '',
+      type: '2', // 1- бессрочный, 2 - срочный //# По бессрочным вкладам процент применяется ко всей сумме вклада
+      rates: {
+        180: 2.75
+      },
+      capitalization: 'Y', //Капитализация
+      rechargeable: 'Y', //Пополняемый
+      takeoff: 'Y', //можно снять
+      //pension: 'Y', //пенсионные
+    },
+    10: {
+      id: '10',
+      name: 'Вклад "Смарт"',
+      min: '10000',
+      max: '',
+      type: '2', // 1- бессрочный, 2 - срочный //# По бессрочным вкладам процент применяется ко всей сумме вклада
+      rates: {
+        90: 3
+      },
+      capitalization: 'N', //Капитализация
+      rechargeable: 'Y', //Пополняемый
+      takeoff: 'N', //можно снять
+      //pension: 'Y', //пенсионные
+    },
+    11: {
+      id: '11',
+      name: 'Вклад "Новый горизонт"',
+      min: '25000',
+      max: '',
+      type: '2', // 1- бессрочный, 2 - срочный //# По бессрочным вкладам процент применяется ко всей сумме вклада
+      rates: {
+        1: 0.5,
+        31: 2.25,
+        91: 2.65,
+        192: 2.75,
+        271: 2.85,
+        372: 3.83
+      },
+      //capitalization: '', //Капитализация
+      rechargeable: 'Y', //Пополняемый
+      //takeoff: 'Y', //можно снять
+      //pension: '', //пенсионные
+    },
+    12: {
+      id: '12',
+      name: 'Вклад "Радужный"',
+      min: '1000',
+      max: '',
+      type: '2', // 1- бессрочный, 2 - срочный //# По бессрочным вкладам процент применяется ко всей сумме вклада
+      rates: {
+        60: 3.75
+      },
+      capitalization: 'N', //Капитализация
+      rechargeable: 'Y', //Пополняемый
+      takeoff: 'Y', //можно снять
+      //pension: 'Y', //пенсионные
+    },
+  };
+
+  var allIpoteka = {
+    1: {
+      id: '1',
+      name: '«Земельный»',
+      want: [
+        'c2',
+        'c3',
+        'c4',
+        'c6',
+      ],
+      min: '100000',
+      feeKapital: '15',
+      feeMin: '15',
+      feeMax: '80',
+      rates: {
+        0: {
+          10: 9.9,
+          20: 9.5
+        }
+      },
+      commission: {
+        2.5: -1,
+        1: -0.5
+      }
+    },
+    2: {
+      id: '2',
+      name: '«Ключевой процент»',
+      want: [
+        'c1',
+      ],
+      min: '300000',
+      feeKapital: '10',
+      feeMin: '15',
+      feeMax: '80',
+      rates: {
+        0: {
+          10: 8.8,
+          20: 8.6,
+          50: 8.4
+        }
+      }
+    },
+    /*3: {
+      id: '3',
+      name: '«Гараж»',
+      want: [
+        'c7',
+      ],
+      min: '100000',
+      feeMin: '40',
+      feeMax: '80',
+      rates: {
+        0: {
+          40: 11.5
+        }
+      },
+      commission: {
+        2.5: -1,
+        1: -0.5
+      }
+    },*/
+    4: {
+      id: '4',
+      name: '«Коммерческая недвижимость»',
+      want: [
+        'c8',
+      ],
+      min: '300000',
+      max: '',
+      feeMin: '15',
+      feeMax: '80',
+      rates: {
+        0: {
+          20: 11.5,
+          50: 11
+        },
+        /*11: {
+          0: 13.5,
+          50: 12.5
+        },*/
+      },
+      commission: {
+        2.5: -1,
+        1: -0.5
+      }
+    },
+    5: {
+      id: '5',
+      name: '«Рефинансирование»',
+      min: '300000',
+      want: [
+        'c5',
+      ],
+      rates: {
+        1: { //квартира
+          0: {
+            10: 8.8,
+            20: 8.6,
+            50: 8.4
+            //от 80% до 70,01% — 9,9%
+            //от 70% — 9,6%
+          }
+        },
+        2: { //дом или участок
+          0: {
+            10: 9.9,
+            20: 9.5
+            //Соотношение кредит/залог
+            //от 80% и менее — 11,1%
+          },
+          // 11: {
+          //     50: 12.5,
+          //     80: 13.5
+          //     //Соотношение кредит/залог
+          //     //50% и менее —12,5%
+          //     //от 80% до 50,01% — 13,5%
+          // }
+        },
+        3: { //ком недв
+          0: {
+            20: 11.5,
+            50: 11
+            //Соотношение кредит/залог
+            //50% и менее — 11,5%
+            //от 80% до 50,01% — 12,5%
+          },
+          /*11: {
+            50: 12.5,
+            80: 13.5
+            //Соотношение кредит/залог
+            //50% и менее —12,5%
+            //от 80% до 50,01% — 13,5%
+          }*/
+        },
+      },
+      commission: {
+        2.5: -1,
+        1: -0.5
+      }
+    },
+    6: {
+      id: '6',
+      name: '«Земельный дом»',
+      want: [
+        'c9',
+      ],
+      min: '300000',
+      feeKapital: '10',
+      feeMin: '15',
+      feeMax: '80',
+      rates: {
+        0: {
+          10: 9.5,
+          50: 9
+        }
+      },
+      commission: {
+        2.5: -1,
+        1: -0.5
+      }
+    },
+  };
+
+
+//- калькулятор вклада
+include calcs/vklad.pug
+
+//- кредитный калькулятор
+include calcs/credit.pug
+
+//- ипотека
+include calcs/mortgage.pug
+
+//- рефинансирование
+include calcs/refinancing.pug
+
+//- автокредитование
+//- include calcs/auto-credits.pug
+
+
+section.page-section
+  .site-container
+    h2.page-heading-h3.page-mb56
+      | Калькулятор с табами
+
+    .calc-wrapper.page-tab-parent
+      .calc-wrapper__block
+      .calc-wrapper__block
+        .calc-wrapper__content
+          +classic-tab-list(innfo_tba)(class="calc-wrapper__nav page-mb32")
+
+        .calc-wrapper__content
+          .page-tab-content.is-active(data-tab-content="mortgage")
+            form.calc-form(action="")
+              .calc-form__mobile-wrapper
+                .custom-select.custom-select--white.calc-form__inpt
+                  .custom-select__label Предмет ипотеки
+                  select(name="sort" class="js-select")
+                    option(value="Купить квартиру") Купить квартиру
+                    option(value="Купить гараж") Купить гараж
+                    option(value="Купить виллу") Купить виллу
+                    option(value="Купить остров") Купить остров
+                    option(value="Купить дом в деревне") Купить дом в деревне
+
+                .calc-form__inpts
+                  .js-range-single-parent.calc-form__inpt
+                    label.input
+                      input(type="text" class="input__control js-range-single-input" name="custom" placeholder="custom")
+                      span.input__label Стоимость недвижимости
+                      .js-range-single(data-price="price" data-min="100000" data-max="1000000" data-step="10000")
+
+                  .js-range-single-parent.calc-form__inpt
+                    label.input
+                      input(type="text" class="input__control js-range-single-input" name="custom" placeholder="custom")
+                      span.input__label Первоначальный взнос 15%
+                      .js-range-single(data-price="price" data-min="100000" data-max="1000000" data-step="10000")
+
+                .switcher.switcher--black.calc-form__switcher.calc-form__inpt
+                  input(class="visually-hidden" type="checkbox" id=`s-123` name="swicher" value="custom")
+                  label(for=`s-123` class="switcher__container calc-form__switcher-simple")
+                    span.switcher__control
+                    span.switcher__text Использовать материнский капитал
+                    .tooltip.tooltip--type2
+                      +icon-mono("info")(width="24" height="24" class="tooltip__icon")
+                      .tooltip__body
+                        .tooltip__inner
+                          p
+                            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ratione, aspernatur quas distinctio et fuga molestiae corporis incidunt magnam quo!
+
+                .js-range-single-parent.calc-form__inpt
+                  label.input
+                    input(type="text" class="input__control js-range-single-input" name="custom" placeholder="custom")
+                    span.input__label Срок кредита
+                    .js-range-single(data-min="3" data-text="лет" data-max="72" data-step="1")
+
+                label.input.calc-form__inpt
+                  input(type="text" class="input__control" value="106 205 ₽" name="commision" placeholder="Комиссия")
+                  span.input__label Комиссия
+
+                .custom-select.custom-select--white.calc-form__inpt
+                  .custom-select__label Подтверждение дохода
+                  select(name="sort" class="js-select")
+                    option(value="Справкой 2-НДФЛ") Справкой 2-НДФЛ
+                    option(value="Выписка ЗП карте") Выписка ЗП карте
+                    option(value="СЗИ-6") СЗИ-6
+                    option(value="Честное слово") Честное слово 250 выходит чистыми на такси
+
+          .page-tab-content(data-tab-content="kredi")
+            form.calc-form(action="")
+              .calc-form__mobile-wrapper
+                .js-range-single-parent.calc-form__inpt
+                  label.input
+                    input(type="text" class="input__control js-range-single-input" name="custom" placeholder="custom")
+                    span.input__label Сумма кредита
+                    .js-range-single(data-price="price" data-min="100000" data-max="1000000" data-step="10000")
+
+                .js-range-single-parent.calc-form__inpt
+                  label.input
+                    input(type="text" class="input__control js-range-single-input" name="custom" placeholder="custom")
+                    span.input__label Срок кредита / мес
+                    .js-range-single(data-min="3" data-max="72" data-step="1")
+
+                .custom-select.custom-select--white.calc-form__inpt
+                  .custom-select__label Обеспечение
+                  select(name="sort" class="js-select")
+                    option(value="Без обеспечения") Без обеспечения
+                    option(value="Квартира") Квартира
+                    option(value="Дом") Дом
+                    option(value="Другой кредит") Другой кредит
+                    option(value="Гараж") Гараж
+
+                .custom-select.custom-select--white.calc-form__inpt
+                  .custom-select__label Тип платежа
+                  select(name="sort" class="js-select")
+                    option(value="Дифференцированный") Дифференцированный
+                    option(value="Аннуитетный") Аннуитетный
+
+                .custom-select.custom-select--white.calc-form__inpt
+                  .custom-select__label Подтверждение дохода
+                  select(name="sort" class="js-select")
+                    option(value="Справкой 2-НДФЛ") Справкой 2-НДФЛ
+                    option(value="Выписка ЗП карте") Выписка ЗП карте
+                    option(value="СЗИ-6") СЗИ-6
+                    option(value="Честное слово") Честное слово 250 выходит чистыми на такси
+
+          .page-tab-content(data-tab-content="vklad")
+            .calc__legend.calc__legend--mobile-none Расчитатайте вклад:
+
+            form.calc-form(action="")
+              .calc-form__mobile-wrapper
+                .calc__legend.calc__legend--mobile Расчитатайте вклад:
+                .js-range-single-parent.calc-form__inpt
+                  label.input
+                    input(type="text" class="input__control js-range-single-input" name="custom" placeholder="custom")
+                    span.input__label Хочу вложить
+                    .js-range-single(data-price="price" data-min="100000" data-max="1000000")
+
+                .js-range-single-parent.calc-form__inpt
+                  label.input
+                    input(type="text" class="input__control js-range-single-input" name="custom" placeholder="custom")
+                    span.input__label На срок / месяцев
+                    .js-range-single(data-min="3" data-max="36" data-step="1")
+
+              .calc-form__switchers
+                for item, i in fisrt_swithcers
+                  .switcher.switcher--black.calc-form__switcher
+                    input(class="visually-hidden" type="checkbox" id=`s-${i}` name=item.name value="custom")
+                    label(for=`s-${i}` class="switcher__container switcher__container--labeled")
+                      span.switcher__control(data-persent-mobile="- 0,5%")
+                      span.switcher__text!= item.label
+
+      .calc-wrapper__block.calc-wrapper__block--order
+        .page-tab-content.is-active(data-tab-content="mortgage")
+          .calc-container
+            .calc-container__num(data-text="Ежемесячный платёж")
+              | 35 572 ₽
+
+            ul.calc-container__table
+              li.calc-container__cell
+                .calc-container__cell-item Процентная ставка
+                .calc-container__cell-item 7,8%
+              li.calc-container__cell
+                .calc-container__cell-item Сумма кредита
+                .calc-container__cell-item 400 000 ₽
+              li.calc-container__cell
+                .calc-container__cell-item Выгода от комиссии
+                .calc-container__cell-item 2 610 138 ₽
+
+            +button("Подать заявку")(class="calc-container__btn button--lg button--full-width")
+
+            .calc-container__agreement
+              | Расчёт носит информационный характер и не является публичной офертой
+          .calc-form__switchers.calc-form__switchers--mb
+            for item, i in s_swithcers
+              .switcher.switcher--black.calc-form__switcher
+                input(class="visually-hidden" type="checkbox" id=`ss-${i}` name="swicher" value="custom")
+                label(for=`ss-${i}` class="switcher__container switcher__container--labeled")
+                  span.switcher__control(data-persent-mobile="- 0,5%")
+                  span.switcher__text!= item
+
+        .page-tab-content(data-tab-content="kredi")
+          .calc-container
+            .calc-container__num(data-text="Ежемесячный платёж")
+              | 35 572 ₽
+
+            ul.calc-container__table
+              li.calc-container__cell
+                .calc-container__cell-item Процентная ставка
+                .calc-container__cell-item 7,8%
+              li.calc-container__cell
+                .calc-container__cell-item Сумма кредита
+                .calc-container__cell-item 400 000 ₽
+
+            +button("Подать заявку")(class="calc-container__btn button--lg button--full-width")
+
+            .calc-container__agreement
+              | Расчёт носит информационный характер и не является публичной офертой
+
+        .page-tab-content(data-tab-content="vklad")
+          ul.contribution__list
+            li.contribution__item
+              .calc-container
+                .contribution__legend
+                  | Вклад «Новый горизонт»
+
+                .calc-container__nums
+                  .calc-container__num(data-text="Вы заработаете")
+                    | 6 500 ₽
+                  .calc-container__percents
+                    | При ставке #[span 12,4%]
+                .calc-container__btns
+                  +button("Оставить заявку", null, "Заявка")(class="button--lg")
+                  +button("Подобрать", null, null, "link")(class="button--outline button--lg")
+                .calc-container__agreement
+                  | Расчёт носит информационный характер и не является публичной офертой
+
+      .calc-wrapper__block
+
+section.page-section
+  .site-container
+    h2.page-heading-h3.page-mb56
+      | Калькулятор с табами
+
+    .calc-wrapper
+      .calc-wrapper__block
+      .calc-wrapper__block
+        .calc-wrapper__content
+          form.calc-form(action="")
+            .calc-form__mobile-wrapper
+              .custom-select.custom-select--white.calc-form__inpt
+                .custom-select__label Предмет ипотеки
+                select(name="sort" class="js-select")
+                  option(value="Купить квартиру") Купить квартиру
+                  option(value="Купить гараж") Купить гараж
+                  option(value="Купить виллу") Купить виллу
+                  option(value="Купить остров") Купить остров
+                  option(value="Купить дом в деревне") Купить дом в деревне
+
+              .calc-form__inpts
+                .js-range-single-parent.calc-form__inpt
+                  label.input
+                    input(type="text" class="input__control js-range-single-input" name="custom" placeholder="custom")
+                    span.input__label Стоимость недвижимости
+                    .js-range-single(data-price="price" data-min="100000" data-max="1000000" data-step="10000")
+
+                .js-range-single-parent.calc-form__inpt
+                  label.input
+                    input(type="text" class="input__control js-range-single-input" name="custom" placeholder="custom")
+                    span.input__label Первоначальный взнос 15%
+                    .js-range-single(data-price="price" data-min="100000" data-max="1000000" data-step="10000")
+
+              .switcher.switcher--black.calc-form__switcher.calc-form__inpt
+                input(class="visually-hidden" type="checkbox" id=`s-123` name="swicher" value="custom")
+                label(for=`s-123` class="switcher__container switcher__container--labeled")
+                  span.switcher__control(data-persent-mobile="- 0,5%")
+                  span.switcher__text Использовать материнский капитал
+                  .tooltip.tooltip--type2
+                    +icon-mono("info")(width="24" height="24" class="tooltip__icon")
+                    .tooltip__body
+                      .tooltip__inner
+                        p
+                          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ratione, aspernatur quas distinctio et fuga molestiae corporis incidunt magnam quo!
+
+              .js-range-single-parent.calc-form__inpt
+                label.input
+                  input(type="text" class="input__control js-range-single-input" name="custom" placeholder="custom")
+                  span.input__label Срок кредита
+                  .js-range-single(data-min="3" data-text="лет" data-max="72" data-step="1")
+
+              label.input.calc-form__inpt
+                input(type="text" class="input__control" value="106 205 ₽" name="commision" placeholder="Комиссия")
+                span.input__label Комиссия
+
+              .custom-select.custom-select--white.calc-form__inpt
+                .custom-select__label Подтверждение дохода
+                select(name="sort" class="js-select")
+                  option(value="Справкой 2-НДФЛ") Справкой 2-НДФЛ
+                  option(value="Выписка ЗП карте") Выписка ЗП карте
+                  option(value="СЗИ-6") СЗИ-6
+                  option(value="Честное слово") Честное слово 250 выходит чистыми на такси
+
+
+      .calc-wrapper__block
+        .calc-container
+          .calc-container__num(data-text="Ежемесячный платёж")
+            | 35 572 ₽
+
+          ul.calc-container__table
+            li.calc-container__cell
+              .calc-container__cell-item Процентная ставка
+              .calc-container__cell-item 7,8%
+            li.calc-container__cell
+              .calc-container__cell-item Сумма кредита
+              .calc-container__cell-item 400 000 ₽
+
+          .calc-container__btns
+            +button("Оставить заявку", null, "Заявка")(class="button--lg")
+            +button("Тарифы", null, null, "link")(class="button--outline button--lg")
+
+          .calc-container__agreement
+            | Расчёт носит информационный характер и не является публичной офертой
+        .calc-form__switchers.calc-form__switchers--mb
+          for item, i in s_swithcers
+            .switcher.switcher--black.calc-form__switcher
+              input(class="visually-hidden" type="checkbox" id=`sss-${i}` name="swicher" value="custom")
+              label(for=`sss-${i}` class="switcher__container switcher__container--labeled")
+                span.switcher__control(data-persent-mobile="- 0,5%")
+                span.switcher__text!= item
+
+
+      .calc-wrapper__block
+
+section.page-section
+  .site-container
+    h2.page-heading-h3.page-mb56
+      | Калькулятор кредитный c двумя кнопками
+
+    .calc-wrapper
+      .calc-wrapper__block
+      .calc-wrapper__block
+        .calc-wrapper__content
+          form.calc-form(action="")
+            .calc-form__mobile-wrapper
+              .js-range-single-parent.calc-form__inpt
+                label.input
+                  input(type="text" class="input__control js-range-single-input" name="custom" placeholder="custom")
+                  span.input__label Сумма кредита
+                  .js-range-single(data-price="price" data-min="100000" data-max="1000000" data-step="10000")
+
+              .js-range-single-parent.calc-form__inpt
+                label.input
+                  input(type="text" class="input__control js-range-single-input" name="custom" placeholder="custom")
+                  span.input__label Срок кредита / мес
+                  .js-range-single(data-min="3" data-max="72" data-step="1")
+
+              .custom-select.custom-select--white.calc-form__inpt
+                .custom-select__label Обеспечение
+                select(name="sort" class="js-select")
+                  option(value="Без обеспечения") Без обеспечения
+                  option(value="Квартира") Квартира
+                  option(value="Дом") Дом
+                  option(value="Другой кредит") Другой кредит
+                  option(value="Гараж") Гараж
+
+              .custom-select.custom-select--white.calc-form__inpt
+                .custom-select__label Тип платежа
+                select(name="sort" class="js-select")
+                  option(value="Дифференцированный") Дифференцированный
+                  option(value="Аннуитетный") Аннуитетный
+
+              .custom-select.custom-select--white.calc-form__inpt
+                .custom-select__label Подтверждение дохода
+                select(name="sort" class="js-select")
+                  option(value="Справкой 2-НДФЛ") Справкой 2-НДФЛ
+                  option(value="Выписка ЗП карте") Выписка ЗП карте
+                  option(value="СЗИ-6") СЗИ-6
+                  option(value="Честное слово") Честное слово 250 выходит чистыми на такси
+
+
+      .calc-wrapper__block
+        .calc-container
+          .calc-container__num(data-text="Ежемесячный платёж")
+            | 35 572 ₽
+
+          ul.calc-container__table
+            li.calc-container__cell
+              .calc-container__cell-item Процентная ставка
+              .calc-container__cell-item 7,8%
+            li.calc-container__cell
+              .calc-container__cell-item Сумма кредита
+              .calc-container__cell-item 400 000 ₽
+
+          .calc-container__btns
+            +button("Оставить заявку", null, "Заявка")(class="button--lg")
+            +button("Тарифы", null, null, "link")(class="button--outline button--lg")
+
+          .calc-container__agreement
+            | Расчёт носит информационный характер и не является публичной офертой
+
+
+      .calc-wrapper__block

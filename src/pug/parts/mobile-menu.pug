@@ -1,0 +1,101 @@
+-
+  menu_items = [
+    { name: "Частным клиентам", tabLabel: false },
+    { name: "Бизнесу", tabLabel: false },
+    { name: "Финансовым институтам", tabLabel: false }
+  ]
+
+  mobile_nav = [
+    {
+      part: 'Частным клиентам',
+      links: [
+        "Ипотека", "Карты", "Кредиты", "Автокредиты", "Вклады", "Сервисы и услуги"
+      ],
+      banner: true
+    },
+    {
+      part: 'Бизнесу',
+      links: [
+        "Кредиты", "РКО", "Карты", "Лизинг", "Эквайринг", "Депозиты", "Сервисы и услуги"
+      ],
+      banner: true
+    },
+    {
+      part: 'Финансовым институтам',
+      links: [
+        "Межбанковские операции", "Открытие ЛОРО счетов", "Инкассация"
+      ]
+    },
+    {
+      part: 'О банке',
+      links: [
+        "Общая информация", "Пресс-центр", "Документы",
+        "Карьера", "Контакты", "Реквизиты"
+      ]
+    }
+  ]
+
+section.mobile-menu.js-mobile-menu
+  .mobile-menu__inner
+    button.mobile-menu__close-menu.js-mobile-menu-close
+      span.visually-hidden Закрыть Меню
+      +icon-mono("close")(width="16" height="16")
+    .mobile-menu__swipe-line
+    header.mobile-menu__info-header
+      .mobile-menu__heading Меню
+      +classic-tab-list(menu_items)
+    .mobile-menu__info-body.js-menu-tabs.active(data-group="root")
+      for item, i in mobile_nav
+        .mobile-menu__container
+          .mobile-menu__legend= item.part
+          if i == 3
+            .mobile-menu__banks
+              .mobile-menu__banks-icon-wrapper
+                +icon-mono('marker')(class="mobile-menu__banks-icon" width="20" height="20")
+              a(href="" class="page-link-full") Офисы и банкоматы
+              +icon-mono('shevron-arrow-right')(width="16" height="16" class="mobile-menu__banks-shvron")
+          ul.mobile-menu__list
+            for link, j in item.links
+              - var index = j + 1
+              li.mobile-menu__item
+                a.mobile-menu__link.js-menu-tabs-button(href="#" data-group= index)= link
+          if item.banner
+            .mobile-menu__shield
+              a.mobile-menu__shield-heading.page-link-full(href="./") Мобильное приложение
+              p.mobile-menu__shield-text
+                | Доступные услуги и сервисы банка в вашем телефоне
+              img(src="assets/images/mobile-img.png" alt="")
+    each elem, k in Array.from(Array(30).keys())
+      - var index = k + 1
+      .mobile-menu__second.js-menu-tabs(data-group= index)
+        .mobile-menu__second-btn-back-wrapper
+          +icon-multi("arrow_right_outline")(width="16px" height="16px")
+          button.mobile-menu__second-btn-back.js-menu-tabs-button(type="button" data-group="root")
+            | Назад
+        a.mobile-menu__second-link-wrapper(href="#")
+          .mobile-menu__second-link
+            | Ипотека
+          +icon-mono('shevron-arrow-right')(width="16" height="16" class="mobile-menu__banks-shvron")
+        .mobile-menu__second-body
+          for item, i in mobile_nav
+            if i < mobile_nav.length - 1
+              .mobile-menu__container
+                .mobile-menu__second-subtitle
+                  | Программы
+                ul.mobile-menu__list
+                  for link in item.links
+                    li.mobile-menu__item
+                      a.mobile-menu__link(href="./")= link
+                a.mobile-menu__second-list-link(href="#")
+                  | Смотреть все
+            else
+              .mobile-menu__container
+                .mobile-menu__second-subtitle
+                  | Программы
+                article.dropdown-menu__shield
+                  img.dropdown-menu__shield-images(src="assets/images/bg-card-img.jpg" alt="")
+                  h3.dropdown-menu__shield-heading Мир Classic с кешбэком
+                  .dropdown-menu__shield-links
+                    +moreLink("Подробнее", "page-more-link--classic")(class="dropdown-menu__shield-link")
+                    .dropdown-menu__shield-info
+                      | до #[span 20%]

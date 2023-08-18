@@ -1,0 +1,19 @@
+-
+  fixed_menu_list = [
+    { name: "Ипотека", icon: "icon0" },
+    { name: "Карты", icon: "icon1" },
+    { name: "Кредиты", icon: "icon2" },
+    { name: "Вклады", icon: "icon3" }
+  ]
+
+section.fixed-menu
+  .site-container
+    nav.fixed-menu__nav
+      ul.fixed-menu__list
+        for item in fixed_menu_list
+          li.fixed-menu__item
+            img.fixed-menu__icon(src=`assets/images/fixed-menu/${item.icon}.svg` alt="")
+            a.fixed-menu__link(href="./")= item.name
+      button.fixed-menu__btn.js-fixed-menu
+        +icon-mono("burger")(class="fixed-menu__btn-icon" width="24" height="24")
+        +icon-mono("close")(class="fixed-menu__btn-icon fixed-menu__btn-icon--close" width="24" height="24")

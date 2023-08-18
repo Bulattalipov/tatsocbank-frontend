@@ -1,0 +1,42 @@
+.count-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 14rem;
+  height: 6.4rem;
+  border-radius: 0.8rem;
+}
+
+.count-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6.4rem;
+  height: 6.4rem;
+  background-color: var(--color-base-1);
+  border-radius: 1.2rem;
+  transition: background-color var(--transition);
+
+  @include mq(lg, min) {
+    &:hover {
+      background-color: var(--color-primary-hover);
+
+      svg {
+        fill: var(--color-white);
+      }
+    }
+  }
+
+  &:active {
+    background-color: var(--color-primary);
+
+    svg {
+      fill: var(--color-white);
+    }
+  }
+
+  &__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}

@@ -1,0 +1,6 @@
+mixin texarea(palceholder, req)
+  - required = req ? 'true' : 'false'
+  label.texarea&attributes(attributes)
+    textarea(name="textarea" data-parsley-maxlength="300" required=required data-parsley-required=required placeholder=palceholder class="texarea__control")
+    span.texarea__count
+      | до 300 символов

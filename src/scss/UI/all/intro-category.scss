@@ -1,0 +1,32 @@
+.intro-category {
+  position: relative;
+  display: block;
+  padding: 1.4rem 1.6rem;
+  overflow: hidden;
+  color: var(--color-base-1);
+  border: 0.5px solid var(--color-base-3);
+  border-radius: 1.2rem;
+  cursor: pointer;
+  transition: background-color var(--transition), border-color var(--transition);
+
+  &__legend {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.6rem;
+    font: var(--font-label);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color var(--transition);
+
+    &-icon {
+      width: 1.2rem;
+      height: 1.2rem;
+      margin-right: 0.4rem;
+    }
+  }
+
+  &__text {
+    max-width: 22.2rem;
+    font: var(--font-text-3-reg);
+  }
+}

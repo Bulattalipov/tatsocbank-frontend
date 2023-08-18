@@ -1,0 +1,59 @@
+.map-nav-buttons {
+  &__locate {
+    .icon-location {
+      fill: transparent;
+      stroke: var(--color-base-7);
+    }
+
+    @include mq(md) {
+      width: 3.8rem;
+      height: 3.8rem;
+
+      .icon-location-mobile {
+        width: 1.6rem;
+        height: 1.6rem;
+        fill: var(--color-base-1);
+        stroke: var(--color-base-7);
+      }
+    }
+
+    .icon-location-dis{
+      display: none;
+      fill: transparent;
+      stroke: var(--color-base-7);
+    }
+
+    &:active {
+      background-color: var(--color-primary);
+
+      .icon-location {
+        fill:  var(--color-primary);
+      }
+    }
+
+    &--disabled {
+      pointer-events: none;
+
+      .icon-location {
+        display: none;
+      }
+
+      .icon-location-dis {
+        display: block;
+      }
+
+      .icon-location-mobile {
+        display: none;
+      }
+
+      @include mq(md) {
+        .icon-location-dis {
+          width: 1.6rem;
+          height: 1.6rem;
+          fill: var(--color-base-1);
+          stroke: var(--color-base-7);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,257 @@
+.career-form {
+  width: 100%;
+
+  &__section {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 6rem;
+
+    @include mq(md) {
+      margin-bottom: 4rem;
+    }
+
+    @include mq(sm) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-base-2);
+    padding: 3rem;
+    border-radius: 2rem;
+    margin-bottom: 3rem;
+
+    @include mq(md) {
+      padding: 0;
+    }
+
+    .input__control {
+      padding-right: 6rem;
+
+      @include mq(md) {
+        background-color: var(--color-base-2);
+      }
+    }
+  }
+
+  &__search-info {
+    display: flex;
+    align-items: center;
+    margin-left: 4rem;
+    flex-shrink: 0;
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  &__search-info-text {
+    font: var(--font-btn-medium);
+  }
+
+  &__item-basic-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6.6rem;
+    height: 6.6rem;
+    border-radius: 50%;
+    background-color: var(--color-base-1);
+    margin-left: 1.6rem;
+    transition: background-color var(--transition);
+
+    @include mq("custom", min, 768) {
+      &:hover {
+        background-color: var(--color-base-4);
+      }
+    }
+  }
+
+  &__item-basic-link-icon {
+    width: 2.6rem;
+    height: 2.6rem;
+    background-size: cover;
+
+    @include mq(sm) {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+
+    @include mq(md) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.6rem;
+    }
+  }
+
+  &__box-select {
+    width: 30.4rem;
+    margin-right: 1.6rem;
+
+    @include mq(md) {
+      width: 100%;
+      order: 1;
+    }
+  }
+
+  &__checkboxs-wrapper {
+    max-width: 64%;
+
+    @include mq(md) {
+      max-width: 100%;
+      grid-column: span 2;
+      margin-right: auto;
+    }
+  }
+
+  &__checkboxs {
+    display: flex;
+    margin-right: 3rem;
+    overflow-x: auto;
+
+    @include noScrollbar();
+
+    @include mq(md) {
+      margin-right: calc(-1 * var(--padding-offset));
+      margin-left: calc(-1 * var(--padding-offset));
+      padding-right: var(--padding-offset);
+      padding-left: var(--padding-offset);
+    }
+  }
+
+  &__checkboxs-label {
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-right: 0.8rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      .career-form__checkboxs-btn {
+        background-color: var(--color-base-3);
+      }
+    }
+  }
+
+  &__checkbox {
+    width: 0.1px;
+    height: 0.1px;
+    clip: rect(0 0 0 0);
+    visibility: hidden;
+
+    &:checked+.career-form__checkboxs-btn {
+      position: relative;
+      background-color: var(--color-base-8);
+      color: var(--color-base-1);
+      padding-right: 3.6rem;
+
+      @include mq(sm) {
+        padding-right: 2.9rem;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 1.2rem;
+        background-image: url("../images/cross.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 0.9rem;
+        height: 1rem;
+
+        @include mq(sm) {
+          right: 1rem;
+        }
+      }
+    }
+  }
+
+  &__checkboxs-btn {
+    font-size: 1.2rem;
+    padding: 1.2rem;
+    border: 0.1rem solid var(--color-base-4);
+    border-radius: 0.8rem;
+    user-select: none;
+    transition: padding .3s;
+    transition: background-color .5s, padding-right .5s;
+
+    @include mq(sm) {
+      padding: 0.5rem 1rem 0.6rem 1rem;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 5.6rem;
+    height: 5.6rem;
+    background-color: var(--color-base-2);
+    border-radius: 1.2rem;
+
+    @include mq(md) {
+      display: flex;
+    }
+
+    .icon {
+      fill: none;
+      stroke: currentcolor;
+      stroke-width: 1.5px;
+    }
+
+    &::before {
+      position: absolute;
+      top: -0.3rem;
+      right: -0.3rem;
+      width: 1.4rem;
+      height: 1.4rem;
+      background-color: var(--color-primary);
+      border-radius: 50%;
+      content: "";
+    }
+  }
+
+  &__sum {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    font: var(--font-text-4-semi);
+
+    span {
+      display: flex;
+      margin-right: 1.6rem;
+      font: var(--font-numbers-4);
+    }
+  }
+
+  .icon-inside-circle {
+    margin-left: 2rem;
+
+    @include mq(sm) {
+      margin-left: 1.2rem;
+    }
+  }
+
+  &__mobile {
+    margin-left: auto;
+
+    @include mq(md) {
+      display: flex;
+      width: 100%;
+      padding-top: 1.6rem;
+      border-top: 0.1rem solid var(--color-base-3);
+    }
+  }
+}

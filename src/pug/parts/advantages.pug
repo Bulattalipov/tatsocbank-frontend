@@ -1,0 +1,14 @@
+-
+  adv_list = [
+    { name: "Материнский капитал", text: "Для первого взноса или погашения кредита, полностью или частично" },
+    { name: "Индивидуальные условия для зарплатных клиентов", text: "Для первого взноса или погашения кредита, полностью или частично" },
+    { name: "Удобный срок кредитования", text: "Для первого взноса или погашения кредита, полностью или частично" }
+  ]
+
+section.page-section.js-section(id="advantages")
+  .site-container
+    h2.page-heading-h3.page-mb56 Преимущества
+    ul.advantages
+      for item in adv_list
+        li.advantages__item
+          +advantages-card(item.name, item.text)

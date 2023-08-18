@@ -1,0 +1,78 @@
+-
+  media_tab_arr2 = [
+    { name: "Новости", tabLabel: "news" },
+    { name: "Блог", tabLabel: "blog" },
+  ]
+
+  careerList2 = [
+    {name: "Акции"},
+    {name: "Деятельность"},
+    {name: "Для акционеров"},
+    {name: "Финансовые пресс-релизы"},
+  ]
+
+  careerList3 = [
+    {name: "О финансах"},
+    {name: "Безопасность"},
+    {name: "Ипотека"},
+    {name: "Кредиты"},
+    {name: "Инвестиции"},
+    {name: "Карты"},
+  ]
+
+section.page-intro.page-intro.page-intro--white-bg
+  .site-container
+    h1.page-heading-h2.page-mb56
+      | Пресс-центр
+    .press-center-block.page-tab-parent
+      from.press-center-block__contain
+        ul.tabs-list
+          li.tabs-list__item
+            label.tabs-list__label
+              input(type="radio" checked="checked" name="press-center" value="custom" class="visually-hidden tabs-list__input")
+              span.tab-buton Новости
+          li.tabs-list__item
+            label.tabs-list__label
+              input(type="radio" name="press-center" value="custom" class="visually-hidden tabs-list__input")
+              span.tab-buton Блог
+        .press-center-block__contain-box
+          .press-center-block__search.js-search-fields
+            +input("Найти новость, статью", "name", "Найти новость, статью", null, null)
+            .press-center-block__search-btn
+              +icon-mono("search")(width="32px" height="32px")
+          .custom-select.press-center-block__box-select
+            .custom-select__label Сортировать по:
+            select(name="city" class="js-select")
+              option(value="Актуальные") Актуальные
+              option(value="За последние 3 месяца") За последние 3 месяца
+              option(value="За последние 6 месяцев") За последние 6 месяцев
+              option(value="За текущий год") За текущий год
+              option(value="За текущий год") 2021
+              option(value="За текущий год") 2020
+          //- button.press-center-block__btn(type="button" data-path="modal-time")
+          //-   +icon-mono("filter")(width="24" height="24")
+      .press-center-block__contents
+        .press-center-block__content.page-tab-content.is-active(data-tab-content="news")
+          form.press-center-block__tags
+            .career-form__checkboxs
+              each item in careerList2
+                label.career-form__checkboxs-label
+                  input.career-form__checkbox(type="checkbox" name="jobs")
+                  .career-form__checkboxs-btn= item.name
+          ul.press-center-block__list
+            each i in Array.from(Array(12).keys())
+              li.press-center-block__list-item
+                +press-center-card("Что выгоднее при покупке автомобиля: автокредит или потребительский кредит?", "Для акционеров")
+          +button("Показать еще")(class="button--outline button--lg button--full press-center-block__btn-more")
+        .press-center-block__content.page-tab-content(data-tab-content="blog")
+          form.press-center-block__tags
+            .career-form__checkboxs
+              each item2 in careerList3
+                label.career-form__checkboxs-label
+                  input.career-form__checkbox(type="checkbox" name="jobs")
+                  .career-form__checkboxs-btn= item2.name
+          ul.press-center-block__list
+            each j in Array.from(Array(12).keys())
+              li.press-center-block__list-item
+                +press-center-card("Что выгоднее при покупке автомобиля: автокредит или потребительский кредит?", "Для акционеров", true)
+          +button("Показать еще")(class="button--outline button--lg button--full press-center-block__btn-more")

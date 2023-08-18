@@ -1,0 +1,16 @@
+mixin classic-tab-list(array, anchors)
+  if anchors
+    ul.tabs-list&attributes(attributes)
+      for tab, i in array
+        - activeClass = i === 0 ? "is-active" : ""
+        li.tabs-list__item
+          a.tab-buton.page-tab-btn(href= tab.tabLabel class=activeClass)= tab.name
+  else
+    ul.tabs-list&attributes(attributes)
+      for tab, i in array
+        - activeClass = i === 0 ? "is-active" : ""
+        li.tabs-list__item
+          if (tab.tabLabel)
+            button.tab-buton.page-tab-btn(class=activeClass data-tab-name= tab.tabLabel)= tab.name
+          else
+            button.tab-buton(class=activeClass)= tab.name

@@ -1,0 +1,175 @@
+/* stylelint-disable selector-class-pattern */
+.currency-rate {
+  display: block;
+  width: 100%;
+  max-width: 60rem;
+
+  @include mq(md) {
+    max-width: 100%;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+
+    &--body {
+      margin-bottom: 1.6rem;
+      padding-bottom: 1.6rem;
+      border-bottom: 1px solid var(--color-border);
+
+      &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__cell {
+    font: var(--font-text-2-med);
+
+    &--head {
+      color: var(--color-base-5);
+      font: var(--font-label);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    &:nth-child(1) {
+      width: 8.9rem;
+      margin-right: auto;
+    }
+
+    &:nth-child(2) {
+      margin-right: 9.4rem;
+
+      @include mq(sm) {
+        margin-right: 2.9rem;
+      }
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      width: 9.2rem;
+    }
+  }
+
+  &__head,
+  &__body {
+    display: block;
+    width: 100%;
+  }
+
+  &__head {
+    margin-bottom: 1.6rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  &__value {
+    display: flex;
+    align-items: center;
+
+    img {
+      flex-shrink: 0;
+      width: 3rem;
+      height: 3rem;
+      margin-right: 2rem;
+      object-fit: contain;
+
+      @include mq(sm) {
+        display: none;
+      }
+    }
+  }
+
+  &__numbers {
+    display: flex;
+    align-items: center;
+
+    &--buy {
+      position: relative;
+
+      &::after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 0.8rem;
+        border-color: transparent transparent #559b57;
+        border-style: solid;
+        border-width: 0 5px 5px;
+        content: "";
+      }
+    }
+
+    &--sell {
+      position: relative;
+
+      &::after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 0.8rem;
+        border-color: transparent transparent var(--color-error);
+        border-style: solid;
+        border-width: 0 5px 5px;
+        transform: rotate(180deg);
+        content: "";
+      }
+    }
+  }
+
+  &--full {
+    max-width: 100%;
+
+    .currency-rate__cell {
+      &:nth-child(2) {
+        width: 11.6rem;
+        margin-right: 15.2rem;
+
+        @include mq(lg) {
+          display: none;
+        }
+      }
+
+      &:nth-child(3) {
+        width: 4.8rem;
+        margin-right: 6.8rem;
+
+        @include mq(md) {
+          display: none;
+        }
+      }
+
+      &:nth-child(4) {
+        margin-right: 8.1rem;
+      }
+
+      &:nth-child(4),
+      &:nth-child(5) {
+        width: 9.1rem;
+
+        @include mq(sm) {
+          width: 7.5rem;
+        }
+      }
+
+      @include mq(sm) {
+        margin: 0 !important;
+
+        .currency-rate__value img {
+          display: block;
+          width: 2.4rem;
+          height: 2.4rem;
+          margin-right: 1rem;
+        }
+      }
+    }
+
+    .currency-rate__row {
+      @include mq(sm) {
+        justify-content: space-between;
+      }
+    }
+  }
+}

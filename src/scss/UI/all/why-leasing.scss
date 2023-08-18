@@ -1,0 +1,67 @@
+.why-leasing {
+
+  .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem 2rem;
+
+    @include mq(lg) {
+      display: flex;
+    }
+  }
+
+  &__item {
+    display: flex;
+
+    @include mq(lg) {
+      width: 36rem;
+    }
+
+    @include mq(sm) {
+      width: 28rem;
+      flex-direction: column;
+    }
+  }
+
+  &__item-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6.8rem;
+    height: 6.8rem;
+    margin-bottom: 2.6rem;
+    background-color: var(--color-other-orange);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 2.6rem;
+
+    @include mq(sm) {
+      width: 6rem;
+      height: 6rem;
+      margin-bottom: 1.4rem;
+    }
+  }
+
+  &__item-icon {
+    width: 3.2rem;
+    height: 3.2rem;
+    object-fit: contain;
+  }
+
+  &__item-box-title {
+    font: var(--font-h5);
+    min-height: 6.2rem;
+    max-width: 35rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__item-box-desc {
+    margin-top: 2rem;
+    color: var(--color-base-5);
+
+    @include mq(sm) {
+      margin-top: 1.4rem;
+    }
+  }
+}

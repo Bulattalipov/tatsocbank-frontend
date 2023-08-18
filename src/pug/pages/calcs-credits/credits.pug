@@ -1,0 +1,105 @@
+script.
+  const settings1 = {
+    rates: {
+      default: 0,
+      depositType: {
+        n: {
+          maxSum: 500000,
+          rate: 0.124,
+          add: 0
+        },
+        vehicle: {
+          maxSum: 1000000,
+          rate: 0.119,
+          add: 0.025
+        },
+        realty: {
+          maxSum: 2000000,
+          rate: 0.114,
+          add: 0.01
+        }
+      },
+      proofOfIncome: {
+        1: 0,
+        2: 0.01,
+        3: 0.01
+      }
+    }
+  }
+
+section.page-section
+  .site-container
+    h2.page-heading-h3.page-mb56
+      | Калькулятор кредитный
+
+    .calc-wrapper
+      .calc-wrapper__block
+      .calc-wrapper__block
+        .calc-wrapper__content
+          form.calc-form.js-form-calculator-consumer(action="" id="js-main-page-consumer-calc")
+            .calc-form__mobile-wrapper
+              .js-range-single-parent.calc-form__inpt
+                label.input
+                  input(type="text" class="input__control js-d-input js-range-input-consumer-2 js-range-single-input" name="initial-fee" placeholder="custom")
+                  span.input__label Сумма кредита, ₽
+                  .js-range-single.js-range-slider-consumer-2(data-price="" data-min="200000" data-value="400000" data-max="500000" data-step="50000")
+
+              .custom-select.custom-select--white.calc-form__inpt
+                .custom-select__label Срок кредита, лет
+                select(name="time" class="js-select js-d-input")
+                  option(value="12") 1
+                  option(value="24") 2
+                  option(value="36") 3
+                  option(value="48") 4
+                  option(value="60") 5
+                  option(value="72") 6
+
+              .custom-select.custom-select--white.calc-form__inpt
+                .custom-select__label Обеспечение
+                select(name="depositType" class="js-select js-d-input js-d-update-range")
+                  option(value="n") Без обеспечения
+                  option(value="vehicle") Предоставлю ТС
+                  option(value="realty") Предоставлю недвижимость
+
+              .custom-select.custom-select--white.calc-form__inpt(id="js-hide-insurance")
+                .custom-select__label Страхование залога
+                select(name="insurance" class="js-select js-d-input js-d-update-range")
+                  option(value="y") Да
+                  option(value="") Нет
+
+              .custom-select.custom-select--white.calc-form__inpt
+                .custom-select__label Тип платежа
+                select(name="paymentType" class="js-select js-d-input")
+                  option(value="1") Дифференцированный
+                  option(value="2") Аннуитетный
+
+              .custom-select.custom-select--white.calc-form__inpt
+                .custom-select__label Подтверждение дохода
+                select(name="proofOfIncome" class="js-select js-d-input")
+                  option(value="1") Справка 2-НДФЛ / выписка по ЗП карте / СЗИ-6
+                  option(value="2") Справка по форме Банка
+
+
+      .calc-wrapper__block
+        .calc-container.js-consumer-results
+          .calc-container__num(id="js-d-res-label" data-text="Ежемесячный платёж")
+            | #[span.result1 35 572] &nbsp;₽
+
+          ul.calc-container__table
+            //- li.calc-container__cell
+            //-   .calc-container__cell-item Средний ежемесячный платёж
+            //-   .calc-container__cell-item #[span.result1 7,8 ]%
+            li.calc-container__cell
+              .calc-container__cell-item Процентная ставка
+              .calc-container__cell-item #[span.result2 0.0]&nbsp;%
+            li.calc-container__cell
+              .calc-container__cell-item Переплата по кредиту
+              .calc-container__cell-item #[span.result4 26 867]&nbsp;₽
+
+          +button("Подать заявку")(class="calc-container__btn button--lg button--full-width")
+
+          .calc-container__agreement
+            | Расчёт носит информационный характер и не является публичной офертой
+
+
+      .calc-wrapper__block

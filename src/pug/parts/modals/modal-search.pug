@@ -1,0 +1,69 @@
+.modal__container.modal-search(data-target="modal-search")
+  button.button-reset.modal__close-btn.modal-close(type="button")
+    +icon-mono("close")(width="22" height="22" class="modal__close-btn-icon")
+  .modal__content
+    .modal__content-close-mobile.modal-close
+    .modal__content-inner.js-search-parent
+      button.button-reset.modal__close-btn.modal__close-btn--mobile.modal-close(type="button")
+        +icon-mono("close")(width="22" height="22" class="modal__close-btn-icon")
+      .modal__legend
+        | Поиск по сайту
+
+      form.search__form
+        label.input.input--grey
+          input(type="text" class="input__control search__form-control js-search no_validate" value="Кредит" data-items="content" name="search" placeholder="Найти программу, продукт или сервис")
+          span.input__label Найти программу, продукт или сервис
+          +icon-mono("search")(width="24" height="24" class="search__form-icon")
+
+      .search__popular
+        | Популярные запросы:
+        ul
+          li
+            label
+              input(type="radio" value="Семейная ипотека" name="search_popular" class="visually-hidden")
+              span Семейная ипотека
+          li
+            label
+              input(type="radio" value="Карта Мир" name="search_popular" class="visually-hidden")
+              span Карта Мир
+          li
+            label
+              input(type="radio" value="Автокредит" name="search_popular" class="visually-hidden")
+              span Автокредит
+          li
+            label
+              input(type="radio" value="Вклады" name="search_popular" class="visually-hidden")
+              span Вклады
+
+      .search-results-wrapper(data-items-target="content")
+        ul.search__results
+          li.search__results-item.highlight-element Кредит для зарплатных клиентов
+          li.search__results-item.highlight-element Кредит под залог
+          li.search__results-item.highlight-element Кредит к ипотеке
+          li.search__results-item.highlight-element Кредит для погашения ипотеки
+          li.search__results-item.highlight-element Кредит для зарплатных клиентов
+          li.search__results-item.highlight-element Кредит для зарплатных клиентов
+          li.search__results-item.highlight-element Кредит под залог
+          li.search__results-item.highlight-element Кредит к ипотеке
+          li.search__results-item.highlight-element Кредит для погашения ипотеки
+          li.search__results-item.highlight-element Кредит для зарплатных клиентов
+          li.search__results-item.highlight-element Кредит для зарплатных клиентов
+          li.search__results-item.highlight-element Кредит под залог
+          li.search__results-item.highlight-element Кредит к ипотеке
+          li.search__results-item.highlight-element Кредит для погашения ипотеки
+          li.search__results-item.highlight-element Кредит для зарплатных клиентов
+          li.search__results-item.highlight-element Кредит для зарплатных клиентов
+          li.search__results-item.highlight-element Кредит под залог
+          li.search__results-item.highlight-element Кредит к ипотеке
+          li.search__results-item.highlight-element Кредит для погашения ипотеки
+          li.search__results-item.highlight-element Кредит для зарплатных клиентов
+          li.search__results-item.highlight-element Кредит для зарплатных клиентов
+          li.search__results-item.highlight-element Кредит под залог
+          li.search__results-item.highlight-element Кредит к ипотеке
+          li.search__results-item.highlight-element Кредит для погашения ипотеки
+          li.search__results-item.highlight-element Кредит для зарплатных клиентов
+          li.search__results-item.highlight-element Кредит для зарплатных клиентов
+          li.search__results-item.highlight-element Кредит под залог
+          li.search__results-item.highlight-element Кредит к ипотеке
+          li.search__results-item.highlight-element Кредит для погашения ипотеки
+          li.search__results-item.highlight-element Кредит для зарплатных клиентов

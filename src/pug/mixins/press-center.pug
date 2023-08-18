@@ -1,0 +1,61 @@
+mixin press-center(tabs, name)
+  -
+    media_tab_arr = [
+      { name: "Новости", tabLabel: "news" },
+      { name: "Блог", tabLabel: "blog" },
+    ]
+
+    press_center_cards = [
+      { name: "Что выгоднее при покупке автомобиля: автокредит или потребительский кредит? Что выгоднее при покупке автомобиля: автокредит или потребительский кредит? Что выгоднее при покупке автомобиля: автокредит или потребительский кредит? Что выгоднее при покупке автомобиля: автокредит или потребительский кредит? Что выгоднее при покупке автомобиля: автокредит или потребительский кредит? Что выгоднее при покупке автомобиля: автокредит или потребительский кредит?", tag: "Акции" },
+      { name: "Что выгоднее при покупке автомобиля: автокредит или потребительский кредит?", tag: "Деятельность" },
+      { name: "Что такое расчётный счёт в банке?", tag: "Акционерам" },
+      { name: "Что такое расчётный счёт в банке?", tag: "Финансовые пресс-релизы" },
+      { name: "Что выгоднее при покупке автомобиля: автокредит или потребительский кредит?", tag: "Финансовые пресс-релизы" },
+      { name: "Что выгоднее при покупке автомобиля: автокредит или потребительский кредит?", tag: "Финансовые пресс-релизы" }
+    ]
+
+    press_center_cards_blogs = [
+      { name: "Что выгоднее при покупке автомобиля", tag: "Акции" },
+      { name: "Что выгоднее при покупке автомобиля: автокредит?", tag: "Деятельность" },
+      { name: "Что такое расчётный счёт в банке?", tag: "Акционерам" },
+      { name: "Что такое расчётный счёт в банке2?", tag: "Финансовые пресс-релизы" },
+      { name: "Что выгоднее при покупке автомобиля: автокредит или потребительский кредит?", tag: "Финансовые пресс-релизы" },
+      { name: "Что выгоднее при покупке автомобиля: автокредит или потребительский кредит?", tag: "Финансовые пресс-релизы" }
+    ]
+
+  if tabs
+    section.page-section.news-section.js-section
+      .site-container.page-tab-parent
+        h2.page-heading-h4.page-mb32= name
+        .page-flex-row.page-flex-row--space-btwn.page-mb32
+          +classic-tab-list(media_tab_arr)
+          +moreLink("Смотреть все")(class="news-section__link")
+
+        .page-tab-content.is-active(data-tab-content="news")
+          .page-swiper.page-swiper--visible-right.swiper(data-slides="4" data-gap="16")
+            ul.swiper-wrapper.press-center
+              for card in press_center_cards
+                li.press-center__item.swiper-slide
+                  +press-center-card(card.name, card.tag)
+          +moreLink("Смотреть все")(class="news-section__link--mobile")
+
+        .page-tab-content(data-tab-content="blog")
+          .page-swiper.page-swiper--visible-right-mobile.swiper(data-slides="4" data-gap="16")
+            ul.swiper-wrapper.press-center
+              for card in press_center_cards_blogs
+                li.press-center__item.swiper-slide
+                  +press-center-card(card.name, card.tag)
+          +moreLink("Смотреть все")(class="news-section__link--mobile")
+  else
+    section.page-section.news-section.js-section
+      .site-container
+        .page-flex-row.page-flex-row--space-btwn.page-mb32
+          h2.page-heading-h4= name
+          +moreLink("Смотреть все")(class="news-section__link")
+
+        .page-swiper.page-swiper--visible-right-mobile.swiper(data-slides="4" data-gap="16")
+          ul.swiper-wrapper.press-center
+            for card in press_center_cards
+              li.press-center__item.swiper-slide
+                +press-center-card(card.name, card.tag)
+        +moreLink("Смотреть все")(class="news-section__link--mobile")

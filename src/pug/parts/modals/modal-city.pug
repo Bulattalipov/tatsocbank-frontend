@@ -1,0 +1,48 @@
+.modal__container.modal-city(data-target="modal-city")
+  button.button-reset.modal__close-btn.modal-close(type="button")
+    +icon-mono("close")(width="22" height="22" class="modal__close-btn-icon")
+  .modal__content
+    .modal__content-close-mobile.modal-close
+    .modal__content-inner
+      button.button-reset.modal__close-btn.modal__close-btn--mobile.modal-close(type="button")
+        +icon-mono("close")(width="22" height="22" class="modal__close-btn-icon")
+      .modal__legend
+        | Фильтры
+      .modal__link
+        +icon-inside-circle("hh")
+        span.modal__link-text
+          | Посмотреть на hh.ru
+      form.modal__form
+        .modal__form-subtitle
+          | Город
+        ul.modal__form-list
+          li.modal__form-list-item
+            .checkbox
+              input(type="radio" class="visually-hidden" id="city-1" name="city" checked)
+              label(for="city-1" class="checkbox__container")
+                span.checkbox__control.checkbox__control--rounded
+                .modal__form-city
+                  | Казань
+          li.modal__form-list-item
+            .checkbox
+              input(type="radio" class="visually-hidden" id="city-2" name="city")
+              label(for="city-2" class="checkbox__container")
+                span.checkbox__control.checkbox__control--rounded
+                .modal__form-city
+                  | Набережные Челны
+          li.modal__form-list-item
+            .checkbox
+              input(type="radio" class="visually-hidden" id="city-3" name="city")
+              label(for="city-3" class="checkbox__container")
+                span.checkbox__control.checkbox__control--rounded
+                .modal__form-city
+                  | Нижнекамск
+          li.modal__form-list-item
+            .checkbox
+              input(type="radio" class="visually-hidden" id="city-4" name="city")
+              label(for="city-4" class="checkbox__container")
+                span.checkbox__control.checkbox__control--rounded
+                .modal__form-city
+                  | Зеленодольск
+        .modal__bottom-btns
+          +button("Применить", null, null)(class="button--lg modal__bottom-btn")

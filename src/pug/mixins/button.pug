@@ -1,0 +1,16 @@
+mixin button(name, icon, mobile_name, link)
+  - classMobile = mobile_name ? "button--whith-mobile-text" : ""
+  if (link)
+    .button(class=classMobile)&attributes(attributes)
+      a.button__text.page-link-full(href="/")= name
+      if mobile_name
+        a.button__text.button__text--mobile(href="/")= mobile_name
+      if icon
+        +icon-mono(`${icon}`)(width="24" height="24" class="button__icon")
+  else
+    button.button(class=classMobile)&attributes(attributes)
+      span.button__text= name
+      if mobile_name
+        span.button__text.button__text--mobile= mobile_name
+      if icon
+        +icon-mono(`${icon}`)(width="24" height="24" class="button__icon")

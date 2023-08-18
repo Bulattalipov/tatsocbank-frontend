@@ -1,0 +1,18 @@
+mixin breadcrumbs(levels)
+  - arr_white = ['index']
+  section.breadcrumbs__container.fix-block&attributes(attributes)
+    .site-container
+      .breadcrumbs(class={'is-white': arr_white.includes(bread_white)})
+        each item, index in levels
+
+          - var count = index+1
+          - var name = item[0]
+          - var link = item[1] || null
+
+          if link
+            .breadcrumbs__item
+              a.breadcrumbs__item-link(href=link) #{name}
+          else
+            .breadcrumbs__item
+              span
+                | #{name}

@@ -1,0 +1,33 @@
+-
+  rko_tab = [
+    { name: "Коммунальные платежи", tabLabel: "payment" },
+    { name: "Денежные переводы", tabLabel: "transactions" },
+    { name: "Валютные операции", tabLabel: "currency" },
+    { name: "Конверсионные операции", tabLabel: "conversion" },
+  ]
+
+.page-section
+  .site-container.page-tab-parent
+    h2.page-heading-h3.page-mb32
+      | Виды РКО для физических лиц
+    +classic-tab-list(rko_tab)(class="tabs-list--flex-start rko__tabs")
+
+    for item, i in rko_tab
+      - isActive = i === 0 ? "is-active" : ""
+      .page-tab-content(class=isActive data-tab-content=item.tabLabel)
+        section.rko
+          img(src="assets/images/rko/img3.jpg" class="rko__img" alt="")
+          h2.rko__legend= item.name
+          .rko__content
+            p
+              | Услуга банка по проведению денежных операций с открытием или без открытия счета
+
+            ul
+              li Коммунальные услуги
+              li Штрафы
+              li Услуги телефонии
+              li Налоги
+              li Услуги телевидения
+              li Интернет
+
+          +button("Выбрать отделение", null, null, "link")(class="button--md rko__btn")

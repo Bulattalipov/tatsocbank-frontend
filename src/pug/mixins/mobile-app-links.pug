@@ -1,0 +1,14 @@
+mixin mobile-app-links(big)
+  - pathGoogl = big ? 'assets/images/googleplay-big.svg' : 'assets/images/googleplay.svg'
+  - pathAppstore = big ? 'assets/images/appstore-big.svg' : 'assets/images/appstore.svg'
+  - bigClass = big ? 'is-big' : ''
+
+  ul.mobile-app-links(class=bigClass)
+    li.mobile-app-links__item
+      a.mobile-app-links__link(href="./" target="_blank")
+        span.visually-hidden скачать c google play
+        img(src=pathGoogl alt="")
+    li.mobile-app-links__item
+      a.mobile-app-links__link(href="./" target="_blank")
+        span.visually-hidden скачать c app store
+        img(src=pathAppstore alt="")

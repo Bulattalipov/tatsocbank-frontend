@@ -1,0 +1,21 @@
+-
+  cards_list = [
+    "Дебетовые карты", "Кредитные карты"
+  ]
+
+main.page-main.main
+  +breadcrumbs([['Главная', "/"], ['Карты']])
+  section.page-intro-simple.page-top-offset
+    .site-container
+      h1.page-heading-h1 Карты
+
+  section.page-section.landing-section
+    .site-container
+      ul.landing-section__list
+        for item in cards_list
+          li.landing-section__item
+            +landing-card(item, 'card')
+
+  include ../../parts/faq.pug
+  +press-center(false, "Полезное о картах")
+  +review-banner()

@@ -1,0 +1,263 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000, $alpha: 50%);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity var(--transition-time), visibility var(--transition-time);
+
+  &.is-open {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity var(--transition-time), visibility var(--transition-time);
+  }
+
+  &__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity var(--transition);
+    will-change: opacity;
+
+    &.modal-open {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 25;
+    width: 100%;
+    max-width: 55.8rem;
+    height: auto;
+    max-height: 90%;
+    padding: 4rem;
+    overflow: auto;
+    background-color: var(--color-white);
+    border-radius: 1.6rem;
+    box-shadow: 0 0 1rem rgba($color: #000, $alpha: 10%);
+    transform: translate(-50%, -50%);
+    pointer-events: all;
+
+    &-close-mobile {
+      position: absolute;
+      top: 0.5rem;
+      left: 50%;
+      display: none;
+      width: 3.6rem;
+      height: 0.2rem;
+      background-color: var(--color-base-5);
+      border-radius: 0.2rem;
+      transform: translateX(-50%);
+
+      // @include mq(sm) {
+      //   display: block;
+      // }
+    }
+
+    @include mq(sm) {
+      top: auto;
+      bottom: 0;
+      left: 0;
+      max-width: 100%;
+      max-height: calc(100% - 4rem);
+      padding: 2.4rem 2rem 2rem;
+      overflow: auto;
+      border-radius: 1.6rem 1.6rem 0 0;
+      transform: none;
+    }
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.4rem;
+    height: 5.4rem;
+    background-color: transparent;
+    background-color: rgba(255 255 255 / 50%);
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: all;
+
+    &-icon {
+      width: 2.2rem;
+      height: 2.2rem;
+
+      @include mq(sm) {
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+
+    &:hover {
+      /** span {
+        background-color: var(--color-light-green);
+      }
+      **/
+    }
+
+    &:active {
+      /**  span {
+        background-color: var(--color-dark-green);
+      } **/
+    }
+
+    @include mq(sm) {
+      top: 1rem;
+      right: 1rem;
+      display: none;
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    &--mobile {
+      display: none;
+
+      @include mq(sm) {
+        display: flex;
+      }
+    }
+  }
+
+  &__legend {
+    margin-bottom: 2.4rem;
+    font: var(--font-h5);
+    text-align: center;
+
+    &--text-left {
+      text-align: left;
+    }
+
+    &-text {
+      margin-bottom: 2.4rem;
+      color: var(--color-base-5);
+      font: var(--font-text-2-reg1);
+      text-align: center;
+
+      p {
+        margin-bottom: 1.5rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      &--text-left {
+        text-align: left;
+      }
+
+      &--small {
+        font: var(--font-text-3-reg);
+      }
+    }
+  }
+
+  &__from-btn {
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
+
+    @include mq(sm) {
+      margin-top: 1.5rem;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  .icon-inside-circle {
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--color-base-2);
+
+    &__icon {
+      width: 2.6rem;
+      height: 2.6rem;
+      background-size: cover;
+    }
+  }
+
+  &__link-text {
+    font: var(--font-text-3-med);
+    color: var(--color-base-5);
+    margin-left: 1.2rem;
+  }
+
+  &__form-list {
+    margin-bottom: 3rem;
+  }
+
+  &__form-list-item {
+    margin-bottom: 0.6rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__form-subtitle {
+    font: var(--font-text-1-med);
+    margin-bottom: 1.6rem;
+  }
+
+  &__form-city {
+    margin-left: 0.8rem;
+  }
+
+  &__bottom-btns {
+    display: flex;
+    gap: 1.6rem;
+    margin-right: calc(-1 * var(--padding-offset));
+    margin-left: calc(-1 * var(--padding-offset));
+    padding-right: var(--padding-offset);
+    padding-left: var(--padding-offset);
+    padding-top: 1.4rem;
+    border-top: 0.1rem solid var(--color-base-2);
+  }
+
+  &__bottom-btn {
+    width: 100%;
+  }
+}
+
+.modal-results {
+  &__img {
+    width: 19.5rem;
+    height: 13.9rem;
+    margin-bottom: 4rem;
+    object-fit: contain;
+
+    @include mq(sm) {
+      width: 16rem;
+      height: 11.4rem;
+      margin-bottom: 2rem;
+    }
+
+    &--review {
+      display: block;
+      width: 31.7rem;
+      height: 18.5rem;
+      margin: 0 auto;
+      margin-bottom: 4rem;
+    }
+  }
+}

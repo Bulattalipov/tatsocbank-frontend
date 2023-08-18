@@ -1,0 +1,15 @@
+mixin press-center-card(name, tag, widthImages)
+  if widthImages
+    article.press-center-card.press-center-card--width-images&attributes(attributes)
+      span.press-center-card__tag= tag
+      .press-center-card__img-wrapper
+        +imgLazy("assets/images/press-center-block/1.jpg", alt="")(class="press-center-card__img")
+      h3.press-center-card__heading
+        a(href="./")= name
+      span.press-center-card__date 13 октября 2022
+  else
+    article.press-center-card&attributes(attributes)
+      span.press-center-card__tag= tag
+      h3.press-center-card__heading
+        a(href="./")= name
+      span.press-center-card__date 13 октября 2022

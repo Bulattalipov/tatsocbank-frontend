@@ -1,0 +1,41 @@
+mixin card-banner(tabs, name, text, list, btntext)
+  -
+    card_banner_tab = [
+      { name: "МИР кешбэк"},
+      { name: "Условия кешбэка"},
+    ]
+
+  section.page-section.js-section
+    .site-container
+      if (tabs)
+        h2.page-heading-h3.page-mb56
+          | Кешбэк
+        +classic-tab-list(card_banner_tab)(class="tabs-list--flex-start page-mb32")
+      article.card-shield
+        if (!tabs)
+          span.card-shield__tag.tag.tag--colorfull.tag--icon-star Откройте карту и станьте клиентом
+        h3.card-shield__heading.page-heading-h3= name
+        p.card-shield__text= text
+        if (list)
+          .card-shield__img-wrapper
+            img(src="assets/images/shileds/card.jpg" class="card-shield__img" alt="")
+            ul.card-shield__list
+              li.card-shield__item
+                .card-shield__info-text
+                  | До #[b 30%]
+                .card-shield__info-caption
+                  | Кэшбек у партнеров
+              li.card-shield__item
+                .card-shield__info-text
+                  | #[b 0] ₽
+                .card-shield__info-caption
+                  | Обслуживание
+        else
+          img(src="assets/images/shileds/card.jpg" class="card-shield__img" alt="")
+
+        if (!btntext)
+          +button('Подробнее', null, null, "link")(class="button--lg button--third card-shield__btn")
+        else
+          .card-shield__btn-wrapper
+            +button('Подробнее', null, null, "link")(class="button--lg button--third card-shield__btn")
+            p.card-shield__btn-text!= btntext

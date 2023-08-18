@@ -1,0 +1,33 @@
+.icon-inside-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 6.6rem;
+  height: 6.6rem;
+  border-radius: 50%;
+  background-color: var(--color-base-1);
+  transition: background-color var(--transition);
+  flex-shrink: 0;
+
+  @include mq(sm) {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  @include mq("custom", min, 768) {
+    &:hover {
+      background-color: var(--color-base-4);
+    }
+  }
+
+  &__icon {
+    width: 2.6rem;
+    height: 2.6rem;
+    background-size: cover;
+
+    @include mq(sm) {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}

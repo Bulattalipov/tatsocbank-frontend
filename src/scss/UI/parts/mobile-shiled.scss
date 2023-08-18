@@ -1,0 +1,168 @@
+.mobile-shiled {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 36.1rem;
+  padding: 4rem;
+  color: var(--color-white);
+  background: linear-gradient(135.71deg, #6c47d9 24.69%, #8363e2 117.83%);
+  border-radius: 2rem;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-image: url("../images/shileds/shiled-bg-svg.svg");
+    background-repeat: no-repeat;
+    background-position: 85% 50%;
+    background-size: contain;
+    border-radius: 2rem;
+    content: "";
+  }
+
+  &--dark-bg {
+    background: #1E1815;
+  }
+
+  &__heading {
+    max-width: 49rem;
+    margin-bottom: 1.5rem;
+    font: var(--font-h4);
+    letter-spacing: -0.02em;
+
+    @include mq(sm) {
+      font: var(--font-h5);
+    }
+  }
+
+  &__text {
+    max-width: 49rem;
+    margin-bottom: 1rem;
+
+    @include mq(lg) {
+      display: none;
+    }
+  }
+
+  &__dwnld {
+    position: absolute;
+    right: 4rem;
+    bottom: 4rem;
+
+    &-text {
+      max-width: 21rem;
+      margin-bottom: 3.2rem;
+      font: var(--font-text-3-reg);
+
+      @include mq(sm) {
+        display: none;
+      }
+    }
+
+    &-links {
+      display: flex;
+      align-items: center;
+    }
+
+    &-item {
+      margin-right: 1.2rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @include mq(sm) {
+        margin-right: 0.9rem;
+      }
+    }
+
+    &-link {
+      display: block;
+      width: 11.3rem;
+      height: 3.7rem;
+
+      @include mq(sm) {
+        width: 13rem;
+        height: 4.3rem;
+      }
+    }
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @include mq(lg) {
+      position: static;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    right: 29.8rem;
+    bottom: 0;
+    width: 48.7rem;
+    height: 40.9rem;
+    object-fit: contain;
+
+    @include mq(lg) {
+      right: 4rem;
+      bottom: 0;
+      width: 48.7rem;
+      height: 30.9rem;
+    }
+
+    @include mq(md) {
+      right: -5rem;
+    }
+
+    @include mq(sm) {
+      right: auto;
+      bottom: -8rem;
+      left: -1.2rem;
+      width: 17.9rem;
+      height: 19.1rem;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+
+    @include mq(sm) {
+      align-self: stretch;
+      justify-content: flex-end;
+      margin-top: 7.1rem;
+    }
+  }
+
+  &__btn {
+    margin-right: 3.2rem;
+
+    @include mq(lg) {
+      display: none;
+    }
+  }
+
+  @include mq(lg) {
+    overflow: hidden;
+  }
+
+  @include mq(sm) {
+    height: auto;
+    min-height: 0;
+    padding: 1.8rem;
+    border-radius: 1.2rem;
+
+    &::before {
+      content: none;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+extends layout/default.pug
+
+block variables
+	- const bodyClass = "page-home"
+	- const pageTitle = "Калькуляторы Автокредитование"
+	- const siteLang = "ru"
+
+block content
+	include pages/calcs-auto/main.pug
+
+
+block scriptsDev
+	script(src="assets/js/calcsFunc.js?v=" + siteVersion)
+	script(src="assets/js/frontend.js?v=" + siteVersion)
+	script(src="assets/js/auto-credits.js?v=" + siteVersion)

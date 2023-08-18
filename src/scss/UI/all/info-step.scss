@@ -1,0 +1,140 @@
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable selector-class-pattern */
+.info-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2.6rem;
+
+  &__num {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17.7rem;
+    height: 17.7rem;
+    margin-bottom: 3rem;
+
+    &-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-color: #f8661c;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        content: "";
+      }
+
+      &::before {
+        background: conic-gradient(#f8661c var(--r), #fff 0deg);
+        background-color: transparent;
+        transition: all var(--transition);
+      }
+
+      &::after {
+        z-index: 1;
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+        background-color: #fff;
+        border: 1px solid var(--color-base-2);
+      }
+    }
+
+    &-progress {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+      fill: none;
+      stroke-dasharray: 121;
+      stroke-dashoffset: 128;
+      stroke-width: 0.3px;
+    }
+
+    &::before {
+      position: relative;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 14.9rem;
+      height: 14.9rem;
+      font: var(--font-numbers-2);
+      background-color: var(--color-base-2);
+      border-radius: 50%;
+      content: counter(list);
+
+      @include mq(lg) {
+        width: 12.9rem;
+        height: 12.9rem;
+        font: var(--font-numbers-4);
+      }
+
+      @include mq(sm) {
+        width: 7.1rem;
+        height: 7.1rem;
+        font: var(--font-numbers-5);
+      }
+    }
+
+    @include mq(lg) {
+      width: 14.7rem;
+      height: 14.7rem;
+    }
+
+    @include mq(sm) {
+      width: 10.3rem;
+      height: 10.3rem;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 2rem;
+    font: var(--font-h5);
+    text-align: center;
+
+    @include mq(sm) {
+      margin-bottom: 0.8rem;
+    }
+  }
+
+  &__txt {
+    max-width: 37.7rem;
+    color: var(--color-base-5);
+    font: var(--font-text-2-reg2);
+    text-align: center;
+
+    a,
+    button {
+      display: inline-block;
+      color: var(--color-base-7);
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  @include mq(lg) {
+    padding: 0;
+  }
+}

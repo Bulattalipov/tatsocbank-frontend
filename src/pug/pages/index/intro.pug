@@ -1,0 +1,70 @@
+-
+  intro_cat = [
+    { legend: "Ипотека без первого взноса", thumb_legend: "Без первого взноса <br> от&nbsp;5,2%", slug: "Ипотека" },
+    { legend: "Дебетовая карта", thumb_legend: "Дебетовая карта c&nbsp;кэшбеком до 20%", slug: "Дебетовая карта" },
+    { legend: "«Счастливая дорога»", thumb_legend: "«Счастливая дорога» от&nbsp;15,7%", slug: "Автокредит" },
+    { legend: "«Тропическая жара»", thumb_legend: "«Тропическая жара» до&nbsp;8% годовых", slug: "вклад" },
+    { legend: "Кредит на любые цели", thumb_legend: "Кредит на любые цели от&nbsp;14,7%", slug: "кредит" },
+  ]
+
+section.section.intro
+  .intro__img-container
+    picture
+      source(srcset="assets/images/intro_img_mobile2.jpg" media="(max-width: 600px)")
+      img(class="intro__img is-active" src="assets/images/intro_img.jpg" alt="alt" data-color-text="dark")
+    picture
+      source(srcset="assets/images/intro_img_mobile.jpg" media="(max-width: 600px)")
+      img(class="intro__img is-active" src="assets/images/intro_img2.jpg" alt="alt" data-color-text="white")
+    picture
+      source(srcset="assets/images/intro_img_mobile2.jpg" media="(max-width: 600px)")
+      img(class="intro__img is-active" src="assets/images/intro_img.jpg" alt="alt" data-color-text="dark")
+    picture
+      source(srcset="assets/images/intro_img_mobile.jpg" media="(max-width: 600px)")
+      img(class="intro__img is-active" src="assets/images/intro_img2.jpg" alt="alt" data-color-text="white")
+    picture
+      source(srcset="assets/images/intro_img_mobile2.jpg" media="(max-width: 600px)")
+      img(class="intro__img is-active" src="assets/images/intro_img.jpg" alt="alt" data-color-text="dark")
+
+  .site-container.intro__inner
+    .swiper.intro__container
+      for cat in intro_cat
+        .intro__item
+          .intro__item-block
+            h1.intro__heading
+              | #{cat.legend}
+            p.intro__text.intro__text--mobile
+              | Воспользуйтесь обновлёнными программами ипотечного кредитования на новое, вторичное и загородное жильё.
+          .intro__item-block
+            p.intro__numbers
+              span.intro__numbers-legend от
+              span.intro__numbers-num 5,2%
+            p.intro__text
+              | Воспользуйтесь обновлёнными программами ипотечного кредитования на новое, вторичное и загородное жильё.
+            +button("Подробнее", null, null, 'link')(class="intro__btn button--lg")
+      ul.swiper-wrapper
+        for cat in intro_cat
+          li.swiper-slide
+            .intro__empty-box
+              .intro__item
+                .intro__item-block
+                  h1.intro__heading
+                    | #{cat.legend}
+                  p.intro__text.intro__text--mobile
+                    | Воспользуйтесь обновлёнными программами ипотечного кредитования на новое, вторичное и загородное жильё.
+                .intro__item-block
+                  p.intro__numbers
+                    span.intro__numbers-legend от
+                    span.intro__numbers-num 5,2%
+                  p.intro__text
+                    | Воспользуйтесь обновлёнными программами ипотечного кредитования на новое, вторичное и загородное жильё.
+                  +button("Подробнее", null, null, 'link')(class="intro__btn button--lg")
+    .swiper.intro__categories
+      ul.swiper-wrapper
+        for cat in intro_cat
+          li.intro__categories-item.swiper-slide
+            .intro-category
+              .intro-category__legend
+                +icon-mono("star")(width="12" height="12" class="intro-category__legend-icon")
+                | #{cat.slug}
+              .intro-category__text!= cat.thumb_legend
+      .page-swiper-pagination.intro__categories-pagination

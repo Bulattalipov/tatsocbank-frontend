@@ -1,0 +1,13 @@
+main.page-main.main
+  +breadcrumbs([['Главная', "/"], ['Общая информация']])
+
+  +page-intro-detail-new("Общая информация о ТАТСОЦБАНКЕ", "АО «ТАТСОЦБАНК» один из самых динамично развивающихся банков Республики Татарстан")
+  include general-information.pug
+  include geography.pug
+  .page-section
+    .site-container
+      .quote-block
+        blockquote.quote-block__text.page-heading-h2
+          | #[b="Одним из приоритетных направлений банка является "] совершенствование и создание индивидуальных схем обслуживания наших партнёров
+  +info-img(true, true)
+  include utility-block.pug

@@ -1,0 +1,19 @@
+main.page-main.main
+  +breadcrumbs([['Главная', "/"], ['Мобильное приложение']])
+
+  +page-intro-detail("Мобильное приложение ТАТСОЦБАНК", "Возможность пополнять вклад в течение всего срока вклада", null, 'app', null)
+
+  include ../../parts/advantages.pug
+
+  section.page-section.js-section
+    .site-container
+      h2.page-heading-h3.page-mb56.page-heading-sm-center Как стать пользователем
+      +info-steps()
+
+  +card-banner(null, 'МИР Classic debit', 'Банк ежемесячно выплачивает на счет карты кешбэк «живыми» деньгами, о чем извещает вас SMS или Push уведомлением', 'list', null)
+
+  include ../../parts/additional-information.pug
+
+  include ../../parts/rko.pug
+
+  +review-banner()

@@ -1,0 +1,17 @@
+.modal__container.modal-qr(data-target="mobile-qr")
+  button.button-reset.modal__close-btn.modal-close(type="button")
+    +icon-mono("close")(width="22" height="22" class="modal__close-btn-icon")
+  .modal__content.modal-qr__content
+    .modal__content-close-mobile.modal-close
+    .modal__content-inner
+      button.button-reset.modal__close-btn.modal__close-btn--mobile.modal-close(type="button")
+        +icon-mono("close")(width="22" height="22" class="modal__close-btn-icon")
+      .modal-qr__container
+        .modal-qr__imgs
+          .modal-qr__img-wrapper
+            img.modal-qr__img(src="assets/images/qr.jpg" alt="")
+          .modal-qr__img-wrapper
+            img.modal-qr__img(src="assets/images/qr.jpg" alt="")
+        +mobile-app-links()
+        .modal-qr__text
+          | Включите камеру на вашем телефоне и наведите на QR-код или перейдите в магазины приложений по ссылке

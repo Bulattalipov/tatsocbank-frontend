@@ -1,0 +1,22 @@
+.benefits-cooperation {
+  .tabs-list {
+    width: fit-content;
+    margin-bottom: 5rem;
+
+    @include mq(sm) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .page-tab-content {
+    @include mq(lg) {
+      margin-left: calc(-1 * var(--padding-offset));
+    }
+  }
+
+  .advantages {
+    @include mq(lg) {
+      padding-left: var(--padding-offset);
+    }
+  }
+}

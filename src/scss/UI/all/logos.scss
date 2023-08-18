@@ -1,0 +1,57 @@
+.logos {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.6rem;
+
+  @include mq(lg) {
+    grid-template-columns: repeat(5, 1fr);
+    margin-right: calc(-1 * var(--padding-offset));
+    margin-left: calc(-1 * var(--padding-offset));
+    padding-right: var(--padding-offset);
+    padding-left: var(--padding-offset);
+  }
+
+  @include mq(md) {
+    display: flex;
+    overflow-x: scroll;
+    gap: 1.2rem;
+
+    @include noScrollbar();
+  }
+
+  &__item {
+    border: 0.1rem solid var(--color-base-3);
+    border-radius: 1.2rem;
+    height: 24rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem;
+
+    @include mq(lg) {
+      height: 20rem;
+      padding: 2rem;
+    }
+
+    @include mq(md) {
+      height: 15rem;;
+    }
+
+    @include mq(sm) {
+      height: 9rem;
+    }
+  }
+
+  &__item-img {
+    display: block;
+    width: 13.3rem;
+
+    @include mq(md) {
+      min-width: 10rem;
+    }
+
+    @include mq(sm) {
+      min-width: 5rem;
+    }
+  }
+}

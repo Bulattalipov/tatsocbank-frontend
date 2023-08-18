@@ -1,0 +1,33 @@
+mixin callback-banner-list(name, normal, big)
+  .page-section
+    .site-container
+      section.callback-trap.callback-trap--text-mb.js-section
+        h2.page-heading-h3.callback-trap__heading= name
+        p.callback-trap__text
+          | Доступные услуги и сервисы банка в вашем телефоне
+        img(src="assets/images/shileds/bg-shield2.png" class="callback-trap__image" alt="Доступные услуги и сервисы банка в вашем телефоне")
+
+        if normal
+          form.callback-trap__form.callback-trap__form--column(data-need-validation data-sucess="success-small" data-error="error")
+            .callback-trap__form-list
+              +input("Имя или Название организации", "name", "Имя или Название организации", null, "fio")(class="js-validation-wrapper callback-trap__input" data-ts="123")
+              +input("Номер телефона", "phone", "Номер телефона", null, "phone")(class="js-validation-wrapper callback-trap__input")
+              +texarea('Ваше сообщение', true)(class="callback-trap__textarea js-validation-wrapper")
+            .callback-trap__box
+              +button("Подать заявку")(class="button--md button--disabled-visible callback-trap__btn")
+              p.callback-trap__agreement-text
+                | При нажати кнопки «Подать заявку» вы даете согласие на обработку #[a(href="./") персональных данных]
+
+        if big
+          form.callback-trap__form.callback-trap__form--column(data-need-validation data-sucess="success-small" data-error="error")
+            .callback-trap__form-list
+              +input("ФИО", "name", "ФИО", null, "fio")(class="js-validation-wrapper callback-trap__input" data-ts="123")
+              +input("Название организации", "organization", "Название организации", null, "fio")(class="js-validation-wrapper callback-trap__input" data-ts="123")
+              +input("Email", "organization", "Email", null, "email")(class="js-validation-wrapper callback-trap__input" data-ts="123")
+              +input("Номер телефона", "phone", "Номер телефона", null, "phone")(class="js-validation-wrapper callback-trap__input")
+              +input("ИНН", "phone", "ИНН", null, "fio")(class="js-validation-wrapper callback-trap__input callback-trap__input--row")
+              +texarea('Ваше сообщение', true)(class="callback-trap__textarea js-validation-wrapper")
+            .callback-trap__box
+              +button("Подать заявку")(class="button--md button--disabled-visible callback-trap__btn")
+              p.callback-trap__agreement-text
+                | При нажати кнопки «Подать заявку» вы даете согласие на обработку #[a(href="./") персональных данных]

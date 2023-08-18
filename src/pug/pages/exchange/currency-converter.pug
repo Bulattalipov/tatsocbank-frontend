@@ -1,0 +1,56 @@
+-
+  curenscy1 = [
+    { name: "RUB", banknote: "₽", value: '1' },
+    { name: "USD", banknote: "$", value: '80,35' },
+    { name: "EUR", banknote: "€", value: '88,05' },
+    { name: "CNY", banknote: "¥", value: '113,50' },
+    { name: "KZT", banknote: "₸", value: '16,84' },
+  ]
+
+  curenscy2 = [
+    { name: "RUB", banknote: "₽", value: '1' },
+    { name: "USD", banknote: "$", value: '83,75' },
+    { name: "EUR", banknote: "€", value: '93,05' },
+    { name: "CNY", banknote: "¥", value: '123,50' },
+    { name: "KZT", banknote: "₸", value: '19,60' },
+  ]
+
+section.page-section(id="toBlock")
+  .site-container
+    h2.page-heading-h3.page-mb32 Конвертер валют
+
+    .currency-converter__container
+      .currency-converter__block
+        .currency-converter__legend У меня есть
+
+        ul.tabs-list.tabs-list--rounded.currency-converter__tabs
+          for item, i in curenscy1
+            - isActive = i === 0 ? "is-active" : ""
+            li.tabs-list__item
+              button.tab-buton.tab-buton--rounded.js-sale-btn(class=isActive data-value=item.value data-banknote=item.banknote data-currency=item.name)= item.name
+
+        label.input.currency-converter__input(class="js-sale-input")
+          span.currency-converter__banknote.js-banknote ₽
+          input(type="number" class="input__control no_validate" value="1" name="sale" placeholder="Продажа")
+          span.input__label Продажа
+
+      .currency-converter__icon
+        +icon-mono("conversion")(width="44" height="44")
+
+      .currency-converter__block
+        .currency-converter__legend Мне надо получить
+
+        ul.tabs-list.tabs-list--rounded.currency-converter__tabs
+          for item, i in curenscy2
+            - isDisabled = i === 0 ? "disabled" : ""
+            - isActive = i === 1 ? "is-active" : ""
+            li.tabs-list__item
+              button.tab-buton.tab-buton--rounded.js-buy-btn(class=isDisabled data-value=item.value class=isActive data-banknote=item.banknote data-currency=item.name)= item.name
+
+        label.input.currency-converter__input(class="js-buy-input")
+          span.currency-converter__banknote.js-banknote $
+          input(type="number" class="input__control no_validate" value="0.013" name="buy" placeholder="Покупка")
+          span.input__label Покупка
+
+        p.currency-converter__warning
+          | Курс актуален на 10.10.2020

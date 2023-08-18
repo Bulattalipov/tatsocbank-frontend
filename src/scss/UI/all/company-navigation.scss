@@ -1,0 +1,16 @@
+.company-navigation {
+  display: flex;
+  align-items: center;
+
+  .header__legend-link {
+    opacity: 1;
+  }
+
+  &__item {
+    margin-right: 4rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+mixin bestOffer(name, text, num)
+  article.best-offer-card
+    .best-offer-card__img-wrapper
+      img.lazyload(data-src="assets/images/best-offers/img1.jpg" src="assets/images/placegolder.phg" alt="")
+    header.best-offer-card__header
+      h3.best-offer-card__heading= name
+      p.best-offer-card__text= text
+
+    .best-offer-card__info
+      a.page-link-full.best-offer-card__link(href="./")
+        span Подробнее
+        +icon-mono("shevron-arrow-right")(width="16" height="16" class="best-offer-card__link-icon")
+      if num
+        .best-offer-card__num(data-text="от")
+          | 5,7%

@@ -1,0 +1,27 @@
+-
+  foote_menu = [
+    "Частным лицам", "Бизнесу", "Финасовым институтам", "О банке"
+  ]
+
+.footer__mobile-menu
+  ul.accordion__list
+    for item in foote_menu
+      li.accordion__item
+        .accordion.js-accordion
+          button.accordion__head.js-accordion-btn
+            span.accordion__label= item
+          .accordion__body.js-accordion-content
+            .accordion__body-content
+              .footer__legend Ипотека
+              nav.footer__menu
+                ul.footer__menu-list
+                  for item in footer_nav_mortage
+                    li.footer__menu-item
+                      a.footer__menu-link(href= item.link)= item.name
+
+              .footer__legend Автокредиты
+              nav.footer__menu
+                ul.footer__menu-list
+                  for item in footer_nav_car
+                    li.footer__menu-item
+                      a.footer__menu-link(href= item.link)= item.name

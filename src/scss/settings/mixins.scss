@@ -1,0 +1,65 @@
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin customScrollbar {
+  &::-webkit-scrollbar {
+    width: 0.2rem;
+    background-color: var(--color-grey-300);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-grey-600);
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--color-grey-300);
+  }
+}
+
+@mixin noScrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar * {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+}
+
+@mixin maxSizeText($size) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: $size;
+  -webkit-box-orient: vertical;
+}

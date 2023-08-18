@@ -1,0 +1,16 @@
+mixin page-intro-detail-new(name, text, listTag, button)
+  section.page-intro.page-intro--detail-page.page-intro--modif&attributes(attributes)
+    .site-container.page-intro__container
+      h1.page-heading-h2.page-intro__heading!= name
+      p.page-intro__text= text
+      if listTag
+        ul.page-intro__tag-list
+          li.page-intro__tag-list-item
+            | Для организаций с любой численностью сотрудников
+          li.page-intro__tag-list-item
+            | Организация может находится на обслуживании в любом банке
+      .page-intro__image-container
+        img(src="assets/images/landing-card/img1.jpg" class="page-intro__image-round" alt=name)
+      if button
+        .page-intro__btns
+          +button("Оставить заявку", null, "Заявка")(class="button--lg page-intro__btn-callback" data-path="modal-callback")

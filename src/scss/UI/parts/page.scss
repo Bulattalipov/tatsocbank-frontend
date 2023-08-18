@@ -1,0 +1,288 @@
+/* stylelint-disable selector-class-pattern */
+.page-mb10 {
+  margin-bottom: 1rem;
+}
+
+.page-mb12 {
+  margin-bottom: 1.2rem;
+}
+
+.page-mb16 {
+  margin-bottom: 1.6rem;
+
+  @include mq(sm) {
+    margin-bottom: 1.2rem;
+  }
+}
+
+.page-mb32 {
+  margin-bottom: 3.2rem;
+
+  @include mq(sm) {
+    margin-bottom: 2rem;
+  }
+}
+
+.page-mb40 {
+  margin-bottom: 4rem;
+
+  @include mq(sm) {
+    margin-bottom: 2rem;
+  }
+}
+
+.page-mb56 {
+  margin-bottom: 5.6rem;
+
+  @include mq(lg) {
+    margin-bottom: 4.6rem;
+  }
+
+  @include mq(sm) {
+    margin-bottom: 2rem;
+  }
+}
+
+.page-ui {
+  background-color: var(--color-base-2);
+}
+
+.page-top-offset {
+  padding-top: calc(var(--header-height) + 6rem);
+}
+
+.page-link {
+  display: inline-flex;
+  align-items: center;
+  font: var(--font-btn-medium);
+
+  &__icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-left: 0.4rem;
+    fill: none;
+    stroke: currentcolor;
+    stroke-width: 2px;
+  }
+}
+
+.page-swiper {
+  overflow: visible;
+
+  &--visible-right {
+    margin-right: -100%;
+    padding-right: 100%;
+  }
+
+  &--visible-right-mobile {
+    @include mq(sm) {
+      margin-right: calc(-1 * var(--padding-offset));
+      padding-right: var(--padding-offset);
+    }
+  }
+
+  .swiper-slide {
+    height: auto;
+  }
+
+  .best-offer-card {
+    height: 100%;
+  }
+}
+
+.page-swiper-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+
+  .swiper-pagination-bullet {
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: var(--color-white);
+    opacity: 0.2;
+
+    &.swiper-pagination-bullet-active {
+      opacity: 1;
+    }
+  }
+}
+
+.page-heading-h1 {
+  font: var(--font-h1);
+  letter-spacing: -0.02em;
+
+  @include mq(lg) {
+    font: var(--font-h2);
+  }
+
+  @include mq(sm) {
+    font: var(--font-h1);
+  }
+}
+
+.page-heading-h2 {
+  font: var(--font-h2);
+  letter-spacing: -0.02em;
+
+  @include mq(lg) {
+    font: var(--font-h3);
+    font-weight: 500;
+  }
+
+  @include mq(sm) {
+    font: var(--font-h2);
+  }
+}
+
+.page-heading-h3 {
+  font: var(--font-h3);
+  letter-spacing: -0.02em;
+}
+
+.page-heading-h4 {
+  font: var(--font-h4);
+  letter-spacing: -0.02em;
+}
+
+.page-heading-sm-center {
+  @include mq(sm) {
+    text-align: center;
+  }
+}
+
+.page-section {
+  margin-bottom: 16rem;
+
+  @include mq(sm) {
+    margin-bottom: 7rem;
+  }
+}
+
+.page-section-mb-60 {
+  margin-bottom: 6rem;
+
+  @include mq(sm) {
+    margin-bottom: 4.5rem;
+  }
+}
+
+.page-section-mb-80 {
+  margin-bottom: 8rem;
+
+  @include mq(sm) {
+    margin-bottom: 7rem;
+  }
+}
+
+.page-flex-row {
+  display: flex;
+  align-items: center;
+
+  &--space-btwn {
+    justify-content: space-between;
+  }
+}
+
+.page-more-link {
+  display: flex;
+  align-items: center;
+  font: var(--font-btn-medium);
+
+  &__icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-left: 0.4rem;
+    transition: color var(--transition);
+    fill: none;
+    stroke: currentcolor;
+    stroke-width: 1.5px;
+    transition: transform var(--transition);
+
+    @include mq(sm) {
+      display: none;
+    }
+  }
+
+  @include mq(sm) {
+    padding: 1.6rem 3.2rem;
+    color: var(--color-base-7);
+    background-color: var(--color-base-2);
+    border-radius: 0.8rem;
+  }
+
+  &--classic {
+    @include mq(sm) {
+      padding: 0;
+      color: inherit;
+      background-color: transparent;
+      border-radius: 0;
+
+      .page-more-link__icon {
+        display: block;
+      }
+    }
+  }
+
+  &.is-active {
+    color: var(--color-primary-hover);
+  }
+
+  &:hover {
+    color: var(--color-primary-hover);
+
+    .page-more-link__icon {
+      transform: translateX(0.3rem);
+    }
+  }
+}
+
+.page-tab-content {
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+}
+
+.page-link-full {
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    content: "";
+  }
+}
+
+.page-agreement {
+  margin-top: 2rem;
+  color: var(--color-base-5);
+  font: var(--font-text-5-reg);
+  text-align: center;
+}
+
+.page-intro-simple {
+  margin-bottom: 10rem;
+
+  .site-container {
+    margin-top: 4.6rem;
+
+    @include mq(sm) {
+      margin-top: 0;
+    }
+  }
+
+  @include mq(sm) {
+    margin-bottom: 5.2rem;
+  }
+
+}
+
+.page-desc {
+  font: var(--font-text-2-reg1);
+  max-width: 95rem;
+  color: var(--color-base-5);
+}

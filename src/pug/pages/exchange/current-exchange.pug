@@ -1,0 +1,37 @@
+section.page-section
+  .site-container
+    h2.page-heading-h3.page-mb32 Текущие курсы валют #[br] к рублю РФ
+
+    .current-exchange__container
+      .current-exchange__info
+        h4.current-exchange__heading Операционные кассы
+        p.current-exchange__text Курс актуален на 10.10.2020
+        +button("Выбрать кассу", null, null, null)(class="button--md current-exchange__btn")
+      .current-exchange__currency-rate
+        table.currency-rate.currency-rate--full
+          caption.visually-hidden Таблица валютного курса
+          thead.currency-rate__head
+            tr.currency-rate__row
+              td.currency-rate__cell.currency-rate__cell--head Код
+              td.currency-rate__cell.currency-rate__cell--head Валюта обмена
+              td.currency-rate__cell.currency-rate__cell--head Единиц
+              td.currency-rate__cell.currency-rate__cell--head Покупка
+              td.currency-rate__cell.currency-rate__cell--head продажа
+
+          tbody.currency-rate__body
+            each i in Array.from(Array(3).keys())
+              tr.currency-rate__row.currency-rate__row--body
+                td.currency-rate__cell
+                  .currency-rate__value
+                    img(src="assets/images/currency/usa.svg" alt="Валюта USD")
+                    | USD
+                td.currency-rate__cell
+                  .currency-rate__numbers Доллар США
+                td.currency-rate__cell
+                  .currency-rate__numbers 1
+                td.currency-rate__cell
+                  .currency-rate__numbers.currency-rate__numbers--buy 62,42 ₽
+                td.currency-rate__cell
+                  .currency-rate__numbers.currency-rate__numbers--sell 64,42 ₽
+
+        +button("Выбрать кассу", null, null, null)(class="button--md current-exchange__btn current-exchange__btn--mobile")

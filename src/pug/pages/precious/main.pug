@@ -1,0 +1,9 @@
+main.page-main.main
+  +breadcrumbs([['Главная', "/"], ['Драгоценные металлы']])
+
+  +page-intro-detail("Драгоценные металлы", "Вы можете приобрести коллекционные изделия из драгоценных металлов", null, null, 'app')
+
+  include filter.pug
+  include coin-list.pug
+
+  +review-banner()

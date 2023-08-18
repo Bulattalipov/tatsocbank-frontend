@@ -1,0 +1,6 @@
+mixin advantages-card(name, text)
+  article.advantages-card
+    .advantages-card__icon-wrapper
+      +imgLazy("assets/images/advantages/icon.svg")(class="advantages-card__icon")
+    h3.advantages-card__heading= name
+    p.advantages-card__text= text

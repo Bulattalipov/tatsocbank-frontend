@@ -1,0 +1,21 @@
+.page-ui {
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-base-6);
+
+    &-legend {
+      margin-bottom: 2rem;
+      font: var(--font-h5);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border: none;
+    }
+  }
+}

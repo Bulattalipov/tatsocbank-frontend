@@ -1,0 +1,223 @@
+-
+  footer_nav_mortage = [
+    { name: "Ключевой процент", link: "./" },
+    { name: "Без первоначального взноса", link: "./" },
+    { name: "Льготная ипотека", link: "./" },
+    { name: "Семейная ипотека", link: "./" },
+    { name: "Сельская ипотека", link: "./" },
+    { name: "Военная ипотека", link: "./" },
+    { name: "Семейная ипотека для военных", link: "./" },
+    { name: "Ипотека для IT-специалистов", link: "./" },
+    { name: "Коммерческая недвижимость", link: "./" },
+    { name: "Дом мечты", link: "./" },
+    { name: "Загородный дом", link: "./" },
+    { name: "В залоге", link: "./" },
+    { name: "Рефинансирование ипотеки", link: "./" },
+    { name: "Кредитные каникулы", link: "./" },
+  ]
+
+  footer_nav_car = [
+    { name: "Стандартная программа", link: "./" },
+    { name: "Стандартная программа ПЛЮС", link: "./" },
+    { name: "Счастливая дорога", link: "./" },
+    { name: "Корпоративная программа", link: "./" },
+    { name: "Рефинансирование автокредита", link: "./" },
+    { name: "Кредитные каникулы", link: "./" }
+  ]
+
+  footer_nav_debt = [
+    { name: "Под залог", link: "./" },
+    { name: "Для зарплатных клиентов", link: "./" },
+    { name: "Кредит к ипотеке", link: "./" },
+    { name: "На погашение ипотеки", link: "./" },
+    { name: "Кредитные каникулы", link: "./" },
+    { name: "Рефинансирование кредита", link: "./" },
+  ]
+
+  footer_nav_deposit = [
+    { name: "Радужный", link: "./" },
+    { name: "Тропическая жара", link: "./" },
+    { name: "Ромашки", link: "./" },
+    { name: "Капитальное вложение", link: "./" },
+    { name: "Стабильный процент", link: "./" },
+    { name: "Выплата", link: "./" },
+    { name: "До востребования", link: "./" },
+  ]
+
+  footer_nav_map = [
+    { name: "Дебетовые карты", link: "./" },
+    { name: "Кредитные карты", link: "./" },
+  ]
+
+  footer_nav_services = [
+    { name: "Офисы и банкоматы", link: "./" },
+    { name: "Аренда сейфов", link: "./" },
+    { name: "Курсы валют", link: "./" },
+    { name: "Драгоценные металлы", link: "./" },
+    { name: "Мобильное приложение", link: "./" },
+    { name: "Приложение для бизнеса", link: "./" },
+  ]
+
+  footer_nav_buisenes = [
+    { name: "Кредитование", link: "./" },
+    { name: "Эквайринг", link: "./" },
+    { name: "Лизинг", link: "./" },
+    { name: "Карты", link: "./" },
+    { name: "РКО", link: "./" },
+    { name: "Депозиты", link: "./" },
+    { name: "Банковские гарантии", link: "./" },
+    { name: "Инкассация", link: "./" },
+    { name: "ВЭД и валютный контроль", link: "./" }
+  ]
+
+  footer_nav_finance = [
+    { name: "Инкассация", link: "./" },
+    { name: "Межбанковские операции", link: "./" },
+    { name: "Открытие ЛОРО счета", link: "./" }
+  ]
+
+  footer_nav_bank = [
+    { name: "Открытая информация", link: "./" },
+    { name: "Общая информация", link: "./" },
+    { name: "Лицензии", link: "./" },
+    { name: "Рейтинг", link: "./" },
+    { name: "Пресс-центр", link: "./" },
+    { name: "Вакансии", link: "./" },
+    { name: "Отзывы", link: "./" }
+  ]
+
+footer.footer.js-section
+  .site-container
+
+    .footer__nav-block
+      .footer__nav-left
+        a.footer__Logo(href="./")
+          span.visually-hidden На главную
+          img(src="assets/images/logo.svg" alt="Логотип компании")
+
+        include mobile-footer-menu.pug
+
+        a.footer__tel(href="tel:88003505151" data-label="Звонок по России") 8 800 350-51-51
+
+        a.page-link(href="./")
+          span.page-link__text Все контакты
+          +icon-mono("shevron-arrow-right")(width="16" height="16" class="page-link__icon")
+
+        button.footer__blid
+          +icon-mono("eye")(width="24" height="24" class="footer__blid-icon")
+          span.footer__blid-text Версия для слабовидящих
+      .footer__nav-right
+        .footer__nav-item-legend
+          .footer__label Частным лицам
+        .footer__nav-item
+          .footer__legend Ипотека
+          nav.footer__menu
+            ul.footer__menu-list
+              for item in footer_nav_mortage
+                li.footer__menu-item
+                  a.footer__menu-link(href= item.link)= item.name
+        .footer__nav-item
+          .footer__legend Автокредиты
+          nav.footer__menu
+            ul.footer__menu-list
+              for item in footer_nav_car
+                li.footer__menu-item
+                  a.footer__menu-link(href= item.link)= item.name
+          .footer__legend Кредиты
+          nav.footer__menu
+            ul.footer__menu-list
+              for item in footer_nav_debt
+                li.footer__menu-item
+                  a.footer__menu-link(href= item.link)= item.name
+        .footer__nav-item
+          .footer__legend Вклады
+          nav.footer__menu
+            ul.footer__menu-list
+              for item in footer_nav_deposit
+                li.footer__menu-item
+                  a.footer__menu-link(href= item.link)= item.name
+          .footer__legend Карты
+          nav.footer__menu
+            ul.footer__menu-list
+              for item in footer_nav_map
+                li.footer__menu-item
+                  a.footer__menu-link(href= item.link)= item.name
+        .footer__nav-item
+          .footer__legend Сервисы и услуги
+          nav.footer__menu
+            ul.footer__menu-list
+              for item in footer_nav_services
+                li.footer__menu-item
+                  a.footer__menu-link(href= item.link)= item.name
+
+    .footer__nav-block
+      .footer__nav-left
+        .footer__label Мобильное приложение
+        .mobile-app.mobile-app--offset-bottom
+          img(src="assets/images/mobile-app-icon.jpg" class="mobile-app__img" alt="")
+          .mobile-app__info
+            a.mobile-app__link(href="./" target="_blank") ТАТСОЦБАНК
+            span.mobile-app__legend Для iOS и Android
+
+        .mobile-app
+          img(src="assets/images/mobile-app-icon2.jpg" class="mobile-app__img" alt="")
+          .mobile-app__info
+            a.mobile-app__link(href="./" target="_blank") ТСБ Бизнес
+            span.mobile-app__legend Для iOS и Android
+
+        .footer__label.footer__label--offset-top-auto Другие источники
+
+        a.footer__copyright-logo.footer__copyright-logo--mobile(href="./")
+            img(src="assets/images/copy_logo_whitre_2.svg" alt="")
+
+        ul.social
+          li.social__item
+            a.social__link(href="./" tagret="_blank")
+              span.visually-hidden ссылка на HeadHunter
+              img(src="assets/images/hh.svg" alt="логотип VK")
+          li.social__item
+            a.social__link(href="./" tagret="_blank")
+              span.visually-hidden ссылка на Vkontakte
+              img(src="assets/images/vk.svg" alt="логотип VK")
+      .footer__nav-right
+        .footer__nav-item
+          .footer__label Бизнесу
+          ul.footer__bottom-menu
+            for item in footer_nav_buisenes
+              li.footer__bottom-menu-item
+                a.footer__legend-big(href= item.link)= item.name
+        .footer__nav-item
+          .footer__label Финасовым институтам
+          ul.footer__bottom-menu
+            for item in footer_nav_finance
+              li.footer__bottom-menu-item
+                a.footer__legend-big(href= item.link)= item.name
+        .footer__nav-item
+          .footer__label О банке
+          ul.footer__bottom-menu
+            for item in footer_nav_bank
+              li.footer__bottom-menu-item
+                a.footer__legend-big(href= item.link)= item.name
+
+    .footer__copyright
+      .footer__copyright-block
+      .footer__copyright-block
+        .footer__copyright-block-item
+          p._offset-bottom
+            | Акционерное общество «банк социального развития Татарстана ТАТСОЦБАНК». Генеральная #[br] лицензия ЦБ РФ № 480 от 25.03.2015
+          p._offset-bottom
+            | 420111, РФ, Республика Татарстан, г. Казань, ул. Чернышевского, 18/23
+          ._text-conteiner
+            p © 2022 Все права защищены
+            a(href="./") Правовая информация
+        .footer__copyright-block-item
+          a.footer__copyright-logo(href="./")
+            img(src="assets/images/copy_logo.svg" alt="")
+        .footer__copyright-block-item
+          ._text-conteiner
+            p © 2022 Все права защищены
+            a(href="./") Правовая информация
+          a.mw(href="./")
+            span.mw__txt Сайт разработан
+            img(src="assets/images/mw.svg" alt="Логотип Mw")
+

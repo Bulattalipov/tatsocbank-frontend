@@ -1,0 +1,70 @@
+.slider-btns {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 12.8rem;
+  height: 6rem;
+  padding: 0.4rem;
+  border: 1px solid var(--color-base-5);
+  border-radius: 0.8rem;
+
+  &::before {
+    order: 2;
+    width: 1px;
+    height: 1.7rem;
+    background-color: var(--color-base-4);
+    content: "";
+  }
+
+  &.hide {
+    display: none;
+  }
+
+  @include mq(sm) {
+    display: none;
+  }
+}
+
+.slider-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  order: 3;
+  width: 5.2rem;
+  height: 5.2rem;
+  border-radius: 0.6rem;
+  transition: background-color var(--transition);
+
+  &__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: none;
+    stroke: currentcolor;
+    stroke-width: 2px;
+  }
+
+  @include mq(lg, min) {
+    &:hover {
+      background-color: var(--color-base-3);
+    }
+  }
+
+  &:active {
+    background-color: var(--color-base-2);
+  }
+
+  &:nth-child(1) {
+    order: 1;
+
+    svg {
+      transform: scale(-1, 1);
+    }
+  }
+
+  &.swiper-button-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

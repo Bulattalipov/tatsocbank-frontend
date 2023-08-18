@@ -1,0 +1,6 @@
+mixin moreLink(name, classic, link)
+  - classicClass = classic ? "page-more-link--classic" : ""
+  - linkItem = link ? link : './'
+  .page-more-link(class= classicClass)&attributes(attributes)
+    a(href=linkItem)= name
+    +icon-mono("shevron-arrow-right")(width="16" height="16" class="page-more-link__icon")

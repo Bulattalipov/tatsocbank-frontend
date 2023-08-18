@@ -1,0 +1,43 @@
+.popular-products {
+  display: flex;
+  margin: -0.4rem;
+
+  &.swiper {
+    @include mq(lg) {
+      overflow: visible;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 3.2rem;
+  }
+
+  &__item {
+    flex-shrink: 0;
+    width: 20%;
+    padding: 0.4rem;
+
+    @include mq(lg) {
+      width: 30%;
+      padding: 0;
+    }
+
+    @include mq(md) {
+      width: 35%;
+    }
+
+    @include mq(sm) {
+      width: 70%;
+    }
+  }
+
+  @include mq(lg) {
+    margin: 0;
+    margin-right: calc(-1 * var(--padding-offset));
+    padding-right: var(--padding-offset);
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+
+    @include noScrollbar();
+  }
+}

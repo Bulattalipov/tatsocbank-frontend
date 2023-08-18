@@ -1,0 +1,27 @@
+mixin currency-rate()
+  table.currency-rate&attributes(attributes)
+    caption.visually-hidden Таблица валютного курса
+    thead.currency-rate__head
+      tr.currency-rate__row
+        td.currency-rate__cell.currency-rate__cell--head Валюта
+        td.currency-rate__cell.currency-rate__cell--head Покупка
+        td.currency-rate__cell.currency-rate__cell--head Продажа
+    tbody.currency-rate__body
+      tr.currency-rate__row.currency-rate__row--body
+        td.currency-rate__cell
+          .currency-rate__value
+            img(src="assets/images/currency/usa.svg" alt="Валюта USD")
+            | USD
+        td.currency-rate__cell
+          .currency-rate__numbers.currency-rate__numbers--buy 62,42 ₽
+        td.currency-rate__cell
+          .currency-rate__numbers.currency-rate__numbers--sell 64,42 ₽
+      tr.currency-rate__row.currency-rate__row--body
+        td.currency-rate__cell
+          .currency-rate__value
+            img(src="assets/images/currency/eur.svg" alt="Валюта EUR")
+            | EUR
+        td.currency-rate__cell
+          .currency-rate__numbers.currency-rate__numbers--buy 62,42 ₽
+        td.currency-rate__cell
+          .currency-rate__numbers.currency-rate__numbers--sell 64,42 ₽

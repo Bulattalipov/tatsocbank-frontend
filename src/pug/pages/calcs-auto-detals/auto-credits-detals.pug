@@ -1,0 +1,124 @@
+-
+  fisrt_swithcers = [
+    { label: "Мне есть 28 лет", name: "auto-family1"},
+    { label: "Я состою в браке, имею ребенка", name: "auto-family2" },
+    { label: "Я получаю зарплату на карту АО «ТАТСОЦБАНК»", name: "salary" },
+    { label: "Со страхованием жизни", name: "life-insurance" }
+  ]
+
+  allAuto = {
+    1: {
+        id: '1',
+        name: 'Стандартная',
+    }
+  };
+
+
+script.
+  let autoDetals = {
+    id: '6',
+    name: 'Счастливая дорога',
+    delay: false,
+    min: '200000',
+    max: '6000000',
+    feeMin: '10',
+    feeMax: '70',
+    rates: {
+        24: {
+            10: 12.8,
+            50: 10.8
+        },
+        36: {
+            10: 12.8,
+            50: 10.8
+        },
+        48: {
+            10: 12.8,
+            50: 10.8
+        },
+        60: {
+            10: 12.8,
+            50: 10.8
+        },
+    },
+    terms: [
+        24,
+        36,
+        48,
+        60
+    ],
+    family1: '',
+    family2: '',
+    salary: '0',
+    lifeInsurance: '0',
+    options: {
+        1013: '+0.5',
+        1014: '+1',
+        1015: '0'
+    },
+    type: [
+        '7',
+    ],
+  }
+
+section.page-section
+  .site-container
+    h2.page-heading-h3.page-mb56
+      | Автокредитование детальная: "Стандартная"
+
+    .calc-wrapper
+      .calc-wrapper__block
+      .calc-wrapper__block
+        .calc-wrapper__content
+          form.calc-form.js-form-calculator-auto(action="")
+            .calc-form__mobile-wrapper
+              .custom-select.custom-select--white.calc-form__inpt
+                .custom-select__label Хочу приобрести
+                select(name="i-want" class="js-select js-auto-action")
+                  option(value="6") Новый авто
+                  option(value="7") Авто с пробегом
+              .js-range-single-parent.calc-form__inpt
+                label.input
+                  input(type="text" class="input__control js-range-single-input js-range-input-auto-1 js-auto-action js-number" readonly name="property-value" placeholder="custom")
+                  span.input__label Стоимость авто, ₽
+                  .js-range-single.js-range-slider-auto-1.js-auto-action(data-price="" data-value="450000" data-min="100000" data-max="6000000" data-step="50000")
+
+              .js-range-single-parent.calc-form__inpt
+                label.input
+                  input(type="text" class="input__control js-range-single-input js-range-input-auto-2 js-auto-action js-number" readonly name="initial-fee" placeholder="custom")
+                  span.input__label Первоначальный взнос #[span.js-auto-fee " 35.00%"]
+                  .js-range-single.js-range-slider-auto-2.js-auto-action(data-price="" data-min="45000" data-value="150000" data-from="150000" data-max="315000" data-step="20000")
+
+              .js-range-single-parent.calc-form__inpt
+                label.input
+                  input(type="text" class="input__control js-range-single-input js-auto-action js-range-input-auto-3" name="credit-term" readonly placeholder="custom")
+                  span.input__label Срок кредита / мес
+                  .js-range-single.js-range-slider-auto-3.js-auto-action(data-min="24" data-value="24" data-text="мес." data-max="60" data-step="12")
+
+              .custom-select.custom-select--white.calc-form__inpt
+                .custom-select__label Подтверждение дохода
+                select(name="proof-of-income" class="js-select js-auto-action")
+                  option(value="1015") Справкой 2-НДФЛ
+                  option(value="1014") Справкой по форме Банка
+                  option(value="1013") Я индивидуальный предприниматель
+
+      .calc-wrapper__block.js-calculator-programs-item(data-id=6)
+        .calc-container.js-consumer-results
+          .calc-container__num(id="js-d-res-label" data-text="Ежемесячный платёж")
+            | #[span(data-result="monthly") 35 572] &nbsp;₽
+
+          ul.calc-container__table
+            li.calc-container__cell
+              .calc-container__cell-item Процентная ставка
+              .calc-container__cell-item #[span(data-result="rate") 12.4]&nbsp;%
+            li.calc-container__cell
+              .calc-container__cell-item Сумма кредита
+              .calc-container__cell-item #[span(name="credit-amount") 400 000]&nbsp;₽
+
+          +button("Подать заявку")(class="calc-container__btn button--lg button--full-width")
+
+          .calc-container__agreement
+            | Расчёт носит информационный характер и не является публичной офертой
+
+      .calc-wrapper__block
+

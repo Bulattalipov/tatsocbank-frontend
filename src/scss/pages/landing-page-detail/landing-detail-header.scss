@@ -1,0 +1,48 @@
+.landing-detail-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 6.6rem;
+  padding: 1.6rem 0;
+  background-color: var(--color-white);
+  box-shadow: 0 0 10px rgba(0 0 0 / 8%);
+  visibility: hidden;
+  opacity: 0;
+
+  &.is-visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    display: block;
+    max-width: 17.3rem;
+
+    .icon {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__nav {
+    margin-left: 6.7rem;
+  }
+
+  &__btn {
+    margin-left: auto;
+    padding: 1rem 1.6rem;
+  }
+
+  @include mq(lg) {
+    display: none !important;
+  }
+}

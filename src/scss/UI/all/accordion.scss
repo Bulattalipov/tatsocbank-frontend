@@ -1,0 +1,237 @@
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable selector-class-pattern */
+.accordion {
+  display: block;
+  width: 100%;
+  line-height: 1;
+
+  &.active {
+    .accordion__head {
+      &::before {
+        transform: translateY(-50%) rotate(0);
+      }
+    }
+  }
+
+  &__head {
+    position: relative;
+    width: 100%;
+    text-align: left;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-image: url("../images/arrow-bottom.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      transform: translateY(-50%);
+      transform: translateY(-50%) rotate(180deg);
+      transition: transform var(--transition);
+      content: "";
+    }
+  }
+
+  &__label {
+    display: block;
+    font: var(--font-label);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  &__body-content {
+    padding-top: 2rem;
+
+    p {
+      margin-bottom: 1.5rem;
+
+      strong {
+        font-weight: 600;
+      }
+
+      &:nth-last-of-type(1) {
+        margin-bottom: 0;
+      }
+
+      @include mq(sm) {
+        margin-bottom: 1.2rem;
+      }
+    }
+
+    ul {
+      margin: 2rem 0 3.5rem;
+
+      li {
+        position: relative;
+        padding-left: 2.4rem;
+
+        &::before {
+          position: absolute;
+          top: 1.2rem;
+          left: 1rem;
+          width: 0.4rem;
+          height: 0.4rem;
+          background-color: var(--color-base-6);
+          border-radius: 50%;
+          transform: translateY(-50%);
+          content: "";
+
+          @include mq(sm) {
+            top: 0.9rem;
+          }
+        }
+      }
+
+      @include mq(sm) {
+        margin: 1rem 0 2.4rem;
+      }
+    }
+
+    .file {
+      background-color: var(--color-base-1);
+      border: 0;
+    }
+
+    .file__size {
+      color: var(--color-base-7);
+      opacity: 0.6;
+    }
+
+    .page-link-full {
+      color: var(--color-base-8);
+    }
+  }
+
+  &__body-content-text {
+    font: var(--font-text-2-semi);
+    margin-bottom: 2rem;
+    color: var(--color-base-7);
+
+    @include mq(sm) {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &__list {
+    display: block;
+    width: 100%;
+  }
+
+  &__item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-base-4);
+
+    &:nth-child(1) {
+      .accordion__head {
+        padding-top: 0;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--filled {
+      margin-bottom: 1rem;
+      padding: 3rem;
+      background-color: var(--color-base-2);
+      border: none !important;
+      border-radius: 1.2rem;
+
+      .accordion__head {
+        &::before {
+          right: auto;
+          left: 0;
+          width: 2rem;
+          height: 2rem;
+          background-image: url("../images/arrow-bottom-filled.svg");
+
+          @include mq(sm) {
+            width: 1.6rem;
+            height: 1.6rem;
+          }
+        }
+      }
+
+      .accordion__body {
+        padding-left: 3.6rem;
+
+        &-content {
+          max-width: 94.4rem;
+          padding-top: 3rem;
+          color: var(--color-base-6);
+          font: var(--font-text-2-reg1);
+
+          @include mq(sm) {
+            max-width: 100%;
+            padding-top: 2rem;
+          }
+        }
+
+        @include mq(sm) {
+          padding-left: 0;
+        }
+      }
+
+      .accordion__label {
+        padding-left: 3.6rem;
+        font: var(--font-h6);
+        letter-spacing: normal;
+        text-transform: none;
+
+        @include mq(sm) {
+          padding-left: 2.8rem;
+          font-weight: 500;
+        }
+      }
+
+      @include mq(sm) {
+        padding: 1.6rem;
+        border-radius: 0.8rem;
+      }
+    }
+  }
+
+  &__body-content {
+    &.accordion__body-content--long {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  &__body-content-box {
+    margin-bottom: 3.5rem;
+
+    &:first-child {
+      margin-top: 3rem;
+
+      @include mq(sm) {
+        margin-top: 1rem;
+      }
+    }
+
+    @include mq(sm) {
+      margin-bottom: 2.4rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .button {
+      margin-top: 2rem;
+      font: var(--font-btn-medium);
+
+      @include mq(sm) {
+        margin-top: 0.8rem;
+        width: 100%;
+        background-color: var(--color-base-2);
+        color: var(--color-base-7);
+      }
+    }
+  }
+}

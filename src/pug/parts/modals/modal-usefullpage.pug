@@ -1,0 +1,31 @@
+.modal__container.modal-review(data-target="modal-useful")
+  button.button-reset.modal__close-btn.modal-close(type="button")
+    +icon-mono("close")(width="22" height="22" class="modal__close-btn-icon")
+  .modal__content
+    .modal__content-close-mobile.modal-close
+    .modal__content-inner
+      button.button-reset.modal__close-btn.modal__close-btn--mobile.modal-close(type="button")
+        +icon-mono("close")(width="22" height="22" class="modal__close-btn-icon")
+      .modal__legend
+        | Страница была полезной?
+      form(action="./" data-need-validation data-sucess="success-review" data-error="success-review")
+        +texarea("Пожалуйста, напишите ваши замечания и предложения. Какой информации не хватает?", "req")(class="texarea--grey js-validation-wrapper")
+        +button("Отправить")(class="button--md modal__from-btn")
+      .page-agreement
+        | При нажати кнопки «Отправить» вы даете согласие на обработку #[a(href="./") персональных данных]
+
+.modal__container.modal-review(data-target="modal-dislike")
+  button.button-reset.modal__close-btn.modal-close(type="button")
+    +icon-mono("close")(width="22" height="22" class="modal__close-btn-icon")
+  .modal__content
+    .modal__content-close-mobile.modal-close
+    .modal__content-inner
+      button.button-reset.modal__close-btn.modal__close-btn--mobile.modal-close(type="button")
+        +icon-mono("close")(width="22" height="22" class="modal__close-btn-icon")
+      .modal__legend
+        | Поделитесь мнением об этой странице
+      form(action="./" data-need-validation data-sucess="success-review" data-error="success-review")
+        +texarea("Пожалуйста, напишите ваши замечания и предложения. Какой информации не хватает?", "req")(class="texarea--grey js-validation-wrapper")
+        +button("Отправить")(class="button--md modal__from-btn")
+      .page-agreement
+        | При нажати кнопки «Отправить» вы даете согласие на обработку #[a(href="./") персональных данных]

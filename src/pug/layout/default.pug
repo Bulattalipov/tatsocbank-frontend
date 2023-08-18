@@ -1,0 +1,44 @@
+include ../data/config.pug
+include ../mixins/**/*.pug
+
+block variables
+
+doctype html
+html(lang=siteLang)
+  head
+    include ../parts/head.pug
+  body(class=bodyClass class={'disable-scroll-custom': noScroll})
+    //- .grid
+    //-   .site-container.grid-container
+    //-     each i in Array.from(Array(24).keys())
+    //-       .grid__col
+    .page-wrapper
+      block header
+        include ../parts/header.pug
+        include ../parts/dpropdown-menu.pug
+        include ../parts/mobile-menu.pug
+
+      block content
+
+      block footer
+        include ../parts/footer.pug
+
+    include ../parts/fixedMenu.pug
+    .modal
+      include ../parts/modals/modal.pug
+      include ../parts/modals/modal-review.pug
+      include ../parts/modals/modal-qr.pug
+      include ../parts/modals/modal-usefullpage.pug
+      include ../parts/modals/modal-site.pug
+      include ../parts/modals/modal-send.pug
+      include ../parts/modals/modal-search.pug
+      include ../parts/modals/modal-request.pug
+      include ../parts/modals/modal-city.pug
+      include ../parts/modals/modal-time.pug
+
+  block scripts
+    script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js")
+    script(src="assets/js/vendor.js?v=" + siteVersion)
+    script(src="assets/js/main.js?v=" + siteVersion)
+    //- script(src="assets/js/backend.js?v=" + siteVersion)
+  block scriptsDev

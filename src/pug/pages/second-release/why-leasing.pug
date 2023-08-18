@@ -1,0 +1,16 @@
+section.page-section.js-section(id="how")
+  .site-container
+    h2.page-heading-h3.page-mb56 Почему лизинг
+    .page-desc.page-mb56
+      | Основная особенность лизинговых сделок – отсутствие необходимости предоставления дополнительных гарантий, залогов и поручительств для обеспечения договора лизинга, кроме приобретаемого в лизинг имущества
+    .why-leasing.js-popular-slider
+      ul.swiper-wrapper
+        each i in Array.from(Array(3).keys())
+          li.why-leasing__item.swiper-slide
+            .why-leasing__item-icon-wrapper
+              +imgLazy("assets/images/advantages/icon.svg")(class="why-leasing__item-icon")
+            .why-leasing__item-box
+              .why-leasing__item-box-title
+                | Экономия налога на прибыль и НДС
+              .why-leasing__item-box-desc
+                | Работает от сети без встроенного аккумулятора. Используется при фиксированном месте оплаты

@@ -1,0 +1,58 @@
+script.
+  let depositDetals = {
+    id: '123', /* значение этого ключа просто должно быть. Допускается любое значение. Она потом будет присваиваться
+     к тегу с классом js-deposit-item */
+    name: 'Вклад "Новый горизонт"',   // название вклада 
+    min: '25000',   // минимальная сумма вклада, которая автоматичкий передаеться к ползунку
+    max: '', // тут тоже самое, что с минимальным (если нет значения, остается то что прописано в html)
+    type: '2', // 1- бессрочный, 2 - срочный //# По бессрочным вкладам процент применяется ко всей сумме вклада
+    rates: {
+      1: 0.5, // день(тут по логике должны прописываться месяцы, но они пишуться в днях): процентная ставка
+      31: 2.25,
+      91: 2.65,
+      192: 2.75,
+      271: 2.85,
+      372: 3.83
+    }
+  }
+
+section.page-section
+  .site-container
+    h2.page-heading-h3.page-mb56
+      | Калькулятор вклада детальная: "Новый горизонт"
+
+    .calc-wrapper
+      .calc-wrapper__block
+      .calc-wrapper__block
+        .calc-wrapper__content
+          form.calc-form.js-form-calculator-deposit(action="")
+            .calc-form__mobile-wrapper
+              .calc__legend.calc__legend--mobile Расчитатайте вклад:
+              .js-range-single-parent.calc-form__inpt
+                label.input
+                  input(type="text" class="input__control js-range-single-input js-range-input-deposit-1 js-deposit-action" name="start-amount" readonly placeholder="custom")
+                  span.input__label Хочу вложить, ₽
+                  .js-range-single.js-range-slider-deposit-1(data-price="" data-min="0" data-value="10" data-max="10000000" data-step="1000")
+
+              .js-range-single-parent.calc-form__inpt
+                label.input
+                  input(type="text" class="input__control js-range-single-input js-range-input-deposit-2 js-deposit-action" name="deposit-term" readonly placeholder="custom")
+                  span.input__label На срок / месяцев
+                  .js-range-single.js-range-slider-deposit-2(data-min="1" data-max="60" data-step="1")
+
+      .calc-wrapper__block.js-deposit-item(data-id)
+        .calc-container.js-consumer-results
+          .calc-container__num(id="js-d-res-label" data-text="Вы заработаете")
+            | #[span(data-result="amount") 35 572] &nbsp;₽
+
+          ul.calc-container__table
+            li.calc-container__cell
+              .calc-container__cell-item Процентная ставка
+              .calc-container__cell-item #[span(data-result="rate") 12.4]&nbsp;%
+
+          +button("Подать заявку")(class="calc-container__btn button--lg button--full-width")
+
+          .calc-container__agreement
+            | Расчёт носит информационный характер и не является публичной офертой
+
+      .calc-wrapper__block

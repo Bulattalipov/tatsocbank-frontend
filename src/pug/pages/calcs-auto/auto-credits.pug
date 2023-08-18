@@ -1,0 +1,462 @@
+-
+  fisrt_swithcers = [
+    { label: "Мне есть 28 лет", name: "auto-family1"},
+    { label: "Я состою в браке, имею ребенка", name: "auto-family2" },
+    { label: "Я получаю зарплату на карту АО «ТАТСОЦБАНК»", name: "salary" },
+    { label: "Со страхованием жизни", name: "life-insurance" }
+  ]
+
+  allAuto = {
+    1: {
+        id: '1',
+        name: 'Стандартная',
+    },
+    2: {
+        id: '2',
+        name: 'Статус Премиум'
+    },
+    3: {
+        id: '3',
+        name: 'Семейное решение'
+    },
+    4: {
+        id: '4',
+        name: 'С отсрочкой платежа'
+    },
+    5: {
+        id: '5',
+        name: 'На подержанный автомобиль'
+    },
+    6: {
+        id: '6',
+        name: 'Счастливая дорога'
+    },
+    7: {
+        id: '7',
+        name: 'Счастливая дорога'
+    },
+  };
+
+
+script.
+  let allAuto = {
+          1: {
+              id: '1',
+              name: 'Стандартная',
+              min: '250000',
+              max: '20000000',
+              feeMin: '10',
+              feeMax: '70',
+              rates: {
+                  24: {
+                      10: 15,
+                      30: 14.5,
+                      50: 14
+                  },
+                  36: {
+                      10: 15,
+                      30: 14.5,
+                      50: 14
+                  },
+                  48: {
+                      10: 15,
+                      30: 14.5,
+                      50: 14
+                  },
+                  60: {
+                      10: 15,
+                      30: 14.5,
+                      50: 14
+                  },
+              },
+              terms: [
+                  24,
+                  36,
+                  48,
+                  60
+              ],
+              family1: '',
+              family2: '',
+              salary: '-2',
+              lifeInsurance: '-2',
+              options: {
+                  1013: '+0.5',
+                  1014: '+1',
+                  1015: '0'
+              },
+              type: [
+                  '6'
+              ],
+          },
+          2: {
+              id: '2',
+              name: 'Статус Премиум',
+              min: '2000000',
+              max: '20000000',
+              feeMin: '20',
+              feeMax: '70',
+              rates: {
+                  24: {
+                      20: 13.5,
+                      50: 12
+                  },
+                  36: {
+                      20: 13.5,
+                      50: 12
+                  },
+                  48: {
+                      20: 13.5,
+                      50: 12
+                  },
+                  60: {
+                      20: 13.5,
+                      50: 12
+                  },
+              },
+              terms: [
+                  24,
+                  36,
+                  48,
+                  60
+              ],
+              family1: 'Y',
+              family2: '',
+              salary: '-2',
+              lifeInsurance: '-2',
+              options: {
+                  1013: '+0.5',
+                  1014: '+1',
+                  1015: '0'
+              },
+              type: [
+                  '6',
+                  '7'
+              ],
+          },
+          3: {
+              id: '3',
+              name: 'Семейное решение',
+              min: '250000',
+              max: '2000000',
+              feeMin: '10',
+              feeMax: '70',
+              rates: {
+                  24: {
+                      10: 14.5,
+                      30: 14,
+                      50: 13.5
+                  },
+                  36: {
+                      10: 14.5,
+                      30: 14,
+                      50: 13.5
+                  },
+                  48: {
+                      10: 14.5,
+                      30: 14,
+                      50: 13.5
+                  },
+                  60: {
+                      10: 14.5,
+                      30: 14,
+                      50: 13.5
+                  },
+              },
+              terms: [
+                  24,
+                  36,
+                  48,
+                  60
+              ],
+              family1: 'Y',
+              family2: 'Y',
+              salary: '-2',
+              lifeInsurance: '-2',
+              options: {
+                  1013: '+0.5',
+                  1014: '+1',
+                  1015: '0'
+              },
+              type: [
+                  '6',
+              ],
+          },
+          4: {
+              id: '4',
+              name: 'С отсрочкой платежа',
+              delay: {
+                  24: 40,
+                  36: 30
+              },
+              min: '250000',
+              max: '30000000',
+              feeMin: '10',
+              feeMax: '80',
+              rates: {
+                  24: {
+                      10: 14.5,
+                      30: 13.5
+                  },
+                  36: {
+                      10: 14.9,
+                      30: 14
+                  },
+              },
+              terms: [
+                  24,
+                  36
+              ],
+              family1: '',
+              family2: '',
+              salary: '-2',
+              lifeInsurance: '-2',
+              options: {
+                  1013: '+0.5',
+                  1014: '+1',
+                  1015: '0'
+              },
+              type: [
+                  '6',
+              ],
+          },
+          5: {
+              id: '5',
+              name: 'На подержанный автомобиль',
+              delay: false,
+              min: '118000',
+              max: '10000000',
+              feeMin: '15',
+              feeMax: '70',
+              rates: {
+                  24: {
+                      15: 15.7,
+                      40: 14.7
+                  },
+                  36: {
+                      15: 15.7,
+                      40: 14.7
+                  },
+                  48: {
+                      15: 15.7,
+                      40: 14.7
+                  },
+                  60: {
+                      15: 15.7,
+                      40: 14.7
+                  },
+              },
+              terms: [
+                  24,
+                  36,
+                  48,
+                  60
+              ],
+              family1: '',
+              family2: '',
+              salary: '-2',
+              lifeInsurance: '-2',
+              options: {
+                  1013: '+0.5',
+                  1014: '+1',
+                  1015: '0'
+              },
+              type: [
+                  '7'
+              ],
+          },
+          6: {
+              id: '6',
+              name: 'Счастливая дорога',
+              delay: false,
+              min: '200000',
+              max: '6000000',
+              feeMin: '10',
+              feeMax: '80',
+              rates: {
+                  24: {
+                      10: 12.8,
+                      50: 10.8
+                  },
+                  36: {
+                      10: 12.8,
+                      50: 10.8
+                  },
+                  48: {
+                      10: 12.8,
+                      50: 10.8
+                  },
+                  60: {
+                      10: 12.8,
+                      50: 10.8
+                  },
+              },
+              terms: [
+                  24,
+                  36,
+                  48,
+                  60
+              ],
+              family1: '',
+              family2: '',
+              salary: '0',
+              lifeInsurance: '0',
+              options: {
+                  1013: '+0.5',
+                  1014: '+1',
+                  1015: '0'
+              },
+              type: [
+                  '6',
+              ],
+          },
+          7: {
+              id: '7',
+              name: 'Счастливая дорога',
+              delay: false,
+              min: '200000',
+              max: '6000000',
+              feeMin: '10',
+              feeMax: '80',
+              rates: {
+                  24: {
+                      10: 15.3,
+                      50: 13.3
+                  },
+                  36: {
+                      10: 15.3,
+                      50: 13.3
+                  },
+                  48: {
+                      10: 15.3,
+                      50: 13.3
+                  },
+                  60: {
+                      10: 15.3,
+                      50: 13.3
+                  },
+              },
+              terms: [
+                  24,
+                  36,
+                  48,
+                  60
+              ],
+              family1: '',
+              family2: '',
+              salary: '0',
+              lifeInsurance: '0',
+              options: {
+                  1013: '+0.5',
+                  1014: '+1',
+                  1015: '0'
+              },
+              type: [
+                  '7'
+              ],
+          },
+      };
+
+section.page-section
+  .site-container
+    h2.page-heading-h3.page-mb56
+      | Автокредитование
+
+    .calc-wrapper.calc-wrapper--scrollable
+      .calc-wrapper__block
+      .calc-wrapper__block
+        .calc-wrapper__content
+          form.calc-form.js-form-calculator-auto(action="")
+            .calc-form__mobile-wrapper
+              .calc__legend.calc__legend--mobile Расчитатайте вклад:
+              .custom-select.custom-select--white.calc-form__inpt
+                .custom-select__label Хочу приобрести
+                select(name="i-want" class="js-select js-auto-action")
+                  option(value="6") Новый авто
+                  option(value="7") Авто с пробегом
+
+              .js-range-single-parent.calc-form__inpt
+                label.input
+                  input(type="text" class="input__control js-range-single-input js-range-input-auto-1 js-auto-action js-number" readonly name="property-value" placeholder="custom")
+                  span.input__label Стоимость авто, ₽
+                  .js-range-single.js-range-slider-auto-1.js-auto-action(data-price="" data-value="450000" data-min="100000" data-max="6000000" data-step="50000")
+
+              .js-range-single-parent.calc-form__inpt
+                label.input
+                  input(type="text" class="input__control js-range-single-input js-range-input-auto-2 js-auto-action js-number" readonly name="initial-fee" placeholder="custom")
+                  span.input__label Первоначальный взнос #[span.js-auto-fee " 35.00%"]
+                  .js-range-single.js-range-slider-auto-2.js-auto-action(data-price="" data-min="45000" data-value="150000" data-from="150000" data-max="315000" data-step="20000")
+
+              .js-range-single-parent.calc-form__inpt
+                label.input
+                  input(type="text" class="input__control" readonly name="credit-amount" placeholder="custom")
+                  span.input__label Сумма кредита, ₽
+
+              .js-range-single-parent.calc-form__inpt
+                label.input
+                  input(type="text" class="input__control js-range-single-input js-auto-action js-range-input-auto-3" name="credit-term" readonly placeholder="custom")
+                  span.input__label Срок кредита / мес
+                  .js-range-single.js-range-slider-auto-3.js-auto-action(data-min="24" data-value="24" data-text="мес." data-max="60" data-step="12")
+
+              .custom-select.custom-select--white.calc-form__inpt
+                .custom-select__label Подтверждение дохода
+                select(name="proof-of-income" class="js-select js-auto-action")
+                  option(value="1015") Справкой 2-НДФЛ
+                  option(value="1014") Справкой по форме Банка
+                  option(value="1013") Я индивидуальный предприниматель
+
+            .calc-form__switchers
+                .switcher.switcher--black.calc-form__switcher
+                  input(class="visually-hidden js-auto-action" type="checkbox" id=`auto-family1` name="auto-family1" value="Y")
+                  label(for=`auto-family1` class="switcher__container switcher__container--labeled")
+                    span.switcher__control(data-persent-mobile="- 0,5%")
+                    span.switcher__text!= "Мне есть 28 лет"
+                .switcher.switcher--black.calc-form__switcher(data-i-want="6")
+                  input(class="visually-hidden js-auto-action" type="checkbox" id=`auto-family2` name="auto-family2" value="Y")
+                  label(for=`auto-family2` class="switcher__container switcher__container--labeled")
+                    span.switcher__control(data-persent-mobile="- 0,5%")
+                    span.switcher__text!= "Я состою в браке, имею ребенка"
+                .switcher.switcher--black.calc-form__switcher
+                  input(class="visually-hidden js-auto-action" type="checkbox" id=`auto-family3` name="salary" value="Y")
+                  label(for=`auto-family3` class="switcher__container switcher__container--labeled")
+                    span.switcher__control(data-persent-mobile="- 0,5%")
+                    span.switcher__text!= "Я получаю зарплату на карту АО «ТАТСОЦБАНК»"
+                .switcher.switcher--black.calc-form__switcher
+                  input(class="visually-hidden js-auto-action" type="checkbox" id=`auto-family4` name="life-insurance" value="Y")
+                  label(for=`auto-family4` class="switcher__container switcher__container--labeled")
+                    span.switcher__control(data-persent-mobile="- 0,5%")
+                    span.switcher__text!= "Со страхованием жизни"
+
+
+      .calc-wrapper__block.js-auto-calculator-output
+        .calc__legend.js-calculator-programs-item-found Вам подойдут:
+
+        ul.contribution__list.js-calculator-programs-results
+          each item, i in allAuto
+            - var widthDeferred = i === "4" ? true : false
+            li.contribution__item.js-calculator-programs-item(data-id=item.id)
+              .calc-container
+                .contribution__legend= item.name
+                ul
+                  li.calc-container__cell
+                    .calc-container__cell-item Средний ежемесячный платёж
+                    .calc-container__cell-item #[span(data-result="monthly") 7.8 ]&nbsp;₽
+                  li.calc-container__cell
+                    .calc-container__cell-item Процентная ставка
+                    .calc-container__cell-item #[span(data-result="rate") 10.8 ]%
+                  if widthDeferred
+                    li.calc-container__cell
+                      .calc-container__cell-item Отсроченный платёж
+                      .calc-container__cell-item #[span(data-result="deferred") 400 000]&nbsp;₽
+                +button("Оставить заявку", null, "Заявка")(class="button--lg calc-container__btn" data-path="modal-city")
+                .calc-container__agreement
+                  | Расчёт носит информационный характер и не является публичной офертой
+          li.contribution__item.js-calculator-programs-item-not-found
+            .calc-container
+              .calc__legend
+                | По вашим параметрам подходящего вклада не найдено
+              p.calc__text
+                | Но мы будем рады проконсульировать вас и подобрать индивидуальный вклад:
+
+              +button("Оставить заявку", null, "Заявка")(class="button--lg")
+
+      .calc-wrapper__block

@@ -1,0 +1,12 @@
+.company-divisions {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    margin-right: 2.4rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

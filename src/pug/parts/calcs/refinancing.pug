@@ -1,0 +1,68 @@
+section.page-section
+  .site-container
+    h2.page-heading-h3.page-mb56
+      | Калькулятор рефинансирования
+
+    .calc-wrapper
+      .calc-wrapper__block
+      .calc-wrapper__block
+        .calc-wrapper__content
+          form.calc-form.js-form-calculator-consumer(action="" id="js-main-page-consumer-calc")
+            .calc-form__mobile-wrapper
+              .js-range-single-parent.calc-form__inpt
+                label.input
+                  input(type="text" class="input__control js-d-input js-range-single-input" name="initial-fee" placeholder="custom")
+                  span.input__label Сумма кредита
+                  .js-range-single(data-price="price" data-min="100000" data-max="1000000" data-step="10000")
+
+              .js-range-single-parent.calc-form__inpt
+                label.input
+                  input(type="text" class="input__control js-d-input js-range-single-input" name="time" placeholder="custom")
+                  span.input__label Срок кредита / мес
+                  .js-range-single(data-min="12" data-text="лет" data-max="60" data-step="12")
+
+              .custom-select.custom-select--white.calc-form__inpt
+                .custom-select__label Обеспечение
+                select(name="depositType" class="js-select js-d-input")
+                  option(value="vehicle") Предоставлю ТС
+                  option(value="realty") Предоставлю недвижимость
+
+              .custom-select.custom-select--white.calc-form__inpt
+                .custom-select__label Страхование залога
+                select(name="insurance" class="js-select js-d-input")
+                  option(value="y") Да
+                  option(value="") Нет
+
+              .custom-select.custom-select--white.calc-form__inpt
+                .custom-select__label Тип платежа
+                select(name="paymentType" class="js-select js-d-input")
+                  option(value="1") Дифференцированный
+                  option(value="2") Аннуитетный
+
+              .custom-select.custom-select--white.calc-form__inpt
+                .custom-select__label Подтверждение дохода
+                select(name="proofOfIncome" class="js-select js-d-input")
+                  option(value="1") Справка 2-НДФЛ / выписка по ЗП карте / СЗИ-6
+                  option(value="2") Справка по форме Банка
+
+
+      .calc-wrapper__block
+        .calc-container.js-consumer-results
+          .calc-container__num(id="js-d-res-label" data-text="Ежемесячный платёж")
+            | #[span.result1 35 572] &nbsp;₽
+
+          ul.calc-container__table
+            li.calc-container__cell
+              .calc-container__cell-item Процентная ставка
+              .calc-container__cell-item #[span.result2 7,8 ]%
+            li.calc-container__cell
+              .calc-container__cell-item Сумма кредита
+              .calc-container__cell-item #[span.result3 400 000]&nbsp;₽
+
+          +button("Подать заявку")(class="calc-container__btn button--lg button--full-width")
+
+          .calc-container__agreement
+            | Расчёт носит информационный характер и не является публичной офертой
+
+
+      .calc-wrapper__block

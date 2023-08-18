@@ -1,0 +1,11 @@
+extends layout/default.pug
+
+block variables
+  - const bodyClass = "page-home"
+  - const pageTitle = "Мобильное приложение"
+  - const siteLang = "ru"
+  - name = 'index'
+  - bread_white = 'index'
+
+block content
+  include pages/mobile-app/main.pug

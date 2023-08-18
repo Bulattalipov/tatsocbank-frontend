@@ -1,0 +1,17 @@
+main.page-main.main
+  +breadcrumbs([['Главная', "/"], ['Курсы валют']])
+
+  +page-intro-detail("Курсы валют", "Получите ряд преимуществ и выгоду, обменяв валюту в нашем банке", null, null, 'Конвертер валют')
+
+  include current-exchange.pug
+
+  include currency-converter.pug
+
+  section.page-section.js-section
+    .site-container
+      h2.page-heading-h3.page-mb56.page-heading-sm-center Как обменять валюту
+      +info-steps()
+
+  include ../../parts/faq.pug
+
+  +review-banner()

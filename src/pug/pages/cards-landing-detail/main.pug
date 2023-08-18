@@ -1,0 +1,37 @@
+main.page-main.main
+  +breadcrumbs([['Главная', "/"], ['Карты', '/'], ['Дебетовые карты', './'], ['МИР Classic debit']])
+  +page-intro-detail("МИР Classic debit", "Купите строящееся или уже сданное жильё в новостройке: квартиру, апартаменты или таунхаус с господдержкой", 'card')
+  section.page-section
+    .site-container
+      .numbers__grid-container
+        .numbers__grid-block
+          ul.numbers
+            li.numbers__item
+              .numbers__head-info
+                | от #[span 6,5%]
+              .numbers__text
+                | Годовая ставка
+            li.numbers__item-divide-point
+            li.numbers__item
+              .numbers__head-info
+                | от #[span 1000] ₽
+              .numbers__text
+                | Первоначальный взнос
+            li.numbers__item-divide-point
+            li.numbers__item
+              .numbers__head-info
+                | #[span 60] дней
+              .numbers__text
+                | Срок вклада
+        .numbers__grid-block
+  include ../../parts/advantages.pug
+  +card-banner('tabs', 'МИР Classic debit', 'Банк ежемесячно выплачивает на счет карты кешбэк «живыми» деньгами, о чем извещает вас SMS или Push уведомлением', 'list', 'Для получения кешбэка необходимо стать участником программы, пройдя регистрацию и привязав свою карту на сайте <a href="./"> privetmir.ru</a>')
+  section.page-section.js-section(id="how")
+    .site-container
+      h2.page-heading-h3.page-mb56.page-heading-sm-center Как получить карту
+      +info-steps()
+  +callback-banner("Заявка на карту")
+  include ../../parts/additional-information.pug
+  include ../../parts/mobile-shield.pug
+  include ../../parts/best-from-bank.pug
+  +review-banner()

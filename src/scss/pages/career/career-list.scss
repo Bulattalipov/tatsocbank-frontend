@@ -1,0 +1,229 @@
+.career-list {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+
+  &__item {
+    border: 0.1rem solid var(--color-base-3);
+    border-radius: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include mq(xs) {
+      padding-top: 1.6rem;
+      padding-bottom: 1.6rem;
+    }
+  }
+
+  &__item-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+    padding: 0 4rem 0 4rem;
+    gap: 7rem;
+
+    @include mq(md) {
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 4rem;
+    }
+
+    @include mq(sm) {
+      margin-bottom: 2.4rem;
+    }
+
+    @include mq(xs) {
+      padding: 0 1.6rem 0 1.6rem;
+    }
+  }
+
+  &__item-top-box {
+    max-width: 58.4rem;
+  }
+
+  &__item-top-box-title {
+    font: var(--font-h4);
+    margin-bottom: 3.2rem;
+
+    @include mq(sm) {
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &__item-top-box-price {
+    font: var(--font-numbers-5);
+  }
+
+  &__item-top-box-text {
+    font: var(--font-text-3-med);
+    margin-right: 0.9rem;
+
+    @include mq(sm) {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__item-top-box-currency {
+    margin-left: 0.9rem;
+
+    @include mq(sm) {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__item-top-contain {
+    display: flex;
+    align-items: center;
+    font: var(--font-text-3-reg);
+
+    @include mq(md) {
+      width: 100%;
+      order: -1;
+      justify-content: space-between;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &__item-top-contain-text {
+    color: var(--color-base-5);
+    margin-right: 0.5rem;
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  &__item-top-contain-date {
+    font: var(--color-base-7);
+    flex-shrink: 0;
+
+    @include mq(md) {
+      order: 1;
+      color: var(--color-base-5);
+    }
+  }
+
+  &__item-top-contain-list {
+    display: flex;
+    margin-left: 1.6rem;
+    gap: 0.8rem;
+
+    @include mq(md) {
+      margin-left: 0;
+    }
+  }
+
+  &__item-top-contain-list-item {
+    font-size: 1.2rem;
+    padding: 1.2rem;
+    border: 0.1rem solid var(--color-base-4);
+    border-radius: 0.8rem;
+
+    @include mq(sm) {
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  &__item-basic {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    gap: 2rem;
+    padding: 0 4rem 0 4rem;
+
+    @include mq(sm) {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    @include mq(xs) {
+      padding: 0 1.6rem 0 1.6rem;
+    }
+  }
+
+  &__item-basic-text {
+    grid-column:  span 10;
+  }
+
+  &__item-basic-list {
+    grid-column: span 8;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    @include mq(lg) {
+      grid-column:  span 15;
+    }
+
+    @include mq(sm) {
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &__item-basic-text {
+    max-width: 50.5rem;
+    font: var(--font-text-2-reg2);
+    color: var(--color-base-5);
+
+    @include mq(lg) {
+      display: none;
+    }
+  }
+
+
+  &__item-basic-list-item {
+    display: flex;
+  }
+
+  &__item-basic-list-item {
+    font: var(--font-text-2-med);
+  }
+
+  &__item-basic-list-item-type {
+    color: var(--color-base-5);
+    margin-right: 0.5rem;
+  }
+
+  &__item-basic-btns {
+    grid-column: span 6;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    @include mq(lg) {
+      grid-column:  span 9;
+    }
+  }
+
+  .icon-inside-circle {
+    margin-left: 2rem;
+    border: 0.1rem solid var(--color-base-4);
+
+    @include mq(sm) {
+      margin-left: 1.2rem;
+    }
+  }
+
+  &__item-basic-btn {
+    height: auto;
+
+    @include mq(sm) {
+      width: 100%;
+    }
+  }
+
+  &__btn-show {
+    @include mq(sm) {
+      border: none;
+      background-color: var(--color-base-2);
+    }
+  }
+}

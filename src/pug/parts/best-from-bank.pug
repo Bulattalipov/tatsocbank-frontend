@@ -1,0 +1,21 @@
+-
+  best_of_banks = [
+    { name: "Загородный дом", text: "Программа для приобретения жилого дома или жилого дома с земельным участком" },
+    { name: "Счастливая дорога", text: "Воспользуйтесь программой для приобретения нового или подержанного автомобиля" },
+    { name: "Мир Classic с кешбэком", text: "Вклад с ежемесячной выплатой процентов" },
+    { name: "Тропическая жара", text: "Программа для приобретения жилого дома или жилого дома с земельным участком" },
+    { name: "Загородный дом", text: "Программа для приобретения жилого дома или жилого дома с земельным участком" },
+    { name: "Загородный дом", text: "Программа для приобретения жилого дома или жилого дома с земельным участком" },
+  ]
+
+section.page-section.js-section
+  .site-container.page-swiper-parent
+    .page-flex-row.page-flex-row--space-btwn.page-mb56
+      h2.page-heading-h3 Лучшее от банка
+      +sliderBtns()
+
+    .page-swiper.page-swiper--visible-right.swiper(data-slides="3.3" data-gap="16" data-nav="true")
+      ul.swiper-wrapper
+        for card in best_of_banks
+          li.swiper-slide
+            +bestOffer(card.name, card.text, true)

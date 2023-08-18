@@ -1,0 +1,36 @@
+-
+  nav_mortageg = [
+    {name: "Все программы", atributName: "programs"},
+    {name: "С господдержкой", atributName: "support"},
+    {name: "Все программы", atributName: "programs2"}
+  ]
+
+  mortageg_list = [
+    "Ключевой процент", "Без первоначального взноса",
+    "Льготная ипотека на новстройку", "Семейная ипотека",
+    "Ипотека для IT-специалистов"
+  ]
+
+section.page-section.landing-section.page-tab-parent
+  .site-container
+    form.landing-section-nav(action="./")
+      +count-tab(nav_mortageg)
+    .landing-section__container
+      .landing-section__contain.page-tab-content(class="is-active" data-tab-content="programs")
+        ul.landing-section__list
+          for item in mortageg_list
+            li.landing-section__item.js-section
+              +landing-card(item)(class="landing-card--sm-row")
+        +button("Показать еще")(class="button--outline button--lg landing-section__btn-load")
+      .landing-section__contain.page-tab-content(data-tab-content="support")
+        ul.landing-section__list
+          for item in mortageg_list
+            li.landing-section__item.js-section
+              +landing-card(item)(class="landing-card--sm-row")
+        +button("Показать еще")(class="button--outline button--lg landing-section__btn-load")
+      .landing-section__contain.page-tab-content(data-tab-content="programs2")
+        ul.landing-section__list
+          for item in mortageg_list
+            li.landing-section__item.js-section
+              +landing-card(item)(class="landing-card--sm-row")
+        +button("Показать еще")(class="button--outline button--lg landing-section__btn-load")

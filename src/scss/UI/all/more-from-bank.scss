@@ -1,0 +1,16 @@
+.more-from-bank {
+  &__swiper {
+    overflow: visible;
+
+
+    .swiper-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.6rem;
+
+      @include mq(lg) {
+        gap: 0;
+      }
+    }
+  }
+}

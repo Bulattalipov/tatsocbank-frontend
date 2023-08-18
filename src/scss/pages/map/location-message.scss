@@ -1,0 +1,35 @@
+.location-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1.5rem;
+  padding: 1.8rem;
+  background-color: var(--color-base-1);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 1.2rem;
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--color-other-orange);
+    border-radius: 100%;
+
+    .icon {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+
+  &__text {
+    max-width: 32.1rem;
+    font: var(--font-text-3-reg);
+  }
+
+  @include mq(md) {
+    column-gap: 1.2rem;
+    padding: 1.6rem;
+  }
+}

@@ -1,0 +1,25 @@
+section.page-section
+  .site-container
+    h2.page-heading-h3.page-mb56
+      | Оборудование
+    .equipment
+      ul.equipment__inner
+        each i in Array.from(Array(3).keys())
+          li.equipment__item
+            .equipment__item-inner
+              h3.equipment__item-title
+                | Verifone VX520
+              ul.equipment__tabs
+                li.equipment__tab
+                  | Терминал
+              ul.equipment__list
+                li.equipment__list-item
+                  | Компактный и производительный
+                li.equipment__list-item
+                  | Для приема платежей банковской картой на кассе, оснащенной POS-системой
+                li.equipment__list-item
+                  | Интеграция с онлайн-кассой Эвотор (полноценная касса для оплаты картами и наличными с печатью кассовых чеков)
+              +imgLazy("assets/images/equipment/equipment.png")(class="equipment__item-img")
+              +button('Оставить заявку', null, null, "link")(class="button--lg button--third equipment__btn")
+      +button("Показать еще")(class="equipment__btn-show button--outline")
+        | Показать еще

@@ -1,0 +1,239 @@
+/* stylelint-disable selector-class-pattern */
+.button {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.6rem 3.2rem;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-radius: 1.2rem;
+  transition: background-color var(--transition);
+  height: 100%;
+
+  &[data-modif="\[\"black\"\]"] {
+    background-color: var(--color-base-8);
+
+    @include mq(lg, min) {
+      &:hover {
+        background-color: #3a3a3a;
+      }
+    }
+
+    &:active {
+      background-color: #202020;
+    }
+  }
+
+  a {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-left: 0.9rem;
+    transition: color var(--transition);
+    fill: none;
+    stroke: currentcolor;
+    stroke-width: 1.5px;
+
+    @include mq(sm) {
+      display: none !important;
+    }
+  }
+
+  &__text {
+    transition: color var(--transition);
+  }
+
+  &__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    color: currentcolor;
+  }
+
+  @include mq(lg, min) {
+    &:hover {
+      background-color: var(--color-primary-hover);
+    }
+
+    &:focus {
+      &.focus-visible {
+        outline: 2px solid var(--color-base-4);
+      }
+    }
+  }
+
+  &:active {
+    background-color: var(--color-primary);
+  }
+
+  @include mq(sm) {
+    padding: 1.4rem 2.8rem;
+    border-radius: 0.8rem;
+  }
+
+  &[disabled],
+  &--disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  &--disabled-visible {
+    &[disabled] {
+      cursor: not-allowed;
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &--no-icon {
+    svg {
+      display: none;
+    }
+  }
+
+  &--lg {
+    padding: 2.2rem 6rem;
+    font: var(--font-btn-large);
+
+    svg {
+      margin-left: 1.2rem;
+    }
+
+    @include mq(sm) {
+      padding: 1.4rem 2.8rem;
+      font: var(--font-btn-medium);
+      border-radius: 0.8rem;
+    }
+  }
+
+  &--md {
+    padding: 2.4rem 4.8rem;
+    font: var(--font-btn-medium);
+
+    svg {
+      width: 1.8rem;
+      height: 1.8rem;
+      margin-left: 0.9rem;
+    }
+
+    @include mq(sm) {
+      padding: 1.4rem 2.8rem;
+      border-radius: 0.8rem;
+    }
+  }
+
+  &--sm {
+    padding: 1.6rem 3.2rem;
+    font: var(--font-btn-small);
+    border-radius: 0.8rem;
+
+    svg {
+      width: 1.6rem;
+      height: 1.6rem;
+      margin-left: 0.9rem;
+    }
+
+    @include mq(sm) {
+      padding: 1.4rem 2.8rem;
+      border-radius: 0.8rem;
+    }
+  }
+
+  &--icon-fill {
+    svg {
+      fill: currentcolor;
+      stroke: none;
+    }
+  }
+
+  &--whith-mobile-text {
+    .button__text--mobile {
+      display: none;
+    }
+
+    @include mq(sm) {
+      .button__text {
+        display: none;
+      }
+
+      .button__text--mobile {
+        display: inline-block;
+      }
+    }
+  }
+
+  &--full {
+    justify-content: center;
+    width: 100%;
+    margin-top: 5rem;
+
+    @include mq(sm) {
+      margin-top: 2rem;
+    }
+  }
+}
+
+
+.button--secondary {
+  color: var(--color-base-7);
+  background-color: var(--color-base-1);
+
+  @include mq(lg, min) {
+    &:hover {
+      color: var(--color-primary-hover);
+      background-color: var(--color-base-1);
+    }
+  }
+
+  &:active {
+    background-color: var(--color-base-2);
+  }
+}
+
+.button--third {
+  background-color: var(--color-base-8);
+
+  @include mq(lg, min) {
+    &:hover {
+      background-color: #3a3a3a;
+    }
+  }
+
+  &:active {
+    background-color: #202020;
+  }
+}
+
+.button--outline {
+  color: var(--color-base-7);
+  background-color: transparent;
+  border: 1px solid var(--color-base-4);
+  transition: background-color var(--transition), border-color var(--transition);
+
+  @include mq(lg, min) {
+    &:hover {
+      color: var(--color-base-1);
+      background-color: var(--color-primary-hover);
+      border-color: var(--color-primary-hover);
+    }
+
+    &:active {
+      color: var(--color-base-1);
+      background-color: var(--color-primary-active);
+      border-color: var(--color-primary-active);
+    }
+  }
+
+  @include mq(lg) {
+    &:active {
+      color: var(--color-base-7);
+      background-color: var(--color-base-2);
+      border-color: var(--color-base-4);
+    }
+  }
+}
+

@@ -1,0 +1,8 @@
+mixin count-tab(arr)
+  ul.count-tab__list
+    for item, i in arr
+      - active = i === 0 ? 'checked' : null
+      li.count-tab__list__item
+        label.count-tab.count-tab-btn(data-tab-name= item.atributName)
+          input(type="radio" checked=active name="custom" value="custom" class="visually-hidden count-tab__control")
+          span.count-tab__label(data-count="20")= item.name

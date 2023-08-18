@@ -1,0 +1,22 @@
+.vacancy-criteria {
+  margin-top: 2.3rem;
+
+  &__item {
+    margin-bottom: 0.3rem;
+    font: var(--font-text-2-med);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item-name {
+    display: inline-block;
+    color: var(--color-base-5);
+    margin-right: 0.5rem;
+  }
+
+  &__item-text {
+    display: inline;
+  }
+}

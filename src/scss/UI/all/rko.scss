@@ -1,0 +1,121 @@
+/* stylelint-disable selector-class-pattern */
+.rko {
+  position: relative;
+  margin-top: 4rem;
+  padding: 5rem;
+  overflow: hidden;
+  background-color: var(--color-base-2);
+  border-radius: 2rem;
+
+  &__legend {
+    max-width: 61.2rem;
+    margin-bottom: 2rem;
+    font: var(--font-h4);
+
+    @include mq(sm) {
+      margin-bottom: 1.2rem;
+      line-height: 1;
+    }
+  }
+
+  &__content {
+    max-width: 45rem;
+    font: var(--font-text-2-reg1);
+
+    p {
+      color: var(--color-base-6);
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: 4fr 3fr;
+      gap: 1rem 2.5rem;
+      margin-top: 4rem;
+
+      li {
+        position: relative;
+        padding-left: 2.2rem;
+
+        &::before {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 1.8rem;
+          height: 1.8rem;
+          background-image: url("../images/tick-orange.svg");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          transform: translateY(-50%);
+          content: "";
+        }
+
+        @include mq(sm) {
+          margin-bottom: 1.2rem;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      @include mq(sm) {
+        display: block;
+        margin-top: 3rem;
+      }
+    }
+
+    @include mq(md) {
+      max-width: 100%;
+    }
+  }
+
+  &__btn {
+    margin-top: 4rem;
+
+    @include mq(sm) {
+      justify-content: center;
+      width: 100%;
+      margin-top: 3rem;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    right: -22rem;
+    width: 100rem;
+    height: 100rem;
+    object-fit: cover;
+    border-radius: 50%;
+    transform: translateY(-50%);
+
+    @include mq(lg) {
+      right: -34rem;
+    }
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  &__tabs {
+    @include mq(lg) {
+      display: flex;
+      overflow: auto;
+
+      @include noScrollbar();
+
+      .tabs-list__item {
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  @include mq(sm) {
+    margin: 0 calc(var(--padding-offset) * -1);
+    margin-top: 2rem;
+    padding: var(--padding-offset);
+    border-radius: 1.2rem;
+  }
+}

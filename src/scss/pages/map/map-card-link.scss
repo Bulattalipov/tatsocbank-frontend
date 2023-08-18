@@ -1,0 +1,60 @@
+.map-card-link {
+  &__body {
+    display: flex;
+    align-items: stretch;
+    padding: 1.8rem;
+    background-color: var(--color-base-3);
+    border-radius: 1.2rem;
+    transition: background-color 0.3s ease;
+
+    @include mq(md) {
+      padding: 1.6rem;
+    }
+  }
+
+  &__image-wrapper {
+    flex-shrink: 0;
+    flex-basis: 13.6rem;
+
+    @include mq(md) {
+      flex-basis: 9.9rem;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 64%;
+
+    > img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2.3rem;
+  }
+
+  &__name {
+    color: var(--color-base-7);
+    font: var(--font-text-2-med);
+  }
+
+  &__text {
+    color: var(--color-base-5);
+    font: var(--font-text-4-reg);
+  }
+
+  &:hover .map-card-link__body {
+    background-color: var(--color-base-4);
+  }
+}

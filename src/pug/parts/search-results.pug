@@ -1,0 +1,28 @@
+section.search.is-paged
+  .search__inner.js-search-parent
+    .site-container.search__container
+      a.search__close-btn(href="./")
+        span.visually-hidden Вернуться на главную
+        +icon-mono("close")(width="24" height="24")
+      h2.search__heading.page-heading-h3 Результаты поиска
+      span.search__total.page-mb40
+        | Найдено 17 результатов
+
+      form.search__form
+        label.input.input--grey
+          input(type="text" class="input__control search__form-control js-search no_validate" value="Кредит" data-items="content" name="search" placeholder="Найти программу, продукт или сервис")
+          span.input__label Найти программу, продукт или сервис
+          +icon-mono("search")(width="24" height="24" class="search__form-icon")
+          +icon-mono("close")(width="24" height="24" class="search__form-icon search__form-icon--close")
+
+      ul.search-results(data-items-target="content")
+        each i in Array.from(Array(3).keys())
+          li.search-results__block
+            span.search-results__legend Продукты#{i}
+            ul.search-results__items
+              each i in Array.from(Array(3).keys())
+                li.search-results-block
+                  .search-results-block__heading Потребительский кредит для зарплатных клиентов
+                  a.search-results-block__text.highlight-element.page-link-full(href="./")
+                    | Программа кредитования на потребительские нужды для клиентов, получающих заработную плату на карты АО «ТАТСОЦБАНК»
+                  +icon-mono("shevron-arrow-right")(width="24" height="24" class="search-results-block__icon")

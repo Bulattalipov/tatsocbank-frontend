@@ -1,0 +1,141 @@
+main.page-main.main
+  +breadcrumbs([['Главная', "/"], ['Документы']])
+  section.page-intro-simple.page-top-offset
+    .site-container
+      h1.page-heading-h2 Документы
+  section.page-section
+    .site-container
+      h2.page-heading-h3.page-mb56 Открытая информация
+      ul.accordion__list
+        each i in Array.from(Array(3).keys())
+          li.accordion__item.accordion__item--filled
+            .accordion.accordion--filled.js-accordion
+              button.accordion__head.js-accordion-btn
+                span.accordion__label Бухгалтерская (финансовая) отчетность по РСБУ
+              .accordion__body.js-accordion-content
+                .accordion__body-content.accordion__body-content--long
+                  each j in Array.from(Array(3).keys())
+                    .accordion__body-content-box
+                      .accordion__body-content-text
+                        | 2016
+                      .file__wrapper
+                        .file
+                          .file__type-wrapper
+                            img.file__type(src="assets/images/pdf.svg" alt="")
+                          .file__info
+                            a(href="assets/fonts/Inter-Bold.woff" class="page-link-full" target="_blank")
+                              | Копия паспорта гражданина РФ (все страницы)
+                              | и копия свидетельства о регистрации по месту
+                              | пребывания (если нет постоянной регистрации на территории РФ).pdf
+                            span.file__size 237.7 Кб
+                        .file
+                          .file__type-wrapper
+                            img.file__type(src="assets/images/pdf.svg" alt="")
+                          .file__info
+                            a(href="assets/fonts/Inter-Bold.woff" class="page-link-full" target="_blank")
+                              | Копия паспорта гражданина РФ (все страницы)
+                              | и копия свидетельства о регистрации по месту
+                              | пребывания (если нет постоянной регистрации на территории РФ).pdf
+                            span.file__size 237.7 Кб
+                        .file
+                          .file__type-wrapper
+                            img.file__type(src="assets/images/pdf.svg" alt="")
+                          .file__info
+                            a(href="assets/fonts/Inter-Bold.woff" class="page-link-full" target="_blank")
+                              | Копия паспорта гражданина РФ (все страницы)
+                              | и копия свидетельства о регистрации по месту
+                              | пребывания (если нет постоянной регистрации на территории РФ).pdf
+                            span.file__size 237.7 Кб
+                        .file
+                          .file__type-wrapper
+                            img.file__type(src="assets/images/pdf.svg" alt="")
+                          .file__info
+                            a(href="assets/fonts/Inter-Bold.woff" class="page-link-full" target="_blank")
+                              | Копия паспорта гражданина РФ (все страницы)
+                              | и копия свидетельства о регистрации по месту
+                              | пребывания (если нет постоянной регистрации на территории РФ).pdf
+                            span.file__size 237.7 Кб
+                      +button("Скачать все", null, false, "/")(class="button--outline types-guarantees__list-btn" download)
+  section.page-section
+    .site-container
+      h2.page-heading-h3.page-mb56 Лицензии
+      .additional-information__item-file-wrapper
+        .file
+          .file__type-wrapper
+            img.file__type(src="assets/images/pdf.svg" alt="")
+          .file__info
+            a(href="assets/fonts/Inter-Bold.woff" class="page-link-full" target="_blank")
+              | Копия паспорта гражданина РФ (все страницы)
+              | и копия свидетельства о регистрации по месту
+              | пребывания (если нет постоянной регистрации на территории РФ).pdf
+            span.file__size 237.7 Кб
+        .file
+          .file__type-wrapper
+            img.file__type(src="assets/images/pdf.svg" alt="")
+          .file__info
+            a(href="assets/fonts/Inter-Bold.woff" class="page-link-full" target="_blank")
+              | Копия паспорта гражданина РФ (все страницы)
+              | и копия свидетельства о регистрации по месту
+              | пребывания (если нет постоянной регистрации на территории РФ).pdf
+            span.file__size 237.7 Кб
+        .file
+          .file__type-wrapper
+            img.file__type(src="assets/images/pdf.svg" alt="")
+          .file__info
+            a(href="assets/fonts/Inter-Bold.woff" class="page-link-full" target="_blank")
+              | Копия паспорта гражданина РФ (все страницы)
+              | и копия свидетельства о регистрации по месту
+              | пребывания (если нет постоянной регистрации на территории РФ).pdf
+            span.file__size 237.7 Кб
+        .file
+          .file__type-wrapper
+            img.file__type(src="assets/images/pdf.svg" alt="")
+          .file__info
+            a(href="assets/fonts/Inter-Bold.woff" class="page-link-full" target="_blank")
+              | Копия паспорта гражданина РФ (все страницы)
+              | и копия свидетельства о регистрации по месту
+              | пребывания (если нет постоянной регистрации на территории РФ).pdf
+            span.file__size 237.7 Кб
+      +button("Скачать все", null, "Скачать все документы", "/")(class="button--outline button--md file__btn" download)
+  section.page-section
+    .site-container
+      h2.page-heading-h3.page-mb56 Документы
+      .additional-information__item-file-wrapper
+        .file
+          .file__type-wrapper
+            img.file__type(src="assets/images/pdf.svg" alt="")
+          .file__info
+            a(href="assets/fonts/Inter-Bold.woff" class="page-link-full" target="_blank")
+              | Копия паспорта гражданина РФ (все страницы)
+              | и копия свидетельства о регистрации по месту
+              | пребывания (если нет постоянной регистрации на территории РФ).pdf
+            span.file__size 237.7 Кб
+        .file
+          .file__type-wrapper
+            img.file__type(src="assets/images/pdf.svg" alt="")
+          .file__info
+            a(href="assets/fonts/Inter-Bold.woff" class="page-link-full" target="_blank")
+              | Копия паспорта гражданина РФ (все страницы)
+              | и копия свидетельства о регистрации по месту
+              | пребывания (если нет постоянной регистрации на территории РФ).pdf
+            span.file__size 237.7 Кб
+        .file
+          .file__type-wrapper
+            img.file__type(src="assets/images/pdf.svg" alt="")
+          .file__info
+            a(href="assets/fonts/Inter-Bold.woff" class="page-link-full" target="_blank")
+              | Копия паспорта гражданина РФ (все страницы)
+              | и копия свидетельства о регистрации по месту
+              | пребывания (если нет постоянной регистрации на территории РФ).pdf
+            span.file__size 237.7 Кб
+        .file
+          .file__type-wrapper
+            img.file__type(src="assets/images/pdf.svg" alt="")
+          .file__info
+            a(href="assets/fonts/Inter-Bold.woff" class="page-link-full" target="_blank")
+              | Копия паспорта гражданина РФ (все страницы)
+              | и копия свидетельства о регистрации по месту
+              | пребывания (если нет постоянной регистрации на территории РФ).pdf
+            span.file__size 237.7 Кб
+      +button("Скачать все", null, "Скачать все документы", "/")(class="button--outline button--md file__btn" download)
+  +review-banner(true)(class="reviews-shield-section--simple")

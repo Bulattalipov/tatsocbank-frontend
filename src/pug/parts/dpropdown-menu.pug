@@ -1,0 +1,50 @@
+.dropdown-menu-container.js-nav-menu-container
+  for item in nav_list
+    section.fix-block.dropdown-menu.js-dropdown-menu(data-menu-child=item.name)
+      h2.visually-hidden главное меню - #{item.name}
+      .site-container.dropdown-menu__row
+        .dropdown-menu__col--empty
+        .dropdown-menu__col
+          span.dropdown-menu__legend= item.name
+          nav.dropdown-menu__nav
+            ul.dropdown-menu__list
+              li.dropdown-menu__item
+                a.dropdown-menu__link(href="./landing-page-detail.html") Ключевой процент
+                .dropdown-menu__item-pop-up
+                  | Квартира на первичном или вторичном рынке недвижимости от 9,2%
+              li.dropdown-menu__item
+                a.dropdown-menu__link(href="./landing-page-detail.html") Рефинансирование ипотеки
+                .dropdown-menu__item-pop-up
+                  | Квартира на первичном или вторичном рынке недвижимости от 9,2%
+
+          +moreLink("Смотреть все", "page-more-link--classic", "./landing-page.html")(class="dropdown-menu__more-link is-active")
+        .dropdown-menu__col
+          span.dropdown-menu__legend Полезное
+          nav.dropdown-menu__nav
+            ul.dropdown-menu__list
+              li.dropdown-menu__item
+                a.dropdown-menu__link(href="./") Выгодно ли брать кредитку?
+                .dropdown-menu__item-pop-up
+                  | Квартира на первичном или вторичном рынке недвижимости от 9,2%
+              li.dropdown-menu__item
+                a.dropdown-menu__link(href="./") Семейная ипотека
+                .dropdown-menu__item-pop-up
+                  | Квартира на первичном или вторичном рынке недвижимости от 9,2%
+              li.dropdown-menu__item
+                a.dropdown-menu__link(href="./") Кешбэк от МИР
+                .dropdown-menu__item-pop-up
+                  | Квартира на первичном или вторичном рынке недвижимости от 9,2%
+
+          +moreLink("Смотреть все", "page-more-link--classic")(class="dropdown-menu__more-link")
+        .dropdown-menu__col
+          button.dropdown-menu__close-btn.js-close-dropdown-menu
+            span.visually-hidden Закрыть меню
+            +icon-mono('close')(width="24" height="24" class="dropdown-menu__close-btn-icon")
+          span.dropdown-menu__legend Специальное условие
+          article.dropdown-menu__shield
+            img.dropdown-menu__shield-images(src="assets/images/bg-card-img.jpg" alt="")
+            h3.dropdown-menu__shield-heading Мир Classic с кешбэком
+            .dropdown-menu__shield-links
+              +moreLink("Подробнее", "page-more-link--classic")(class="dropdown-menu__shield-link")
+              .dropdown-menu__shield-info
+                | до #[span 20%]

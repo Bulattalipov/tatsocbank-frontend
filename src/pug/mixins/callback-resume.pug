@@ -1,0 +1,29 @@
+mixin callback-resume
+  .page-section(id="callback-resume")
+    .site-container
+      section.callback-resume.js-section
+        .callback-resume__texts
+          h2.page-heading-h3.callback-resume__heading
+            | Отправьте свое резюме нам
+          p.callback-resume__text
+            | Мы свяжемся с вами по телефону или пришлем ответ на почту
+        .callback-resume__form-wrapper
+          form.callback-resume__form(data-need-validation data-sucess="success-small" data-error="error")
+            .callback-resume__form-inputs
+              +input("Ваше имя", "name", "Ваше имя", null, "fio")(class="js-validation-wrapper callback-resume__input" data-ts="123")
+              +input("Номер телефона", "phone", "Номер телефона", null, "phone")(class="js-validation-wrapper callback-resume__input")
+            +input("Email", "organization", "Email", null, "email")(class="js-validation-wrapper input--offset-bottom input--grey" data-ts="123")
+            label.callback-resume__form-file
+              input.visually-hidden(type="file" data-parsley-max-file-size="10")
+              .callback-resume__form-file-icon
+                +icon-multi('clip')(width="16px" height="17px")
+              .callback-resume__form-file-text
+                | Прикрепите 1 файл #[span до 10 мб]
+              .callback-resume__form-file-name
+                .callback-resume__form-file-name-text
+                .callback-resume__form-file-name-close
+            .callback-resume__form-box
+              +button("Отправить")(class="button--md button--disabled-visible callback-resume__btn")
+              p.callback-resume__agreement-text
+                | При нажати кнопки «Подать заявку» вы даете согласие на обработку #[a(href="./") персональных данных]
+        img(src="assets/images/shileds/shiled-img.png" class="callback-resume__image" alt="Доступные услуги и сервисы банка в вашем телефоне")

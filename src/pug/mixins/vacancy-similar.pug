@@ -1,0 +1,28 @@
+mixin vacancy-similar(widthImage)
+  section.page-section
+    .site-container
+      .vacancy-similar.page-swiper-parent
+        .vacancy-similar__inner
+          h2.page-heading-h3 Похожие вакансии
+          .slider-btns
+            button.slider-btn.js-prev-slide
+              span.visually-hidden предыдущий слайд
+              +icon-mono("shevron-arrow")(width="24" height="24" class="slider-btn__icon")
+            button.slider-btn.js-next-slide
+              span.visually-hidden слудующий слайд
+              +icon-mono("shevron-arrow")(width="24" height="24" class="slider-btn__icon")
+        .vacancy-similar__slider.page-swiper(data-slides="4" data-gap="16" data-nav="true")
+          .swiper-wrapper
+            each i in Array.from(Array(7).keys())
+              if widthImage
+                +press-center-card("Что выгоднее при покупке автомобиля: автокредит или потребительский кредит?", "Для акционеров", true)(class="swiper-slide")
+              else
+                article.vacancy-similar__slider-item.swiper-slide
+                  .vacancy-similar__slider-item-box
+                    span.vacancy-similar__slider-item-tag Финансы
+                    .vacancy-similar__slider-item-date 13 октября 2022
+                  h3.vacancy-similar__slider-item-heading
+                    a(href="./") Экономист отдела внутрибанковских операций
+                  .vacancy-similar__slider-item-price
+                    | #[span.vacancy-similar__slider-item-price-text От]43 000#[span.vacancy-similar__slider-item-price-currency ₽]
+                  span.vacancy-similar__slider-item-text Расположение эпизодов аннигилирует диалогический одиннадцатисложник, но не рифмами. Замысел вразнобой

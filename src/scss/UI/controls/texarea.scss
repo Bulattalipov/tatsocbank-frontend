@@ -1,0 +1,86 @@
+/* stylelint-disable selector-class-pattern */
+.texarea {
+  position: relative;
+  display: block;
+  width: 100%;
+
+  &__control {
+    width: 100%;
+    height: 12.4rem;
+    padding: 1.6rem;
+    padding-bottom: 3.2rem;
+    background-color: var(--color-white);
+    border-radius: 0.8rem;
+
+    @include mq(lg, min) {
+      &:not([disabled]):hover {
+        background-color: var(--color-base-3);
+
+        ~ .texarea__count {
+          background-color: var(--color-base-3);
+        }
+      }
+    }
+
+    @include placeholder() {
+      color: var(--color-base-5);
+      font: var(--font-text-3-reg);
+    }
+
+    @include mq(sm) {
+      height: 13rem;
+    }
+  }
+
+  &__count {
+    position: absolute;
+    top: 9.2rem;
+    left: 1.6rem;
+    width: calc(100% - 3.2rem);
+    height: 3.2rem;
+    color: var(--color-base-5);
+    font: var(--font-text-5-reg);
+    background-color: var(--color-white);
+    border-radius: 0.8rem;
+
+    @include mq(sm) {
+      top: 9.8rem;
+    }
+  }
+
+  &--grey {
+    .texarea__control {
+      background-color: var(--color-base-2);
+    }
+
+    .texarea__count {
+      background-color: var(--color-base-2);
+    }
+  }
+
+  &.is-error{
+    margin-bottom: 3rem;
+
+    @include mq(xxs) {
+      margin-bottom: 4rem;
+    }
+
+    .texarea__control {
+      background-color: var(--color-error-light);
+      outline: 1px solid var(--color-error);
+    }
+
+    .texarea__count {
+      background-color: var(--color-error-light) !important;
+    }
+
+    .parsley-errors-list {
+      position: absolute;
+      top: 105%;
+      left: 0.3rem;
+      z-index: 3;
+      color: var(--color-error);
+      font: var(--font-text-4-med);
+    }
+  }
+}

@@ -1,0 +1,134 @@
+.contacts-block {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  gap: 2rem;
+  border-radius: 2rem;
+  background-color: var(--color-base-2);
+  overflow: hidden;
+  background-image: url("../images/shileds/shiled-bg-png-full.svg");
+  background-repeat: no-repeat;
+  background-position: 78% 44%;
+
+  @include mq(lg) {
+    display: flex;
+  }
+
+  @include mq(sm) {
+    background-image: none;
+  }
+
+  &__content {
+    padding: 5rem 1rem 5rem 5rem;
+    grid-column: 13 span;
+
+    @include mq(sm) {
+      width: 100%;
+      padding: 2rem;
+    }
+  }
+
+  &__content-title {
+    font: var(--font-h4);
+    margin-bottom: 4rem;
+
+    @include mq(sm) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__content-items {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem 6rem;
+
+    @include mq(sm) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__content-item {
+    font: var(--font-text-2-reg1);
+  }
+
+  &__content-item-title {
+    color: var(--color-base-6);
+    margin-bottom: 1.2rem;
+  }
+
+  &__content-item-desc {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-base-7);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    grid-column: 11 span;
+    margin-left: auto;
+
+    @include mq(lg) {
+      display: none;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-clip-path: circle(80% at 72% 50%);
+    clip-path: circle(80% at 72% 50%);
+  }
+
+  &__btns {
+    display: flex;
+    margin-top: 4rem;
+    gap: 3rem;
+
+    @include mq(sm) {
+      flex-direction: column;
+      gap: 0;
+      margin-top: 3rem;
+    }
+  }
+
+  &__btn {
+    height:  auto;
+
+    @include mq(sm) {
+      background-color: var(--color-base-8);
+      color: var(--color-base-1);
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  .page-more-link {
+    @include mq(sm) {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      border: 0.1rem solid var(--color-base-4);
+
+      a {
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+    }
+  }
+}

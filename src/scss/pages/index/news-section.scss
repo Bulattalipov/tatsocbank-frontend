@@ -1,0 +1,18 @@
+.news-section {
+  &__link {
+    @include mq(sm) {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+
+      @include mq(sm) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+    }
+  }
+}

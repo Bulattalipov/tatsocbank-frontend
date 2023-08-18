@@ -1,0 +1,29 @@
+mixin Select(name, title, options, param)
+  .select
+    .select__current(tabindex="1")
+      .select__value
+        input.select__input(
+          type="radio"
+          value= name
+          name= name
+          id= name
+          checked
+        )
+        p.select__input-text._empty-select(data-count='0')= title
+      .select__icon
+
+    .select__list-wrapper
+      ul.select__list
+        each option, index in options
+          li
+            .checkbox
+              input(
+                type="checkbox"
+                class="visually-hidden js-map-input-search"
+                id= option.value
+                value= option.value
+                data-checkrole= param
+              )
+              label.checkbox__container(for=option.value)
+                span.checkbox__control
+                span.checkbox__text= option.name

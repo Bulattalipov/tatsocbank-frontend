@@ -1,0 +1,24 @@
+section.page-section.js-section
+  .site-container
+    article.mobile-shiled
+      header.mobile-shiled__head
+        h2.mobile-shiled__heading
+          | Мобильное приложение для iOS и Android
+        p.mobile-shiled__text
+          | Доступные услуги и сервисы банка в вашем телефоне
+      .mobile-shiled__dwnld
+        p.mobile-shiled__dwnld-text
+          | Скачайте приложение прямо сейчас:
+        ul.mobile-shiled__dwnld-links
+          li.mobile-shiled__dwnld-item
+            a.mobile-shiled__dwnld-link(href="./" target="_blank")
+              span.visually-hidden скачать на apple
+              img(src="assets/images/mobiles/apple.svg" class="mobile-shiled__dwnld-img" alt="скачать на apple")
+          li.mobile-shiled__dwnld-item
+            a.mobile-shiled__dwnld-link(href="./" target="_blank")
+              span.visually-hidden скачать на android
+              img(src="assets/images/mobiles/android.svg" class="mobile-shiled__dwnld-img" alt="скачать на apple")
+      +imgLazy("assets/images/shileds/phone.png")(class="mobile-shiled__img js-section-2")
+      .mobile-shiled__btns
+        +button("Скачать", "qr")(class="button--md mobile-shiled__btn" data-path="mobile-qr")
+        +moreLink("Подробнее", "classic")

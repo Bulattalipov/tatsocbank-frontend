@@ -1,0 +1,64 @@
+.current-exchange {
+  &__container {
+    display: flex;
+    padding: 5rem;
+    background-color: var(--color-base-2);
+    border-radius: 2rem;
+
+    @include mq(md) {
+      display: block;
+      padding: 3.2rem;
+    }
+
+    @include mq(sm) {
+      padding: 1.6rem;
+      border-radius: 1.2rem;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 1rem;
+    font: var(--font-h4);
+  }
+
+  &__text {
+    color: var(--color-base-6);
+    font: var(--font-text-3-reg);
+  }
+
+  &__btn {
+    margin-top: 3rem;
+    height: auto;
+
+    @include mq(md) {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+
+      @include mq(md) {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+    }
+  }
+
+  &__info {
+    flex-shrink: 0;
+    margin-right: 12rem;
+
+    @include mq(sm) {
+      margin-right: 0;
+    }
+  }
+
+  &__currency-rate {
+    flex-grow: 1;
+
+    @include mq(md) {
+      margin-top: 3.5rem;
+    }
+  }
+}

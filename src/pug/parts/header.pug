@@ -1,0 +1,104 @@
+-
+  company_divisions = [
+    { name: 'Частным клиентам', link: './' },
+    { name: 'Бизнесу', link: './' },
+    { name: 'Финансовым институтам', link: './' },
+  ]
+
+  company_navigation = [
+    "О банке", "Офисы и банкоматы"
+  ]
+
+  info_btns = [
+    { icon: "qr", hidden_text: "Открыть qr-код" },
+    { icon: "search", hidden_text: "Начать поиск" },
+  ]
+
+  nav_list = [
+    { name: "Ипотека", link: "./" },
+    { name: "Кредиты", link: "./" },
+    { name: "Автокредиты", link: "./" },
+    { name: "Карты", link: "./" },
+    { name: "Вклады", link: "./" },
+    { name: "Сервисы и услуги", link: "./" }
+  ]
+
+  arr_head = [
+    "index"
+  ]
+
+header.header.fix-block(class={'is-white': arr_head.includes(name), 'header--disabled': noHeader, 'header--bottom-disabled': noBottomHeader})
+  .header__row.header__row--top
+    .site-container.header__row-content-top
+
+      .header__row-content-top-block
+        ul.company-divisions
+          for division, i in company_divisions
+            - activeClass = i === 0 ? "is-active": ""
+            li.company-divisions__item
+              a.company-divisions__link.header__legend-link(class= activeClass href= division.link)= division.name
+
+      .header__row-content-top-block
+        ul.company-navigation
+          for navigation, i in company_navigation
+            - dropdownClass = i === 0 ? '' : ''
+            if (i === 0)
+              li.company-navigation__item
+                .menu-dropdown__container
+                  button.company-navigation__btn.header__legend-link(class="menu-dropdown js-menu-dropdown")= navigation
+                  ul.menu-dropdown__menu.js-menu-dropdown-menu
+                    li.menu-dropdown__item
+                      a(href="./") Общая информация
+                    li.menu-dropdown__item
+                      a(href="./") Пресс-центр
+                    li.menu-dropdown__item
+                      a(href="./") Документы
+                    li.menu-dropdown__item
+                      a(href="./") Контакты
+                    li.menu-dropdown__item
+                      a(href="./") Реквизиты
+            else
+              li.company-navigation__item
+                a.company-navigation__btn.header__legend-link(href="./")= navigation
+        ul.header-info-btns.header__info-btns
+          for btn in info_btns
+            li.header-info-btns__item
+              button.header-info-btns__btn(class={'js-search-open': btn.icon === 'search', 'is-hidden': pageSearch && btn.icon === 'search'})
+                span.visually-hidden= btn.hidden_text
+                +icon-mono(`${btn.icon}`)(class="header-info-btns__icon" width="24" height="24")
+          li.header-info-btns__item
+            a.header-info-btns__btn(href="#")
+              span.visually-hidden Версия для слобовидящих
+              +icon-mono('eye')(class="header-info-btns__icon" width="24" height="24")
+        .menu-dropdown__container
+          +button("Интернет-банк", "down-triangle")(class="button--third button--sm button--icon-fill header__btn js-menu-dropdown")
+          //- button.button.button--third.button--sm.button--icon-fill.header__btn.button--header-filter.js-menu-dropdown
+          //-   span.button__text
+          //-     | Интернет-банке
+          //-   +icon-mono("down-triangle")(width="24" height="24" class="button__icon")
+
+          ul.menu-dropdown__menu.js-menu-dropdown-menu
+            li.menu-dropdown__item
+              a(href="./") Частным лицам
+            li.menu-dropdown__item
+              a(href="./") Для бизнеса
+  .header__row.header__row--bottom
+    .site-container
+      .header__row-content-bottom
+        a(href="/" class="header__logo")
+          +icon-multi("logo")(width="173" height="36")
+        nav.nav.header__nav
+          ul.nav__list
+            for nav, i in nav_list
+              //- - activeClass = i === 0 ? "is-active" : ""
+              li.nav__item(data-menu-parent=nav.name class="js-dropdown-menu-parent")
+                button.nav__link(href="")= nav.name
+
+        +button("Интернет-банк", "down-triangle")(class="button--third button--sm button--icon-fill header__btn header__btn--mobile" data-path="modal-site")
+        +button("Оставить заявку")(class="button--sm button--no-icon header__btn header__btn--callback")
+        button.header-info-btns__btn.header__info-btn-mobile(data-path="modal-search" class={'is-hidden': pageSearch})
+          span.visually-hidden Начать поиск
+          +icon-mono("search")(class="header-info-btns__icon" width="24" height="24")
+
+
+include search.pug

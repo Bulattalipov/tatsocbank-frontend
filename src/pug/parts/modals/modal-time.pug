@@ -1,0 +1,58 @@
+.modal__container.modal-city(data-target="modal-time")
+  button.button-reset.modal__close-btn.modal-close(type="button")
+    +icon-mono("close")(width="22" height="22" class="modal__close-btn-icon")
+  .modal__content
+    .modal__content-close-mobile.modal-close
+    .modal__content-inner
+      button.button-reset.modal__close-btn.modal__close-btn--mobile.modal-close(type="button")
+        +icon-mono("close")(width="22" height="22" class="modal__close-btn-icon")
+      .modal__legend
+        | Фильтры
+      form.modal__form
+        .modal__form-subtitle
+          | Сортировать по:
+        ul.modal__form-list
+          li.modal__form-list-item
+            .checkbox
+              input(type="radio" class="visually-hidden" id="time-1" name="time" checked)
+              label(for="time-1" class="checkbox__container")
+                span.checkbox__control.checkbox__control--rounded
+                .modal__form-city
+                  | Актуальные
+          li.modal__form-list-item
+            .checkbox
+              input(type="radio" class="visually-hidden" id="time-2" name="time")
+              label(for="time-2" class="checkbox__container")
+                span.checkbox__control.checkbox__control--rounded
+                .modal__form-city
+                  | За последние 3 месяца
+          li.modal__form-list-item
+            .checkbox
+              input(type="radio" class="visually-hidden" id="time-3" name="time")
+              label(for="time-3" class="checkbox__container")
+                span.checkbox__control.checkbox__control--rounded
+                .modal__form-city
+                  | За последние 6 месяцев
+          li.modal__form-list-item
+            .checkbox
+              input(type="radio" class="visually-hidden" id="time-4" name="time")
+              label(for="time-4" class="checkbox__container")
+                span.checkbox__control.checkbox__control--rounded
+                .modal__form-city
+                  | За текущий год
+          li.modal__form-list-item
+            .checkbox
+              input(type="radio" class="visually-hidden" id="time-5" name="time")
+              label(for="time-5" class="checkbox__container")
+                span.checkbox__control.checkbox__control--rounded
+                .modal__form-city
+                  | 2021
+          li.modal__form-list-item
+            .checkbox
+              input(type="radio" class="visually-hidden" id="time-6" name="time")
+              label(for="time-6" class="checkbox__container")
+                span.checkbox__control.checkbox__control--rounded
+                .modal__form-city
+                  | 2020
+        .modal__bottom-btns
+          +button("Применить", null, null)(class="button--lg modal__bottom-btn")

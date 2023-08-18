@@ -1,0 +1,74 @@
+section.page-mb32
+  .site-container
+    from.coins-filter__wrapper
+      .coins-filter.coins-filter__grid-block
+        .coins-filter__block
+          .custom-select
+            .custom-select__label Сортировать по:
+            select(name="sort" class="js-select")
+              option(value="Популярные") Популярные
+              option(value="Популярные") Новые
+              option(value="Популярные") Сначала тяжелые по весу
+              option(value="Популярные") Сначала легкие по весу
+
+        .coins-filter__block.js-range-single-parent
+          label.input.input--grey
+            input(type="text" class="input__control js-range-single-input" name="custom" placeholder="custom")
+            span.input__label Цена
+            .js-range-single(data-price="priceBefore" data-min="10" data-max="1000000")
+
+        .coins-filter__block
+          .custom-select
+            .custom-select__label Металл
+            select(name="sort" class="js-select")
+              option(value="Популярные") Серебро
+              option(value="Популярные") Бронза
+              option(value="Популярные") Золото
+
+      .coins-filter__mobile-filter
+        .coins-filter__btn
+          span.visually-hidden Открыть фильтр
+          +icon-mono("filter")(width="24" height="24")
+        +button("Применить", null, null)(class="button--sm button--third coins-filter__btn-desktop")
+        .coins-filter__sum
+          | #[span 16] Товаров #[br] найдено
+
+
+    -
+      mobile_filter1 = ["Популярные", "Новые", "Сначала тяжелые по весу", "Сначала легкие по весу"]
+      mobile_filter2 = ["Серебро", "Бронза", "Золото"]
+
+    .coins-mobile-filter
+      .coins-mobile-filter__inner
+        form.coins-mobile-filter__content
+          button.coins-mobile-filter__close.js-close-filter(type="button")
+            span.visually-hidden Закрыть фильтр
+            +icon-mono("close")(width="16" height="16")
+          .coins-mobile-filter__legend Фильтры
+
+          .coins-mobile-filter__legend-small Сортировать по:
+          for item, index in mobile_filter1
+            .checkbox(class={'checkbox--mb': index !== mobile_filter1.length - 1})
+              input(type="radio" class="visually-hidden" id=`s-${index}` name="checkit" value="custom")
+              label(for=`s-${index}` class="checkbox__container")
+                span.checkbox__control.checkbox__control--rounded
+                span.checkbox__text= item
+
+          .coins-mobile-filter__legend-small Стоимость
+          .js-range-single-parent
+            label.input.input--grey
+              input(type="text" class="input__control js-range-single-input" name="custom" placeholder="custom")
+              span.input__label Цена
+              .js-range-single(data-price="priceBefore" data-min="10" data-max="1000000")
+
+          .coins-mobile-filter__legend-small Металл
+          for item, index in mobile_filter2
+            .checkbox(class={'checkbox--mb': index !== mobile_filter1.length - 1})
+              input(type="checkbox" class="visually-hidden" id=`s2-${index}` name="checkit2" value="custom")
+              label(for=`s2-${index}` class="checkbox__container")
+                span.checkbox__control
+                span.checkbox__text= item
+
+        .coins-mobile-filter__btns
+          +button("Очистить")(class="button--outline")
+          +button("Применить")(class="js-close-filter")

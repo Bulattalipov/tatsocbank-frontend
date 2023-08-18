@@ -1,0 +1,62 @@
+mixin landing-card(name, card, noList)
+  if noList
+    article.landing-card&attributes(attributes)
+      .landing-card__row
+        .landing-card__row-contain
+          h3.landing-card__heading.page-heading-h2.page-mb16
+            a(href="./")= name
+          p.landing-card__text.page-mb16 АО «ТАТСОЦБАНК» предоставляет услуги инкассации кредитным организациям
+
+        if (!card)
+          .landing-card__img-container
+            +imgLazy("assets/images/landing-card/img1.jpg")(class="landing-card__img" alt= name)
+        else
+          img.landing-card__img-card(src="assets/images/shileds/card.jpg" alt="")
+      .landing-card__row
+        .landing-card__btns
+          +button("Оставить заявку")(class="button--md button--outline landing-card__btn-callback" data-path="modal-callback")
+          +button("Оставить заявку")(class="button--md landing-card__btn-callback landing-card__btn-callback--mobile" data-path="modal-callback")
+          +moreLink("Подробнее")
+  else
+    article.landing-card&attributes(attributes)
+      .landing-card__block
+        h3.landing-card__heading.page-heading-h2.page-mb16
+          a(href="./")= name
+        p.landing-card__text.page-mb16 Квартира на первичном и вторичном рынке недвижимости
+
+        if (!card)
+          ul.tag__list.landing-card__tags
+            li.tag__item
+              span.tag С господдержкой
+
+        if (!card)
+          .landing-card__img-container.landing-card__img-container--mobile
+            +imgLazy("assets/images/landing-card/img1.jpg")(class="landing-card__img" alt= name)
+        else
+          img.landing-card__img-card.landing-card__img-card--mobile(src="assets/images/shileds/card.jpg" alt="")
+
+        ul.landing-card__percents
+          li.landing-card__percents-item
+            .landing-card__percents-info
+              | от #[span 15%]
+            span.landing-card__percents-text Годовая ставка
+          li.landing-card__percents-item
+            .landing-card__percents-info
+              | От #[span 15%]
+            span.landing-card__percents-text Первый взнос
+          li.landing-card__percents-item
+            .landing-card__percents-info
+              | #[span 1-30 ] лет
+            span.landing-card__percents-text Срок кредита
+
+      .landing-card__block
+        if (!card)
+          .landing-card__img-container
+            +imgLazy("assets/images/landing-card/img1.jpg")(class="landing-card__img" alt= name)
+        else
+          img.landing-card__img-card(src="assets/images/shileds/card.jpg" alt="")
+        .landing-card__btns
+          +button("Оставить заявку")(class="button--md button--outline landing-card__btn-callback" data-path="modal-callback")
+          +button("Оставить заявку")(class="button--md landing-card__btn-callback landing-card__btn-callback--mobile" data-path="modal-callback")
+          +moreLink("Подробнее")
+      .landing-card__block.landing-card__block--empty

@@ -1,0 +1,62 @@
+.advantages-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  min-height: 25.6rem;
+  padding: 3rem 2.6rem;
+  border: 1px solid var(--color-base-3);
+  border-radius: 1.2rem;
+
+  &__icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6.8rem;
+    height: 6.8rem;
+    margin-bottom: 2.6rem;
+    background-color: var(--color-other-orange);
+    border-radius: 50%;
+
+    @include mq(sm) {
+      width: 6rem;
+      height: 6rem;
+    }
+  }
+
+  &__icon {
+    width: 3.2rem;
+    height: 3.2rem;
+    object-fit: contain;
+  }
+
+  &__heading {
+    margin-bottom: 2rem;
+    font: var(--font-h5);
+    text-align: center;
+
+    @include mq(sm) {
+      margin-top: auto;
+      margin-bottom: 1.2rem;
+      text-align: left;
+    }
+  }
+
+  &__text {
+    color: var(--color-base-5);
+    font: var(--font-text-2-reg1);
+    text-align: center;
+
+    @include mq(sm) {
+      text-align: left;
+    }
+  }
+
+  @include mq(sm) {
+    align-items: flex-start;
+    justify-content: stretch;
+    min-height: 24.7rem;
+    padding: 1.8rem;
+    border-radius: 1.2rem;
+  }
+}

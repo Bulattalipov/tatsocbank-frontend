@@ -1,0 +1,12 @@
+extends layout/default.pug
+
+block variables
+  - const bodyClass = "page-home"
+  - const pageTitle = "Результаты поиска"
+  - const siteLang = "ru"
+  - noBottomHeader = true
+  - noScroll = true
+  - pageSearch = true
+
+block content
+  include pages/search-results/main.pug

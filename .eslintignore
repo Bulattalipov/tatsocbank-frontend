@@ -1,0 +1,7 @@
+build/**/*.js
+src/assets/js/**/*
+src/js/modules/Modal.js
+src/js/modules/initModal.js
+src/js/modules/customSelectControl.js
+src/js/modules/mapControl.js
+src/js/modules/addJsonToScript.js

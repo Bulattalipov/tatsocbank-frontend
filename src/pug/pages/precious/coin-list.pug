@@ -1,0 +1,67 @@
+-
+  coin_items = [
+    { name: "Реверс", tabLabel: "revers" },
+    { name: "Аверс", tabLabel: "avers" },
+  ]
+
+section.page-section
+  .site-container
+    ul.coins
+      each i in Array.from(Array(10).keys())
+        li.coins__item.js-coin-info-parent
+          article.coin-card
+            .coin-card__img-wrapper.js-coin-info-trigger
+              .coin-card__more
+                +icon-mono('zoom')(class="coin-card__more-icon" width="24" height="24")
+              ul.tag__list
+                li.tag__item
+                  span.tag Серебро
+              img(src="assets/images/coins/coin.png" class="coin-card__img" alt="coins")
+            header.coin-card__info
+              h3.coin-card__heading
+                | Чемпионат мира по футболу FIFA 2018 в России
+              p.coin-card__price
+                | 3000 ₽
+              .tooltip
+                span Характеристики
+                +icon-mono("info")(width="24" height="24" class="tooltip__icon")
+                .tooltip__body
+                  ul.tooltip__inner
+                    li.tooltip__item
+                      | #[span Металл:&nbsp;] Серебро 999 проба
+                    li.tooltip__item
+                      | #[span Вес:&nbsp;] 31,1 г.
+                    li.tooltip__item
+                      | #[span Год выпуска:&nbsp;] 2018, Россия
+                    li.tooltip__item
+                      | #[span Номинал:&nbsp;] 3 рубля
+          .coin-info.js-coin-info-container
+            .coin-info__inner
+              button.coin-info__close.js-coin-info-close
+                span.visually-hidden Закрыть окно
+                +icon-mono("close")(width="24" height="24" class="coin-info__close-icon")
+              .site-container.coin-info__grid
+                .coin-info__block.page-tab-parent
+                  .coin-info__legend.coin-info__legend--mobile
+                    | Чемпионат мира по футболу FIFA 2018 в России
+                  .coin-info__image-warpper
+                    .page-tab-content.is-active(data-tab-content="revers")
+                      img(src="assets/images/coins/coin.png" class="coin-info__image" alt="")
+                    .page-tab-content(data-tab-content="avers")
+                      img(src="assets/images/coins/coin2.png" class="coin-info__image" alt="")
+                    +classic-tab-list(coin_items, null)(class="coin-info__tab")
+                .coin-info__block
+                  .coin-info__legend
+                    | Чемпионат мира по футболу FIFA 2018 в России
+                  ul.coin-info__list
+                    li.coin-info__item
+                      | #[span Металл:&nbsp;] Серебро 999 проба
+                    li.coin-info__item
+                      | #[span Вес:&nbsp;] 31,1 г.
+                    li.coin-info__item
+                      | #[span Год выпуска:&nbsp;] 2018, Россия
+                    li.coin-info__item
+                      | #[span Номинал&nbsp;:] 3 рубля
+                  +button("Оставить заявку", null, null)(class="button--lg coin-info__btn" data-path="modal-callback")
+
+    +button("Показать еще", null, null)(class="button--lg button--outline coin-info__btn-more")

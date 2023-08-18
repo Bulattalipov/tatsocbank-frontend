@@ -1,0 +1,193 @@
+.select {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 5.8rem;
+  margin: 0 auto;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 110%;
+  color: var(--color-text);
+
+  &__input-text {
+    position: relative;
+    display: none;
+    width: auto;
+    margin: 0;
+    padding: 2rem 2.4rem;
+    color: var(--color-base-7);
+    font: var(--font-text-4-med);
+    transition: background-color 0.3s ease-out;
+
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: -4px;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      background-color: var(--color-primary);
+      border-radius: 100%;
+      color: var(--color-base-1);
+      font: var(--font-text-5-med);
+      line-height: 100%;
+      transform: translateY(-50%);
+      content: attr(data-count);
+    }
+
+    &._empty-select {
+      &::after {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+
+  &__current {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-base-2);
+    border-radius: 1.2rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: var(--color-base-3);
+    }
+
+    &.active {
+      color: var(--color-accent);
+      border-color: var(--color-accent);
+      border-radius: 1.2rem 1.2rem 0 0;
+      box-shadow: 0px 13px 30px rgba(0, 0, 0, 0.15);
+
+      &:hover {
+        background-color: var(--color-base-2);
+      }
+
+      & + .select__list-wrapper {
+        box-shadow: 0px 13px 13px rgba(0, 0, 0, 0.15);
+        opacity: 1;
+        animation-name: none;
+
+        .select__option {
+          cursor: pointer;
+        }
+      }
+
+      .select__icon {
+        transform: translateY(-50%) rotate(0deg);
+
+        svg {
+          color: var(--color-accent);
+          stroke: var(--color-accent);
+        }
+      }
+
+      .select__input-text {
+        &::after {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 2.4rem;
+    width: 0;
+    height: 0;
+    border-color: transparent transparent currentcolor;
+    border-style: solid;
+    border-width: 0 4px 4px;
+    transition: transform 0.3s ease-out;
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  &__value {
+    display: flex;
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + .select__input-text {
+      display: block;
+    }
+  }
+
+  &__list-wrapper {
+    position: absolute;
+    top: calc(100% - 2px);
+    z-index: 25;
+    width: 100%;
+    padding: 2rem 2.4rem;
+    overflow: hidden;
+    animation-name: HideList;
+    animation-duration: 0.5s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: step-start;
+    background-color: var(--color-base-2);
+    border-radius: 0 0 1.2rem 1.2rem;
+    list-style: none;
+    opacity: 0;
+  }
+
+  &__list {
+    scrollbar-color: var(--color-other) transparent !important;
+    scrollbar-width: thin !important;
+
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track  {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      width: 0.2rem;
+      height: 7rem;
+      background-color: var(--color-grayscale-400);
+      border: 3px solid var(--color-grayscale-400);
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-track-piece {
+      background-color: transparent;
+    }
+
+    @include mq(sm, max) {
+      height: auto;
+    }
+
+    > li {
+      margin-bottom: 2rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@keyframes HideList {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+
+  }
+}

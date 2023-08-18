@@ -1,0 +1,16 @@
+-
+  more_from_bank = [
+    { name: "ВЭД и валютный контроль", text: "Полный комплекс услуг по сопровождению внешнеэкономической деятельности" },
+    { name: "Зарплатный проект", text: "Воспользуйтесь услугой «Зарплатный проект» для перечисления заработной платы на банковские карты платежных систем Mastercard, Visa и МИР." },
+    { name: "Интернет-эквайринг", text: "Услуга позволяет предприятиям торговли и сервиса принимать оплату за товары и услуги банковскими картами через интернет на WEB-сайте" }
+  ]
+
+section.page-section
+  .site-container
+    h2.page-heading-h3.page-mb56
+      | Еще от банка
+    .more-from-bank__swiper.swiper
+      ul.swiper-wrapper
+        each card in more_from_bank
+          li.swiper-slide
+            +bestOffer(card.name, card.text, false)

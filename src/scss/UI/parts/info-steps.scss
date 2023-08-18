@@ -1,0 +1,40 @@
+/* stylelint-disable selector-class-pattern */
+.info-steps {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  gap: var(--grid-offset);
+  counter-reset: list;
+
+  &--long {
+    .info-steps__item {
+      grid-column: 6 span;
+    }
+  }
+
+  &__item {
+    grid-column: 8 span;
+    counter-increment: list;
+
+    // &:nth-child(2) {
+    //   --r: 246deg !important;
+    // }
+
+    @include mq(sm) {
+      margin-bottom: 3.2rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include mq(sm) {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: none;
+    gap: 0;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+  }
+}

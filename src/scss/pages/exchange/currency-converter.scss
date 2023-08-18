@@ -1,0 +1,125 @@
+/* stylelint-disable selector-class-pattern */
+.currency-converter {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem;
+    background-color: var(--color-base-2);
+    border-radius: 2rem;
+
+    @include mq(lg) {
+      flex-direction: column;
+    }
+
+    @include mq(sm) {
+      padding: 0;
+      background-color: transparent;
+      border-radius: 0;
+    }
+  }
+
+  &__legend {
+    margin-bottom: 3rem;
+    font: var(--font-h4);
+
+    @include mq(sm) {
+      margin-bottom: 1.6rem;
+      font: var(--font-h5);
+    }
+  }
+
+  &__block {
+    width: 100%;
+    max-width: 60rem;
+
+    @include mq(lg) {
+      max-width: 100%;
+    }
+
+    @include mq(sm) {
+      padding: 1.8rem;
+      overflow: hidden;
+      background-color: var(--color-base-2);
+      border-radius: 1.2rem;
+    }
+
+    &:last-child {
+      @include mq(lg) {
+        margin-top: 4rem;
+      }
+
+      @include mq(sm) {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  &__tabs {
+    margin-bottom: 2rem;
+  }
+
+  &__warning {
+    margin-top: 1rem;
+    color: var(--color-base-5);
+    font: var(--font-text-3-reg);
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+    justify-content: center;
+    width: 6.8rem;
+    height: 6.8rem;
+    margin-bottom: 3rem;
+    color: var(--color-base-6);
+    background-color: var(--color-white);
+    border-radius: 50%;
+    display: none;
+
+    .icon {
+      fill: none;
+      stroke: currentcolor;
+      stroke-width: 1.5px;
+
+      @include mq(sm) {
+        width: 3.4rem;
+        height: 3.4rem;
+      }
+    }
+
+    @include mq(lg) {
+      align-self: center;
+      margin: 3rem 0;
+    }
+
+    @include mq(sm) {
+      width: 5rem;
+      height: 5rem;
+      margin: 2rem 0;
+      background-color: var(--color-base-2);
+    }
+  }
+
+  &__banknote {
+    position: absolute;
+    top: 3rem;
+    left: 2.4rem;
+    font: var(--font-text-2-med);
+
+    @include mq(sm) {
+      top: 1.7rem;
+      left: 1.5rem;
+    }
+  }
+
+  &__input {
+    .input__control {
+      padding-left: 4rem;
+
+      @include mq(sm) {
+        padding-left: 3rem;
+      }
+    }
+  }
+}

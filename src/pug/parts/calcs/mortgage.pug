@@ -1,0 +1,137 @@
+-
+  fisrt_swithcers33332123 = [
+    { label: "Я получаю зарплату на карту АО «ТАТСОЦБАНК» <span> + 0,5%</span>", name: "cards", value: "0.2"},
+    { label: "Я предприниматель с расчётным счётом в АО «ТАТСОЦБАНК» <span> + 0,5%</span>", name: "businessman", value: "0.2" },
+    { label: "У моего работодателя открыт расчётный счёт в АО «ТАТСОЦБАНК» <span> + 0,5%</span>", name: "employer", value: "0.2" },
+  ]
+
+section.page-section
+  .site-container
+    h2.page-heading-h3.page-mb56
+      | Ипотека
+
+    form.calc-wrapper.js-form-calculator-ipoteka(action="")
+      .calc-wrapper__block
+      .calc-wrapper__block
+        .calc-wrapper__content
+          .calc-form
+            .calc-form__mobile-wrapper
+              .custom-select.custom-select--white.calc-form__inpt
+                .custom-select__label Предмет ипотеки
+                <select class="js-select js-ipoteka-action js-ipoteka-action-want" name="want">
+                  <option value="c1" data-custom-properties="{'data-year': '1,25', 'data-fee': '15,80', 'data-fee-m': '10,80'}">Купить квартиру</option>
+                  <option value="c2" data-custom-properties="{'data-year': '1,25', 'data-fee': '20,80', 'data-fee-m': '10,80'}">Купить дом</option>
+                  <option value="c9" data-custom-properties="{'data-year': '1,25', 'data-fee': '15,50', 'data-fee-m': '10,50'}">Купить дом от ООО «Корнер»</option>
+                  <option value="c5" data-custom-properties="{'data-year': '1,25', 'data-fee': '0,100'}">Рефинансировать ипотеку</option>
+                  <option value="c3" data-custom-properties="{'data-year': '1,25', 'data-fee': '20,80', 'data-fee-m': '10,80'}">Построить дом</option>
+                  <option value="c4" data-custom-properties="{'data-year': '1,25', 'data-fee': '20,80', 'data-fee-m': '10,80'}">Купить участок</option>
+                  <option value="c6" data-custom-properties="{'data-year': '1,25', 'data-fee': '20,80', 'data-fee-m': '10,80'}">Деньги на ремонт</option>
+                  <option value="c7" data-custom-properties="{'data-year': '1,10', 'data-fee': '40,80'}">Купить гараж или машиноместо</option>
+                  <option value="c8" data-custom-properties="{'data-year': '1,20', 'data-fee': '20,80'}">Купить коммерческую недвижимость</option>
+                </select>
+
+              .custom-select.custom-select--white.calc-form__inpt(data-want="c5")
+                .custom-select__label Цель кредита
+                select(class="js-select js-ipoteka-action" name="c5-cel")
+                  <option value="1" data-custom-properties="{'data-year':'1,25'}">Квартира</option>
+                  <option value="2" data-custom-properties="{'data-year':'1,20'}">Дом или участок</option>
+                  <option value="3" data-custom-properties="{'data-year':'1,20'}">Коммерческая недвижимость</option>
+
+              .calc-form__inpts
+                .js-range-single-parent.calc-form__inpt
+                  label.input
+                    input(type="text" class="input__control js-range-single-input js-range-input-ipoteka-1 js-ipoteka-action js-number" name="ipoteka-amount" placeholder="custom")
+                    span.input__label(for="amount") Стоимость недвижимости
+                    input.js-range-slider-ipoteka-1(name="start-amount-range" data-min="100000" data-max="50000000" data-value="500000" data-step="100000")
+
+                .js-range-single-parent.calc-form__inpt.js-ipoteka-fee-item
+                  label.input
+                    input(type="text" class="input__control js-range-single-input js-range-input-ipoteka-2 js-ipoteka-action" name="initial-fee" placeholder="custom")
+                    span.input__label.js-initial-fee-text Первоначальный взнос #[span.js-ipoteka-fee 15.00%]
+                    input.js-range-slider-ipoteka-2(name="initial-fee-range" data-min="10" data-max="50000000" data-value="5000" data-step="5000")
+
+              .switcher.switcher--black.calc-form__switcher.calc-form__inpt(data-want="c1,c2,c4,c9")
+                input(class="visually-hidden js-ipoteka-action" type="checkbox" id=`s-123` name="kapital" value="Y")
+                label(for=`s-123` class="switcher__container calc-form__switcher-simple")
+                  span.switcher__control
+                  span.switcher__text Использовать материнский капитал
+                  .tooltip.tooltip--type2
+                    +icon-mono("info")(width="24" height="24" class="tooltip__icon")
+                    .tooltip__body
+                      .tooltip__inner
+                        p
+                          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ratione, aspernatur quas distinctio et fuga molestiae corporis incidunt magnam quo!
+
+              .js-range-single-parent.calc-form__inpt
+                label.input
+                  input(type="text" class="input__control js-range-single-input js-range-input-ipoteka-3 js-ipoteka-action" name="ipoteka-term" placeholder="custom")
+                  span.input__label Срок кредита
+                  input.js-range-slider-ipoteka-3(name="ipoteka-term-range" data-min="1" data-value="25" data-max="30" data-step="1")
+
+              .calc-form__inpt--disabled
+                .input.calc-form__inpt
+                  input(type="text" disabled readonly class="input__control" value="106 205 ₽" name="commission-value" placeholder="Комиссия")
+                  span.input__label Комиссия
+
+                ul.tabs-list.tabs-list--rounded
+                  li.tabs-list__item
+                    input(type="radio" id="lab1" checked class="visually-hidden js-ipoteka-action" name="commission" value="2.5")
+                    label.tab-buton.tab-buton--rounded(type="button" for="lab1")
+                      | 2,5%
+                  li.tabs-list__item
+                    input(type="radio" id="lab2" class="visually-hidden js-ipoteka-action" name="commission" value="1")
+                    label.tab-buton.tab-buton--rounded(type="button" for="lab2")
+                      | 1%
+                  li.tabs-list__item
+                    input(type="radio" id="lab3" class="visually-hidden js-ipoteka-action" name="commission" value="0")
+                    label.tab-buton.tab-buton--rounded(type="button" for="lab3")
+                      | Нет
+
+              .custom-select.custom-select--white.calc-form__inpt
+                .custom-select__label Подтверждение дохода
+                select(name="dohod" class="js-select js-ipoteka-action")
+                  option(value="0") Справкой 2-НДФЛ
+                  option(value="0.3") Справкой по форме банка
+                  option(value="0.5") Я — индивидуальный предприниматель
+
+
+      .calc-wrapper__block
+        .calc-container.js-ipoteka-item(data-rate="0.078")
+          .calc-container__num(data-text="Ежемесячный платёж")
+            | #[span(data-result="result1") 35 572]&nbsp;₽
+
+          ul.calc-container__table
+            li.calc-container__cell
+              .calc-container__cell-item Процентная ставка
+              .calc-container__cell-item
+                | #[span(data-result="result2") 7,8]%
+            li.calc-container__cell(data-want="c1,c2,c4,c7,c8")
+              .calc-container__cell-item Сумма кредита
+              .calc-container__cell-item #[span(data-result="result3") 400 000]&nbsp;₽
+            li.calc-container__cell
+              .calc-container__cell-item Переплата по кредиту
+              .calc-container__cell-item #[span(data-result="result4") 400 000]&nbsp;₽
+            li.calc-container__cell
+              .calc-container__cell-item Выгода от комиссии
+              .calc-container__cell-item #[span(data-result="result5") 400 000]&nbsp;₽
+            li.calc-container__cell
+              .calc-container__cell-item Необходимый доход
+              .calc-container__cell-item #[span(data-result="result6") 45 259]&nbsp;₽
+
+          .calc-container__btns
+            +button("Оставить заявку", null, "Заявка")(class="button--lg")
+            +button("Тарифы", null, null, "link")(class="button--outline button--lg")
+
+          .calc-container__agreement
+            | Расчёт носит информационный характер и не является публичной офертой
+
+        .calc-form__switchers.calc-form__switchers--mb
+          for item, i in fisrt_swithcers33332123
+            .switcher.switcher--black.calc-form__switcher
+              input(class="visually-hidden js-ipoteka-action" type="checkbox" id=`1sss-${i}` name=item.name value="0.2")
+              label(for=`1sss-${i}` class="switcher__container switcher__container--labeled")
+                span.switcher__control(data-persent-mobile="- 0,5%")
+                span.switcher__text!= item.label
+
+
+      .calc-wrapper__block

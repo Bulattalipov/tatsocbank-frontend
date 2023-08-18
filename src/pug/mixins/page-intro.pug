@@ -1,0 +1,12 @@
+mixin page-intro(name, text, titleTeg, buttonText='Оставить заявку', attribute="modal-callback")
+  section.page-intro&attributes(attributes)
+    .site-container.page-intro__container
+      if titleTeg
+        h1.page-heading-h2.page-intro__heading= name
+      else
+        h1.page-heading-h1.page-intro__heading= name
+      p.page-intro__text= text
+      img(src="assets/images/page-intro/img1.png" class="page-intro__image" alt=name)
+      .page-intro__btns
+        +button(buttonText, null, "Заявка")(class="button--lg page-intro__btn-callback" data-path=attribute)
+        +button("Подобрать", "shevron-arrow-right", null, 'link')(class="button--lg button--secondary" data-hide)

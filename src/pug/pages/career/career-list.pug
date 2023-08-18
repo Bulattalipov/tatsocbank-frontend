@@ -1,0 +1,43 @@
+section.page-section
+  .site-container
+    .career-list__wrapper
+      ul.career-list
+        each i in Array.from(Array(3).keys())
+          li.career-list__item
+            .career-list__item-top
+              .career-list__item-top-box
+                h3.career-list__item-top-box-title
+                  | Экономист отдела внутрибанковских операций
+                .career-list__item-top-box-price
+                  | #[span.career-list__item-top-box-text От] 43 000 #[span.career-list__item-top-box-currency ₽]
+              .career-list__item-top-contain
+                .career-list__item-top-contain-text
+                  | Опубликовано:
+                .career-list__item-top-contain-date
+                  | 13 октября 2022
+                .career-list__item-top-contain-list
+                  .career-list__item-top-contain-list-item
+                    | Финансы
+            .career-list__item-basic
+              .career-list__item-basic-text
+                | Расположение эпизодов аннигилирует диалогический одиннадцатисложник, но не рифмами. Замысел вразнобой аллитерирует замысел вразнобой аллитерирует музыкальный симулякр.
+              ul.career-list__item-basic-list
+                li.career-list__item-basic-list-item
+                  .career-list__item-basic-list-item-type
+                    | Занятость:
+                  .career-list__item-basic-list-item-text
+                    | полная, гибкий график
+                li.career-list__item-basic-list-item
+                  .career-list__item-basic-list-item-type
+                    | Требуемый опыт:
+                  .career-list__item-basic-list-item-text
+                    | от 1 года
+                li.career-list__item-basic-list-item
+                  .career-list__item-basic-list-item-type
+                    | Город:
+                  .career-list__item-basic-list-item-text
+                    | Казань
+              .career-list__item-basic-btns
+                +button("Подробнее", null, null, "#")(class="button--lg career-list__item-basic-btn")
+                +icon-inside-circle("hh")
+    +button("Показать еще")(class="button--outline button--lg button--full career-list__btn-show")

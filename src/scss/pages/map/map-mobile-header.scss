@@ -1,0 +1,19 @@
+.map-mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .type-radio {
+    width: unset;
+  }
+
+  &__more-link {
+    flex-direction: row-reverse;
+
+    .page-more-link__icon {
+      margin-left: unset;
+      margin-right: 0.4rem;
+      transform: rotate(180deg);
+    }
+  }
+}

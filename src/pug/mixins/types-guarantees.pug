@@ -1,0 +1,87 @@
+mixin types-guarantees(text, number, connections, complete)
+  if text
+    section.page-section&attributes(attributes)
+      .site-container
+        .types-guarantees
+          h2.page-heading-h3.types-guarantees__title.page-mb56
+            | Виды гарантий
+          .types-guarantees__swiper.swiper.js-popular-slider
+            ul.swiper-wrapper
+              each i in Array.from(Array(7).keys())
+                li.types-guarantees__item.swiper-slide
+                  .types-guarantees__item-info
+                    .types-guarantees__item-title
+                      | Договорная гарантия
+                    .types-guarantees__item-desc
+                      | Обеспечение надлежащего исполнения договорных обязательств;ставка на весь срок кредита
+                  .types-guarantees__item-img-wrapper
+                    img.types-guarantees__item-img(src="assets/images/advantages/icon.svg" alt="")
+  if number
+    section.page-section&attributes(attributes)
+      .site-container
+        .types-guarantees
+          h2.page-heading-h3.types-guarantees__title.page-mb56
+            | Виды гарантий
+          .types-guarantees__swiper.swiper.js-popular-slider
+            ul.swiper-wrapper
+              each i in Array.from(Array(3).keys())
+                li.types-guarantees__item.swiper-slide
+                  .types-guarantees__item-info
+                    .types-guarantees__item-title
+                      | Договорная гарантия
+                    ul.landing-card__percents
+                      li.landing-card__percents-item
+                        .landing-card__percents-info
+                          | от #[b 15%] дней
+                        span.landing-card__percents-text Годовая ставка
+                      li.landing-card__percents-item
+                        .landing-card__percents-info
+                          | от #[b 15%] дней
+                        span.landing-card__percents-text Первый взнос
+                  .types-guarantees__item-img-wrapper
+                    img.types-guarantees__item-img(src="assets/images/advantages/icon.svg" alt="")
+  if connections
+    section.page-section&attributes(attributes)
+      .site-container
+        .types-guarantees
+          h2.page-heading-h3.types-guarantees__title.page-mb56
+            | Подключения с интеграцией
+          .types-guarantees__swiper.swiper.js-popular-slider
+            ul.swiper-wrapper
+              each i in Array.from(Array(7).keys())
+                li.types-guarantees__item.swiper-slide
+                  .types-guarantees__item-info
+                    .types-guarantees__item-title
+                      | Договорная гарантия
+                    .types-guarantees__desc
+                      p
+                        | Готовое решение для CMS вашего интернет-магазина:
+                    ul.types-guarantees__list
+                      li.types-guarantees__list-item
+                        | Просто в установке
+                      li.types-guarantees__list-item
+                        | Не требует дополнительной разработки
+                      li.types-guarantees__list-item
+                        | Информирует CMS об успешных оплатах
+                    +button("Оставить заявку", false, false, "/")(class="button--outline types-guarantees__list-btn")
+                  .types-guarantees__item-img-wrapper
+                    img.types-guarantees__item-img(src="assets/images/advantages/icon.svg" alt="")
+  if complete
+    section.page-section&attributes(attributes)
+      .site-container
+        .types-guarantees
+          h2.page-heading-h3.types-guarantees__title.page-mb56
+            | Комплексные решения
+          .types-guarantees__swiper.swiper.js-popular-slider
+            ul.swiper-wrapper
+              each i in Array.from(Array(3).keys())
+                li.types-guarantees__item.swiper-slide
+                  .types-guarantees__item-info
+                    .types-guarantees__item-title
+                      | Договорная гарантия
+                    .types-guarantees__desc
+                      p
+                        | Готовое решение для CMS вашего интернет-магазина:
+                    +button("Подробнее", "shevron-arrow-right", false, "/")(class="button--outline types-guarantees__list-btn")
+                  .types-guarantees__item-icon-wrapper
+                    img.types-guarantees__item-icon(src="assets/images/img-complete-1.png" alt="")

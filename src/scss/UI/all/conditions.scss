@@ -1,0 +1,73 @@
+.conditions {
+  &__item {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    gap: var(--grid-offset);
+    margin-bottom: 1rem;
+    padding: 3rem;
+    background-color: var(--color-base-2);
+    border-radius: 2rem;
+
+    &-block {
+      grid-column: 12 span;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include mq(sm) {
+      display: block;
+      padding: 1.6rem;
+      border-radius: 0.8rem;
+    }
+  }
+
+  &__heading {
+    font: var(--font-h6);
+
+    @include mq(sm) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__content {
+    color: var(--color-base-6);
+    font: var(--font-text-3-reg);
+
+    p {
+      margin-bottom: 1.5rem;
+
+      &:nth-last-of-type(1) {
+        margin-bottom: 0;
+      }
+
+      span {
+        font: var(--font-text-5-reg);
+      }
+    }
+
+    ul {
+      li {
+        position: relative;
+        margin-bottom: 1.6rem;
+        padding-left: 1.8rem;
+
+        &::before {
+          position: absolute;
+          top: 0.8rem;
+          left: 0;
+          width: 0.4rem;
+          height: 0.4rem;
+          background-color: var(--color-base-6);
+          border-radius: 50%;
+          content: "";
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

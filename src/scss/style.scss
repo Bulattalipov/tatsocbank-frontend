@@ -1,0 +1,148 @@
+/* stylelint-disable no-invalid-position-at-import-rule */
+:root {
+  /* typography  */
+  --main-ff: "Inter", sans-serif;
+  --second-ff: "ClashDisplay", sans-serif;
+  --font-size-main: 0.595vw;
+
+  /* font-headnig */
+  --font-h1: 500 12rem/85% var(--main-ff);
+  --font-h2: 500 7.2rem/100% var(--main-ff);
+  --font-h3: 600 4.8rem/100% var(--main-ff);
+  --font-h4: 600 3.2rem/120% var(--main-ff);
+  --font-h5: 600 2.6rem/120% var(--main-ff);
+  --font-h6: 600 2.2rem/120% var(--main-ff);
+
+  /* label */
+  --font-label: 400 1rem/130% var(--main-ff);
+
+  /* font-text */
+  --font-text-1-reg: 400 2rem/130% var(--main-ff);
+  --font-text-1-med: 500 2rem/120% var(--main-ff);
+  --font-text-2-reg1: 400 1.8rem/140% var(--main-ff);
+  --font-text-2-reg2: 400 1.8rem/120% var(--main-ff);
+  --font-text-2-med: 500 1.8rem/140% var(--main-ff);
+  --font-text-2-semi: 600 1.8rem/140% var(--main-ff);
+  --font-text-3-reg: 400 1.6rem/130% var(--main-ff);
+  --font-text-3-med: 500 1.6rem/120% var(--main-ff);
+  --font-text-4-reg: 400 1.4rem/130% var(--main-ff);
+  --font-text-4-med: 500 1.4rem/120% var(--main-ff);
+  --font-text-4-semi: 600 1.4rem/130% var(--main-ff);
+  --font-text-5-reg: 400 1.2rem/120% var(--main-ff);
+  --font-text-5-med: 500 1.2rem/120% var(--main-ff);
+
+  /* font-button */
+  --font-btn-large: 500 1.8rem/140% var(--main-ff);
+  --font-btn-medium: 500 1.6rem/120% var(--main-ff);
+  --font-btn-small: 500 1.4rem/120% var(--main-ff);
+
+  /* font-numbers */
+  --font-numbers-1: 500 18rem/86% var(--second-ff);
+  --font-numbers-2: 500 12rem/86% var(--second-ff);
+  --font-numbers-3: 500 7.2rem/86% var(--second-ff);
+  --font-numbers-4: 500 6.5rem/86% var(--second-ff);
+  --font-numbers-5: 500 3.8rem/86% var(--second-ff);
+  --font-numbers-6: 500 2.2rem/125% var(--second-ff);
+
+  /* font-body */
+  --font-body: var(--font-text-3-reg);
+
+  /* colors */
+  --color-primary: #f8661c;
+  --color-primary-hover: #e2560e;
+  --color-primary-active: #d85311;
+  --color-primary-disabled: #fec5a8;
+  --color-secondary-gradient: linear-gradient(135.71deg, #6c47d9 24.69%, #8363e2 117.83%);
+  --color-base-1: #fff;
+  --color-base-2: #f8f8f8;
+  --color-base-3: #f0f0f0;
+  --color-base-4: #d1d1d1;
+  --color-base-5: #b7b7b7;
+  --color-base-6: #787572;
+  --color-base-7: #2a2a2a;
+  --color-base-8: #241e1a;
+  --color-other-green: #559b57;
+  --color-other-red: #ff4747;
+  --color-other-orange: #fff4ee;
+  --color-other-gradient: linear-gradient(100.39deg, #6c47d9 -11.66%, #d26be3 50.39%, #f8661c 115.08%);
+  --color-error: #e31a1a;
+  --color-error-light: #faebeb;
+  --color-white: var(--color-base-1);
+  --color-bg: var(--color-white);
+  --color-grey-600: #99a5b0;
+  --color-grey-300: #eff1f5;
+
+  /* etc */
+  --transition: 100ms ease-in;
+  --box-shadow: 0 0 10px rgba(0 0 0 / 8%);
+  --padding-offset: 80px;
+  --grid-offset: 16px;
+  --color-border: rgba(42 42 42 / 10%);
+  --header-height: 11.5rem;
+  --fixed-header-height: 7.2rem;
+}
+
+@import "./helpers/**/*";
+@import "./vendor/**/*";
+@import "./settings/**/*";
+@import "./UI/controls/**/*";
+@import "./UI/all/**/*";
+@import "./UI/parts/**/*";
+@import "./blocks/**/*";
+@import "./pages/**/*";
+
+@include mq(xl) {
+  :root {
+    --padding-offset: 40px;
+  }
+}
+
+@include mq(md) {
+  :root {
+    --padding-offset: 20px;
+  }
+}
+
+@include mq(sm) {
+  :root {
+    /* font-headnig */
+    --font-h1: 500 4rem/95% var(--main-ff);
+    --font-h2: 500 3rem/100% var(--main-ff);
+    --font-h3: 600 2.6rem/120% var(--main-ff);
+    --font-h4: 600 2.6rem/140% var(--main-ff);
+    --font-h5: 600 2rem/120% var(--main-ff);
+    --font-h6: 600 1.6rem/120% var(--main-ff);
+
+    /* font-text */
+    --font-text-1-reg: 400 1.6rem/120% var(--main-ff);
+    --font-text-1-med: 500 1.6rem/120% var(--main-ff);
+    --font-text-2-reg1: 400 1.4rem/130% var(--main-ff);
+    --font-text-2-reg2: 400 1.4rem/120% var(--main-ff);
+    --font-text-2-med: 500 1.4rem/140% var(--main-ff);
+    --font-text-2-semi: 600 1.4rem/120% var(--main-ff);
+    --font-text-3-reg: 400 1.4rem/130% var(--main-ff);
+    --font-text-3-med: 500 1.4rem/130% var(--main-ff);
+    --font-text-4-reg: 400 1.2rem/120% var(--main-ff);
+    --font-text-4-med: 500 1.2rem/140% var(--main-ff);
+    --font-text-4-semi: 600 1.2rem/140% var(--main-ff);
+    --font-text-5-reg: 400 1.1rem/120% var(--main-ff);
+    --font-text-5-med: 500 1.2rem/120% var(--main-ff);
+
+    /* font-numbers */
+    --font-numbers-1: 500 4.6rem/86% var(--second-ff);
+    --font-numbers-2: 500 6.5rem/86% var(--second-ff);
+    --font-numbers-3: 500 4.2rem/86% var(--second-ff);
+    --font-numbers-4: 500 4.6rem/86% var(--second-ff);
+    --font-numbers-5: 500 2.8rem/90% var(--second-ff);
+    --font-numbers-6: 500 2rem/90% var(--second-ff);
+
+    /* etc */
+    --header-height: 5.9rem;
+  }
+}
+
+@include mq(custom, max, 360) {
+  :root {
+    --header-height: 6rem;
+  }
+}

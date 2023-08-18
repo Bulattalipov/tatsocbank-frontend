@@ -1,0 +1,40 @@
+-
+  serv = [
+    { name: "Офисы и банкоматы", text: "Адреса отделений и банкоматов «ТАТСОЦБАНК»" },
+    { name: "Драгоценные материалы", text: "Продажа монет из драгоценных металлов" },
+    { name: "Аренда сейфов", text: "Аренда банковских сейфов для надёжного хранения ценностей" },
+    { name: "Расчётно-кассовое обслуживание", text: "Аренда банковских сейфов для надёжного хранения ценностей" }
+  ]
+
+section.page-section.js-section
+  .site-container
+    h2.page-heading-h3.page-mb56
+      | Полезные сервисы
+
+    ul.useful-services.useful-services--grid
+      li.useful-services__item
+        h4.useful-services__legend.useful-services__legend--offset-bottom.useful-services__legend--data-text(data-update="Обновлено 13.10.2022")
+          | Курсы валют в интернет банке
+
+        +currency-rate()(class="useful-services__rate")
+
+        .useful-services__btn-container
+          +button("Подробнее", null, null, 'link')(class="button--sm button--third useful-services__btn")
+          span.useful-services__btn-caption
+            | Точный курс конвертации валюты будет расчитан в отделении банка
+
+      li.useful-services__item.useful-services__item--bg-image.lazyload(data-bg="assets/images/map-bg.jpg")
+        h4.useful-services__legend.useful-services__legend--data-text
+          | Офисы и банкоматы
+        p.useful-services__text
+          | Адреса отделений и банкоматов «ТАТСОЦБАНК», а также банкоматов партнёров
+        .useful-services__btn-container
+          +button("Подробнее", null, null, 'link')(class="button--sm button--third useful-services__btn")
+
+    ul.useful-services__small-services.useful-services--grid
+      for item in serv
+        li.useful-services__item-small
+          a.useful-services__link.page-link-full(href="./")= item.name
+            +icon-mono("shevron-arrow-right")(width="16" height="16" class="useful-services__link-icon")
+          p.useful-services__caption= item.text
+          +imgLazy("assets/images/useful-services/img1.jpg")(class="useful-services__image")

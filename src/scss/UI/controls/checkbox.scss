@@ -1,0 +1,91 @@
+/* stylelint-disable selector-class-pattern */
+.checkbox {
+  &__container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+
+    @include mq(lg, min) {
+      &:hover {
+        .checkbox__control {
+          background-color: var(--color-base-3);
+        }
+      }
+    }
+  }
+
+  &__control {
+    position: relative;
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-primary);
+    border-radius: 0.4rem;
+    transition: background-color var(--transition);
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("../images/tick.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: 0;
+      content: "";
+    }
+
+    &--rounded {
+      border-radius: 50%;
+
+      &::before {
+        top: 50%;
+        left: 50%;
+        width: 0.8rem;
+        height: 0.8rem;
+        background-color: var(--color-white);
+        background-image: none;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &__text {
+    margin-left: 0.8rem;
+    color: currentcolor;
+    font: var(--font-text-3-med);
+  }
+
+  input {
+    &:checked {
+      ~.checkbox__container {
+        .checkbox__control {
+          background-color: var(--color-primary);
+
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &:focus {
+      &.focus-visible {
+        ~.checkbox__container {
+          .checkbox__control {
+            outline: 2px solid var(--color-base-6);
+          }
+        }
+      }
+    }
+  }
+
+  &--mb {
+    margin-bottom: 1rem;
+  }
+}

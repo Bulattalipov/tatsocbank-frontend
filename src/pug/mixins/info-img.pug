@@ -1,0 +1,34 @@
+mixin info-img(title, list, btn, tag, btn2)
+  section.page-section&attributes(attributes)
+    .site-container
+      .info-img
+        .info-img__content
+          if tag
+            span.info-img__tag
+              | с 1 августа по 30 декабря
+          if title
+            h2.page-heading-h3.info-img__title
+              | Ценим каждого клиента
+          .info-img__text
+            p
+              | Коллектив банка делает все, чтобы наши клиенты видели в нас надежного и гибкого партнера, который всегда с пониманием относится к его потребностям и готов пойти навстречу в решении сложных вопросов. Мы осознаем, что уважение и доверие наших клиентов является нашим основным капиталом.
+          .info-img__img-mobile
+            img.info-img__img(src="assets/images/general-information/img-photo.png" alt="")
+          if (list)
+            ul.info-img__list
+              li.info-img__list-item
+                | Забота о развитии бизнеса
+              li.info-img__list-item
+                | Высокая надежность
+              li.info-img__list-item
+                | Выгодные банковские продукты
+              li.info-img__list-item
+                | Индивидуальный подход
+              li.info-img__list-item
+                | Передовые технологии
+          if btn
+            +button('Подробнее', null, null, "link")(class="button--lg button--third info-img__btn")
+          if btn2
+            +button('Подробнее', null, null, "link")(class="button--lg info-img__btn")
+        .info-img__img-wrapper
+          img.info-img__img(src="assets/images/general-information/img-photo.png" alt="")

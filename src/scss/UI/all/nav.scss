@@ -1,0 +1,23 @@
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    margin-right: 2rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    color: var(--color-header);
+    font: var(--font-text-4-med);
+
+    // &.is-active {
+    //   color: var(--color-base-7);
+    // }
+  }
+}

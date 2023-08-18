@@ -1,0 +1,24 @@
+-
+  utilityBlock = [
+    {title: "Пресс-центр", text: "Актуальные новости банка и полезные статьи о финпродуктах и услугах", imgUrl: "assets/images/general-information/utility-block-1.jpg"},
+    {title: "Карьера", text: "Присоединяйтесь к нашей динамичной команде", imgUrl: "assets/images/general-information/utility-block-2.jpg"},
+    {title: "Документы", text: "Публичная информация, лицензии и документы", imgUrl: "assets/images/general-information/utility-block-3.jpg"},
+    {title: "Контакты", text: "Адрес, телефон и режим работы головного офиса «ТАТСОЦБАНК»", imgUrl: "assets/images/general-information/utility-block-4.jpg"},
+    {title: "Реквизиты", text: "Контакты головного офиса, реквизиты и инструкции по перечилению валют", imgUrl: "assets/images/general-information/utility-block-5.jpg"}
+  ]
+section.page-section
+  .site-container
+    .utility-block
+      h2.page-heading-h3.page-mb32
+        | Может быть полезно
+      .utility-block__slider-wrapper
+        .utility-block__slider.swiper.js-utility-slider
+          ul.swiper-wrapper
+            each item in utilityBlock
+              li.swiper-slide
+                .utility-block__item
+                  .utility-block__item-box
+                    +moreLink(item.title, true)
+                    .utility-block__item-text= item.text
+                  .utility-block__item-img-wrapper
+                    +imgLazy(item.imgUrl, "")(class="utility-block__item-img")

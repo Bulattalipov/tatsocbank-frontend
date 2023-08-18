@@ -1,0 +1,43 @@
+section.search.js-search-container
+  .search__inner.js-search-parent
+    .site-container.search__container
+      button.search__close-btn.js-search-close
+        span.visually-hidden Закрыть окно Поиска
+        +icon-mono("close")(width="24" height="24")
+      h2.search__heading.page-heading-h3.page-mb40 Поиск по сайту
+
+      form.search__form
+        label.input.input--grey
+          input(type="text" class="input__control search__form-control js-search no_validate" value="Кредит" data-items="content" name="search" placeholder="Найти программу, продукт или сервис")
+          span.input__label Найти программу, продукт или сервис
+          +icon-mono("search")(width="24" height="24" class="search__form-icon")
+          +icon-mono("close")(width="24" height="24" class="search__form-icon search__form-icon--close")
+
+      .search__popular
+        | Популярные запросы:
+        ul
+          li
+            label
+              input(type="radio" value="Семейная ипотека" name="search_popular" class="visually-hidden")
+              span Семейная ипотека
+          li
+            label
+              input(type="radio" value="Карта Мир" name="search_popular" class="visually-hidden")
+              span Карта Мир
+          li
+            label
+              input(type="radio" value="Автокредит" name="search_popular" class="visually-hidden")
+              span Автокредит
+          li
+            label
+              input(type="radio" value="Вклады" name="search_popular" class="visually-hidden")
+              span Вклады
+
+
+      .search-results-wrapper.is-shown(data-items-target="content")
+        ul.search__results
+          li.search__results-item.highlight-element Кредит для зарплатных клиентов
+          li.search__results-item.highlight-element Кредит под залог
+          li.search__results-item.highlight-element Кредит к ипотеке
+          li.search__results-item.highlight-element Кредит для погашения ипотеки
+          li.search__results-item.highlight-element Кредит для зарплатных клиентов

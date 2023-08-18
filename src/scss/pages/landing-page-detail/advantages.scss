@@ -1,0 +1,39 @@
+.advantages {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  gap: var(--grid-offset);
+
+  &__item {
+    grid-column: 8 span;
+
+    @include mq(lg) {
+      flex-shrink: 0;
+      width: 40%;
+      margin-right: 1.6rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    @include mq(md) {
+      width: 55%;
+    }
+
+    @include mq(sm) {
+      width: 90%;
+      margin-right: 1.4rem;
+    }
+  }
+
+  @include mq(lg) {
+    display: flex;
+    grid-template-columns: none;
+    gap: 0;
+    margin-right: calc(-1 * var(--padding-offset));
+    padding-right: var(--padding-offset);
+    overflow: auto;
+
+    @include noScrollbar();
+  }
+}

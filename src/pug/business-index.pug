@@ -1,0 +1,10 @@
+extends layout/default.pug
+
+block variables
+  - const bodyClass = "page-home"
+  - const pageTitle = "Главная"
+  - const siteLang = "ru"
+  - name = "index"
+
+block content
+  include pages/business-index/main.pug

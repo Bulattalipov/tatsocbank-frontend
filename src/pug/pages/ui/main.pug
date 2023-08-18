@@ -1,0 +1,126 @@
+main.page-main.main.page-top-offset
+  section.ui
+    .site-container
+      ul.page-ui
+        li.page-ui__item
+          .page-ui__item-legend
+            | switcher
+          .switcher
+            input(class="visually-hidden" type="checkbox" id="s-1" name="swicher" value="custom")
+            label(for="s-1" class="switcher__container")
+              span.switcher__control
+        li.page-ui__item
+          .page-ui__item-legend
+            | checkbox
+          .checkbox
+            input(type="checkbox" class="visually-hidden" id="s-3" name="checkit" value="custom")
+            label(for="s-3" class="checkbox__container")
+              span.checkbox__control
+
+          .checkbox
+            input(type="checkbox" class="visually-hidden" id="s-5" name="checkit" value="custom")
+            label(for="s-5" class="checkbox__container")
+              span.checkbox__control.checkbox__control--rounded
+        li.page-ui__item
+          .page-ui__item-legend
+            | switcher labeled
+          .switcher
+            input(class="visually-hidden" type="checkbox" id="s-2" name="swicher" value="custom")
+            label(for="s-2" class="switcher__container switcher__container--labeled")
+              span.switcher__control(data-persent-mobile="- 0,5%")
+              span.switcher__text
+                | Я предприниматель c расчётным счётом в АО «ТАТСОЦБАНК» #[span - 0,5%]
+        li.page-ui__item
+          .page-ui__item-legend
+            | checkbox labeled
+          .checkbox
+            input(type="checkbox" class="visually-hidden" id="s-4" name="checkit" value="custom")
+            label(for="s-4" class="checkbox__container")
+              span.checkbox__control
+              span.checkbox__text
+                | Работают сейчас #[a(href="/") ссылка]
+          .checkbox
+            input(type="checkbox" class="visually-hidden" id="s-6" name="checkit" value="custom")
+            label(for="s-6" class="checkbox__container")
+              span.checkbox__control.checkbox__control--rounded
+              span.checkbox__text
+                | Работают сейчас #[a(href="/") ссылка]
+        li.page-ui__item
+          .page-ui__item-legend
+            | classic tab and tabs list
+          ul.tabs-list
+            li.tabs-list__item
+              button.tab-buton.is-active
+                | Ипотека
+            li.tabs-list__item
+              button.tab-buton
+                | Кредиты
+            li.tabs-list__item
+              button.tab-buton
+                | Вклады
+        li.page-ui__item
+          .page-ui__item-legend
+            | round tab and tabs list
+          ul.tabs-list.tabs-list--rounded
+            li.tabs-list__item
+              button.tab-buton.tab-buton--rounded.is-active
+                | RUB
+            li.tabs-list__item
+              button.tab-buton.tab-buton--rounded(disabled)
+                | USD
+            li.tabs-list__item
+              button.tab-buton.tab-buton--rounded
+                | EUR
+        li.page-ui__item
+          .page-ui__item-legend
+            | labeled tab and tabs list
+          ul.count-tab__list
+            li.count-tab__list__item
+              button.count-tab.is-active(data-count="20")
+                | Все программы
+            li.count-tab__list__item
+              button.count-tab(data-count="20")
+                | С господдержкой
+            li.count-tab__list__item
+              button.count-tab(data-count="20")
+                | Без господдержки
+        li.page-ui__item
+          .page-ui__item-legend
+            | slider btns
+          .slider-btns
+            button.slider-btn
+              span.visually-hidden предыдущий слайд
+              +icon-mono("shevron-arrow")(width="24" height="24" class="slider-btn__icon")
+            button.slider-btn
+              span.visually-hidden слудующий слайд
+              +icon-mono("shevron-arrow")(width="24" height="24" class="slider-btn__icon")
+        li.page-ui__item
+          .page-ui__item-legend
+            | count btns
+          .count-btns
+            button.count-btn
+              span.visually-hidden прибавить
+              +icon-mono("plus")(width="24" height="24" class="count-btn__icon")
+            button.count-btn
+              span.visually-hidden убавить
+              +icon-mono("minus")(width="24" height="24" class="count-btn__icon")
+        li.page-ui__item
+          .page-ui__item-legend
+            | input
+          label.input.input--offset-bottom
+            input(type="text" class="input__control" name="input" placeholder="name")
+            span.input__label name
+          label.input.input--iconed.input--offset-bottom
+            input(type="text" class="input__control" name="input" placeholder="name" value="search")
+            span.input__label name
+            +icon-mono("search")(width="32" height="32" class="input__icon")
+          label.input.input--offset-bottom
+            input(type="text" class="input__control disabled" name="input" placeholder="Имя" value="disabled" disabled)
+            span.input__label name
+          label.input.is-error.input--offset-bottom
+            input(type="text" class="input__control" name="input" placeholder="name" value="error")
+            span.input__label name
+          label.texarea
+            textarea(name="textarea" placeholder="Пожалуйста, напишите ваши замечания и предложения. Какой информации не хватает?" class="texarea__control")
+            span.texarea__count
+              | 289 символов

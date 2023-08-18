@@ -1,0 +1,82 @@
+mixin vacancy-intro(full)
+  if full
+    section.page-intro.page-intro--white-bg.page-intro--withoutMB
+      .site-container
+        .vacancy-intro
+          .vacancy-intro__top
+            .vacancy-intro__top-tabs
+              .vacancy-intro__top-tab
+                | IT
+            .vacancy-intro__top-date
+              .vacancy-intro__top-date-text
+                | Опубликовано:
+              .vacancy-intro__top-date-number
+                | 13 октября 2022
+          h2.page-heading-h2 Разработчик PostgreSQL (Middle/Senior)
+          .vacancy-intro__price
+            | #[span.vacancy-intro__price-text От]43 000#[span.vacancy-intro__price-currency ₽]
+          +vacancy-criteria
+          .vacancy-intro__modile-btns
+            .vacancy-intro__modile-btn
+              +icon-inside-circle("hh")
+            .vacancy-intro__modile-btn.vacancy-intro__modile-btn--share
+              +icon-inside-circle("share")
+              span
+                | Поделиться
+          .vacancy-intro__footer
+            .vacancy-intro__btns
+              +button("Откликнуться", null, null, "#callback-resume")(class="button--lg vacancy-intro__btn-main")
+              +icon-inside-circle("phone")
+              +icon-inside-circle("hh")(class="vacancy-intro__btn-hh")
+            .vacancy-intro__socials
+              .vacancy-intro__socials-text
+                | Поделиться
+              .vacancy-intro__socials-items
+                .vacancy-intro__socials-item.vacancy-intro__socials-item--chain
+                  +icon-multi("social-chain")(width="24px" height="24px" class="vacancy-intro__socials-item-icon")
+                  .vacancy-intro__socials-item-text
+                    | Ссылка успешно скопирована
+                a.vacancy-intro__socials-item(href="#")
+                  +icon-multi("social-telegram")(width="24px" height="24px" class="vacancy-intro__socials-item-icon")
+                a.vacancy-intro__socials-item(href="#")
+                  +icon-multi("social-whatapp")(width="24px" height="24px" class="vacancy-intro__socials-item-icon")
+                a.vacancy-intro__socials-item(href="#")
+                  +icon-multi("social-ok")(width="24px" height="24px" class="vacancy-intro__socials-item-icon")
+                a.vacancy-intro__socials-item(href="#")
+                  +icon-multi("social-vk")(width="24px" height="24px" class="vacancy-intro__socials-item-icon")
+  else
+    section.page-intro.page-intro--white-bg.page-intro--withoutMB
+      .site-container
+        .vacancy-intro.vacancy-intro--full
+          .vacancy-intro__top
+            .vacancy-intro__top-tabs
+              .vacancy-intro__top-tab
+                | IT
+            .vacancy-intro__top-date
+              .vacancy-intro__top-date-text
+                | Опубликовано:
+              .vacancy-intro__top-date-number
+                | 13 октября 2022
+          h2.page-heading-h2 Что выгоднее при покупке автомобиля: автокредит или потребительский кредит?
+          .vacancy-intro__modile-btns
+            .vacancy-intro__modile-btn.vacancy-intro__modile-btn--share
+              +icon-inside-circle("share")
+              span
+                | Поделиться
+          .vacancy-intro__footer
+            .vacancy-intro__socials
+              .vacancy-intro__socials-text
+                | Поделиться
+              .vacancy-intro__socials-items
+                .vacancy-intro__socials-item.vacancy-intro__socials-item--chain
+                  +icon-multi("social-chain")(width="24px" height="24px" class="vacancy-intro__socials-item-icon")
+                  .vacancy-intro__socials-item-text
+                    | Ссылка успешно скопирована
+                a.vacancy-intro__socials-item(href="#")
+                  +icon-multi("social-telegram")(width="24px" height="24px" class="vacancy-intro__socials-item-icon")
+                a.vacancy-intro__socials-item(href="#")
+                  +icon-multi("social-whatapp")(width="24px" height="24px" class="vacancy-intro__socials-item-icon")
+                a.vacancy-intro__socials-item(href="#")
+                  +icon-multi("social-ok")(width="24px" height="24px" class="vacancy-intro__socials-item-icon")
+                a.vacancy-intro__socials-item(href="#")
+                  +icon-multi("social-vk")(width="24px" height="24px" class="vacancy-intro__socials-item-icon")

@@ -1,0 +1,62 @@
+.quote-block {
+  &__text {
+    position: relative;
+    padding-left: 19.2rem;
+
+    @include mq(lg) {
+      padding-left: 16rem;
+    }
+
+    @include mq(md) {
+      padding-left: 13rem;
+      font: var(--font-h4);
+    }
+
+    @include mq(md) {
+      padding-left: 10rem;
+    }
+
+    @include mq(xs) {
+      padding-top: 4rem;
+      padding-left: 0;
+    }
+
+    b {
+      font-weight: 500;
+
+      @include mq(md) {
+        font-weight: 600;
+      }
+
+      @include mq(sm) {
+        color: var(--color-base-5);
+      }
+    }
+
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-image: url('../images/general-information/quotes.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 7.9rem;
+      height: 5.3rem;
+      top: 0;
+      left: 0;
+
+      @include mq(lg) {
+        width: 5.9rem;
+      }
+
+      @include mq(sm) {
+          width: 4.2rem;
+          height: 2.8rem;
+      }
+
+      @include mq(xs) {
+        top: 0;
+      }
+    }
+  }
+}

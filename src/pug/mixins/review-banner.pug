@@ -1,0 +1,20 @@
+mixin review-banner(simple)
+  .reviews-shield-section&attributes(attributes)
+    .site-container
+      section.reviews-shield.js-section
+        if simple
+          .reviews-shield__box
+            .reviews-shield__box-desc
+              p
+                | Дата проведения наблюдательного совета банка, утвердившего годовую отчетность по итогам 2020 года: 30 марта 2021 года
+              p
+                | Дата проведения годового общего собрания акционеров банка, утвердившего распределение прибыли по итогам 2020 года: 30 апреля 2021 года.
+            +moreLink("О банке на сайте ЦБ РФ", "", "/")
+        else
+          h2.reviews-shield__heading.page-heading-h4 Страница была полезной?
+          +imgLazy("assets/images/shileds/shiled-img2.jpg")(class="reviews-shield__img")
+          p.reviews-shield__text
+            | 90% клиентов считают страницу полезной
+          .reviews-shield__btns
+            +button("Да", "like")(class="button--md button--icon-fill reviews-shield__btn reviews-shield__btn--mr" data-path="modal-useful")
+            +button("Нет", "dislike")(class="button--secondary button--icon-fill button--md reviews-shield__btn" data-path="modal-dislike")

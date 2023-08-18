@@ -1,0 +1,19 @@
+mixin input(name, inptName, palcholder, req, mask)
+  - required = req ? 'required' : null
+  if (mask === 'fio')
+    label.input&attributes(attributes)
+      input(type="text" data-parsley-maxlength="50" data-parsley-required="" class="input__control" name=inptName data-parsley-numbers="" placeholder=palcholder)
+      span.input__label= name
+  else if (mask === 'phone')
+    label.input&attributes(attributes)
+      input(type="tel" class="input__control js-phone-mask" name=inptName data-parsley-required="" data-parsley-phone="" placeholder=palcholder)
+      span.input__label= name
+  else if (mask === 'email')
+    label.input&attributes(attributes)
+      input(type="email" class="input__control" name=inptName data-parsley-required="" data-parsley-email="" placeholder=palcholder)
+      span.input__label= name
+  else
+    label.input&attributes(attributes)
+      input(type="text" class="input__control" name=inptName placeholder=palcholder)
+      span.input__label= name
+

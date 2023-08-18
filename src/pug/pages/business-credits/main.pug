@@ -1,0 +1,12 @@
+main.page-main.main
+  +breadcrumbs([['Главная', "/"], ['Кредиты']])
+  +page-intro("Кредиты для малого и среднего бизнеса", "Для роста и развития вашего бизнеса на индивидуальных условиях", true)(class="page-intro--one-button")
+  include ../../parts/advantages.pug
+  section.page-section.js-section(id="how")
+    .site-container
+      h2.page-heading-h3.page-mb56.page-heading-sm-center Как получить кредит
+      +info-steps()
+  +callback-banner-list("Заявка на кредит", true, false)
+  include ../../parts/additional-information.pug
+  include ../../parts/best-from-bank.pug
+  +review-banner

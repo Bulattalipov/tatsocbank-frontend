@@ -1,0 +1,35 @@
+mixin page-intro-detail(name, text, card, app, simple)
+  - appClass = app ? 'page-intro--our-app' : ''
+  section.page-intro.page-intro--detail-page(class=appClass)
+    .site-container.page-intro__container
+      if (!card && !app && !simple)
+        ul.tag__list.tag__list--mb10
+          li.tag__item
+            .tag С господдержкой
+      h1.page-heading-h2.page-intro__heading!= name
+      p.page-intro__text= text
+      if (!card && !app && !simple)
+        .page-intro__image-container
+          img(src="assets/images/landing-card/img1.jpg" class="page-intro__image-round" alt=name)
+      else if (app)
+        img(src="assets/images/phone.png" class="page-intro__image page-intro__image--app" alt=name)
+      else if (simple)
+        img(src="assets/images/change.png" class="page-intro__image" alt=name)
+      else
+        img(src="assets/images/shileds/card.jpg" class="page-intro__image page-intro__image--small" alt=name)
+
+      if (app)
+        .page-intro__btns
+          +button("Скачать", "qr", null)(class="button--lg page-intro__btn-callback" data-path="mobile-qr")
+          +mobile-app-links('big')
+      else if (simple)
+        .page-intro__btns.page-intro__btns--double
+          +button("Оставить заявку", null, 'Заявка')(class="button--lg page-intro__btn-callback" data-path="modal-callback")
+          .button(class="button--lg button--secondary page-intro__btn-callback")
+            a.button__text.page-link-full(href="#toBlock")= simple
+            +icon-mono('shevron-arrow-right')(width="24" height="24" class="button__icon")
+
+      else
+        .page-intro__btns
+          +button("Оставить заявку", null, "Заявка")(class="button--lg page-intro__btn-callback" data-path="modal-callback")
+          +button("Подобрать", "shevron-arrow-right", null, 'link')(class="button--lg button--secondary")

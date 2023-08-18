@@ -1,0 +1,24 @@
+main.page-main.main
+  +breadcrumbs([['Главная', "/"], ['Курсы валют']])
+
+  +page-intro-detail("Аренда сейфов", "Аренда банковских сейфов для надежного хранения ценностей", null, null, 'Выбрать отделение')
+
+
+  .reviews-shield-section
+    .site-container
+      section.reviews-shield.reviews-shield--type2.js-section
+        h2.reviews-shield__heading.page-heading-h3 Дополнительные услуги
+        .reviews-shield__content
+          ul
+            li Пересчет денежных знаков и проверка подлинности банкнот сотрудниками банка
+            li Обеспечение контроля за допуском к индивидуальному сейфу в соответствии с условиями трехстороннего договора аренды индивидуального сейфа
+            li Безопасные сделки с недвижимостью через сейфовую ячейку
+
+        +imgLazy("assets/images/shileds/shiled-img3.png")(class="reviews-shield__img")
+
+        .reviews-shield__btns
+          +button("Выбрать отделение", null)(class="button--lg button--icon-fill reviews-shield__btn reviews-shield__btn--mr")
+          +button("Посмотреть тарифы", null, null, "link")(class="button--secondary button--icon-fill button--lg reviews-shield__btn")
+
+
+  +review-banner()

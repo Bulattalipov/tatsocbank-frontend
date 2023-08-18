@@ -1,0 +1,20 @@
+-
+  nav_mortageg = [
+    {name: "Все программы", atributName: "programs"},
+    {name: "С господдержкой", atributName: "support"},
+    {name: "Все программы", atributName: "programs2"}
+  ]
+
+  mortageg_list = [
+    "Инкассация", "Открытие ЛОРО счетов",
+    "Межбанковские операции",
+  ]
+
+section.page-section.landing-section
+  .site-container
+    .landing-section__container
+      .landing-section__contain
+        ul.landing-section__list
+          for item in mortageg_list
+            li.landing-section__item.js-section
+              +landing-card(item, null, true)

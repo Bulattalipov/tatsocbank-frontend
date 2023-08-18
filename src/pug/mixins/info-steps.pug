@@ -1,0 +1,54 @@
+mixin info-steps(long)
+  if long
+    ul.info-steps.info-steps--long
+      li.info-steps__item.js-info-steps(style={'--r':'96deg'})
+        article.info-step
+          .info-step__num
+            .info-step__num-circle
+          h3.info-step__heading Подайте онлайн-заявку
+          p.info-step__txt
+            | Предварительное решение за 3 дня и понижение ставки при онлайн-заявке
+      li.info-steps__item.js-info-steps(style={'--r':'190deg'})
+        article.info-step
+          .info-step__num
+            .info-step__num-circle
+          h3.info-step__heading Выберите новостройку
+          p.info-step__txt
+            | Можете подобрать сами или выбрать из #[a(href="./" target="_blank") списка аккредитованых] банком
+      li.info-steps__item.js-info-steps(style={'--r':'270deg'})
+        article.info-step
+          .info-step__num
+            .info-step__num-circle
+          h3.info-step__heading Заключите сделку
+          p.info-step__txt
+            | Подпишите документы и оформите страховку, а мы переведём деньги застройщику
+      li.info-steps__item.js-info-steps(style={'--r':'360deg'})
+        article.info-step
+          .info-step__num
+            .info-step__num-circle
+          h3.info-step__heading Заключите сделку
+          p.info-step__txt
+            | Подпишите документы и оформите страховку, а мы переведём деньги застройщику
+  else
+    ul.info-steps
+      li.info-steps__item.js-info-steps(style={'--r':'180deg'})
+        article.info-step
+          .info-step__num
+            .info-step__num-circle
+          h3.info-step__heading Подайте онлайн-заявку
+          p.info-step__txt
+            | Предварительное решение за 3 дня и понижение ставки при онлайн-заявке
+      li.info-steps__item.js-info-steps(style={'--r':'180deg'})
+        article.info-step
+          .info-step__num
+            .info-step__num-circle
+          h3.info-step__heading Выберите новостройку
+          p.info-step__txt
+            | Можете подобрать сами или выбрать из #[a(href="./" target="_blank") списка аккредитованых] банком
+      li.info-steps__item.js-info-steps(style={'--r':'180deg'})
+        article.info-step
+          .info-step__num
+            .info-step__num-circle
+          h3.info-step__heading Заключите сделку
+          p.info-step__txt
+            | Подпишите документы и оформите страховку, а мы переведём деньги застройщику
