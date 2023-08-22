@@ -1,4 +1,3 @@
-/* eslint-disable no-plusplus */
 export default () => {
   const steps = document.querySelectorAll('.js-info-steps');
 
